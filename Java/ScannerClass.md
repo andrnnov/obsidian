@@ -1,8 +1,12 @@
+### Java Scanner Class ###
+
+#ScannerClass
+
 2023-09-04 15:13
 
 Класс `java.util.Scanner`
 
-#JavaScannerClass Java Scanner Class cчитывает данные из источника, который ты для него укажешь. Например, из строки, из файла, из консоли. Далее он распознает эту информацию и обрабатывает нужным образом.
+ [Java Scanner Class](ScannerClassJava) cчитывает данные из источника, который ты для него укажешь. Например, из строки, из файла, из консоли. Далее он распознает эту информацию и обрабатывает нужным образом.
 
 ### Методы
 
@@ -29,20 +33,14 @@ public class Main {
 
 ```java
 ublic class Main {
-
    public static void main(String[] args) {
-
        Scanner sc = new Scanner(System.in);
        System.out.println("Введите число:");
-
        int number = sc.nextInt();
-
        System.out.println("Спасибо! Вы ввели число " + number);
-
    }
 }
 ```
-
 **`hasNextInt()`** — метод проверяет, является ли следующая порция введенных данных числом, или нет (возвращает, соответственно, true или false).
 **`hasNextLine()`** — проверяет, является ли следующая порция данных строкой. 
 **`hasNextByte()`**, **`hasNextShort()`**, **`hasNextLong()`**, **`hasNextFloat()`**, **`hasNextDouble()`** — все эти методы делают то же для остальных типов данных.

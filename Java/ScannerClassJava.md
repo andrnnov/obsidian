@@ -1,6 +1,6 @@
 ### Класс сканера на Java ###
 
-#ScannerClass
+#Java #ScannerClass
 
 2023-09-06 15:22
 

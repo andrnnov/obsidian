@@ -1,6 +1,6 @@
 ### Двусвязный список LinkedList ###
 
-#LinkedList #ArrayList 
+#Java #LinkedList #ArrayList 
 
 2023-09-11 17:27
 

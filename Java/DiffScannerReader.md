@@ -1,6 +1,6 @@
 ### Разница между классом Scanner и BufferedReader в Java ###
 
-#ScannerClass #BufferedReader 
+#Java #ScannerClass #BufferedReader 
 
 2023-09-06 12:52
 

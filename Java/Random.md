@@ -1,6 +1,6 @@
-### Случайные числа в Java ###
+#Java #Random  #setSeed #doubles #ints #longs #nextBytes 
 
-#Java #Random  #setSeed 
+### Случайные числа в Java ###
 
 2023-09-14 17:30
 
@@ -14,15 +14,12 @@ Math.random()
 
 Пример:
 ```java
-public class Main
-{
-   public static void main(String[] args)
-   {
-     for (int i = 0; i < 10; i++)
-     {
-       System.out.println(Math.random());
-     }
-   }
+public class Main {
+	public static void main(String[] args) {
+		for (int i = 0; i < 10; i++) {
+		    System.out.println(Math.random());
+	    }
+    }
 }
 ```
 Вывод:
@@ -42,21 +39,17 @@ public class Main
 
 Сначала нужно превратить диапазон `[0,1)` в `[0, 6)`. Для этого нужно просто умножить результат функции `random()` на `6`. Ну а чтобы получить целые числа, нужно это все округлить:
 ```java
-public class Main
-{
-   public static int getRandomDiceNumber()
-   {
-      return (int) (Math.random() * 6);
-   }
+public class Main {
+   public static int getRandomDiceNumber() {
+	    return (int) (Math.random() * 6);
+	}
 
-   public static void main(String[] args)
-   {
-      for (int i = 0; i < 10; i++)
-      {
-         int x = getRandomDiceNumber();
-         System.out.println(x);
-      }
-   }
+	public static void main(String[] args) {
+	    for (int i = 0; i < 10; i++) {
+	    int x = getRandomDiceNumber();
+	        System.out.println(x);
+	    }
+	}
 }
 ```
 Вывод:
@@ -109,7 +102,7 @@ public class Main
 
 Это очень интересный класс, и у него есть много интересных методов. Начнем с самых простых:
 
-**Метод [void setSeed(long)]()**
+**Метод [void setSeed()](Method-setSeed)**
 
 Этот метод устанавливает исходное значение, которое используется в качестве основы для генерирования случайных чисел.
 
@@ -129,13 +122,12 @@ float f = r.nextFloat();
 Этот метод возвращает случайное целое число в диапазоне `[0, max)`. `0` входит в диапазон, `max` — не входит.
 
 Т.е. если вы хотите получить случайное число из набора `1, 2, 3, 4, 5, 6`, вам нужно будет прибавить к полученному случайному числу единицу:
-
 ```java
 Random r = new Random();
 int x = r.nextInt(6) + 1;
 ```
 
-**Метод `int nextInt()`**
+**Метод [`int nextInt()`](Method-nextInt)**
 
 Этот метод аналогичен предыдущему, но не принимает никаких параметров. Тогда в каком же диапазоне он выдает числа? От `-2 миллиарда` до `+2 миллиарда`.
 
@@ -189,3 +181,13 @@ public class MathFunctions {
 1.2567221522577043
 -1.073685704004384
 -0.8709705603926711==
+
+3. **Методы получения наборов случайных чисел**
+
+Метод [doubles()](Method-doubles) cоздает поток данных, содержащий случайные числа типа double.
+
+Метод [ints()](Method-ints) получает данные типа int в виде потока случайных чисел.
+
+Метод [longs()](Method-longs) получает данные типа long в виде потока случайных чисел.
+
+Метод [nextBytes()](Method-bytes) получает массив случайных чисел типа Bytes[].

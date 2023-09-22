@@ -1,6 +1,6 @@
 ###  Считывание данных с клавиатуры — «ридеры» ###
 
-#Java #BufferedReaderние
+#Java #BufferedReader
 
 2023-09-05 16:49
 

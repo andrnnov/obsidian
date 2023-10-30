@@ -38,19 +38,114 @@
 - HashMap: структура данных в виде словаря, в котором каждый объект имеет уникальный ключ и некоторое значение
 - TreeMap: структура данных в виде дерева, где каждый элемент имеет уникальный ключ и некоторое значение
 
-Интерфейс **Collection** является самым главным для классов коллекций в библиотеке Java. Два основных метода интерфейса.  Интерфейс Collection является обобщенным и расширяет интерфейс Iterable, поэтому все объекты коллекций можно перебирать в цикле по типу **`for-each`**.
+Интерфейс Java Collection (java.util.Collection) - один из корневых интерфейсов Java Collection API. Вы создаете не экземпляр Collection напрямую, а экземпляр одного из подтипов Collection. Вот пример создания списка, который является подтипом коллекции: 
+```java
+Collection collection = new ArrayList();
+```
+Приведенный выше пример работает для каждого подтипа коллекции.
+Вот метод, который работает с коллекцией:
+```java
+public class MyCollectionUtil{
+  public static void doSomething(Collection collection) {
+    
+    Iterator iterator = collection.iterator();
+    while(iterator.hasNext()){
+      Object object = iterator.next();
 
+      //do something to object here...
+    }
+  }
+}
+```
+И вот несколько способов вызвать этот метод с различными подтипами коллекции:
+```java
+Set  set  = new HashSet();
+List list = new ArrayList();
+
+MyCollectionUtil.doSomething(set);
+MyCollectionUtil.doSomething(list);
+```
+Интерфейс Collection является обобщенным и расширяет интерфейс Iterable, поэтому все объекты коллекций можно перебирать в цикле по типу **`for-each`**. 
+Вы можете выполнить итерацию по всем элементам коллекции. Это делается путем получения итератора Java из коллекции и выполнения итерации по нему. Вот как это выглядит: 
+```java
+Collection collection = new HashSet();
+//... add elements to the collection
+
+Iterator iterator = collection.iterator();
+while(iterator.hasNext()){
+    Object object = iterator.next();
+    System.out.println(object);
+}
+```
+Вы также можете выполнить итерацию коллекции Java, используя цикл Java for-each :
+```java
+Collection collection = new HashSet();
+collection.add("A");
+collection.add("B");
+collection.add("C");
+
+for(Object object : collection) {
+    System.out.println(object);
+}
+```
 Среди методов интерфейса Collection можно выделить следующие:
-- **`boolean add (E item)`**: добавляет в коллекцию объект item. При удачном добавлении возвращает true, при неудачном - false
-- **`boolean addAll (Collection<? extends E> col)`**: добавляет в коллекцию все элементы из коллекции col. При удачном добавлении возвращает true, при неудачном - false
+- **`boolean add (E item)`**: добавляет в коллекцию объект item. При удачном добавлении возвращает true, при неудачном - false. Независимо от того, какой подтип коллекции вы используете, существует несколько стандартных методов добавления элементов в коллекцию. Добавление элемента в коллекцию осуществляется с помощью метода add(). Вот пример добавления элемента в коллекцию Java:
+```java
+String     anElement  = "an element";
+Collection collection = new HashSet();
+
+boolean didCollectionChange = collection.add(anElement);
+```
+- **`boolean addAll (Collection<? extends E> col)`**: добавляет в коллекцию все элементы из коллекции col. При удачном добавлении возвращает true, при неудачном - false. Вы также можете добавить коллекцию объектов в коллекцию Java с помощью функции addAll(). Вот пример добавления коллекции объектов в коллекцию Java:
+```java
+Set  aSet  = ... // get Set  with elements from somewhere
+Collection collection = new HashSet();
+collection.addAll(aSet);    //returns boolean too, but ignored here
+```
+Java Collection addAll() добавляет все элементы, найденные в коллекции, переданной в качестве параметра методу. Сам объект коллекции не добавляется. Только его элементы. Если бы вы вместо этого вызвали add() с Collection в качестве параметра, был бы добавлен сам объект Collection, а не его элементы. Точное поведение метода addAll() зависит от подтипа коллекции. Некоторые подтипы коллекций позволяют добавлять один и тот же элемент более одного раза, а другие - нет.
 - **`void clear ()`**: удаляет все элементы из коллекции
-- **`boolean contains (Object item)`**: возвращает true, если объект item содержится в коллекции, иначе возвращает false
+- **`boolean contains(Object item)`** и **`boolean containsAll(Object items)`**: возвращает true, если объект item содержится в коллекции, иначе возвращает false.
+```java
+Collection collection   = new HashSet();
+boolean containsElement = collection.contains("an element");
+Collection elements     = new HashSet();
+boolean containsAll     = collection.containsAll(elements);
+```
 - **`boolean isEmpty ()`**: возвращает true, если коллекция пуста, иначе возвращает false
 - **`Iterator<E> iterator ()`**: возвращает объект Iterator для обхода элементов коллекции
-- **`boolean remove (Object item)`**: возвращает true, если объект item удачно удален из коллекции, иначе возвращается false
-- **`boolean removeAll (Collection<?> col)`**: удаляет все объекты коллекции col из текущей коллекции. Если текущая коллекция изменилась, возвращает true, иначе возвращается false
-- **`boolean retainAll (Collection<?> col)`**: удаляет все объекты из текущей коллекции, кроме тех, которые содержатся в коллекции col. Если текущая коллекция после удаления изменилась, возвращает true, иначе возвращается false
-- **`int size ()`**: возвращает число элементов в коллекции
+- **`boolean remove (Object item)`**. Метод remove() удаляет элемент из коллекции и возвращает значение true, если удаленный элемент присутствовал в коллекции и был удален. Если элемент отсутствовал, метод remove() возвращает значение false. Вот пример удаления элемента из коллекции Java:
+```java
+boolean wasElementRemoved = collection.remove("an element");
+```
+- **`boolean removeAll (Collection<?> col)`**: удаляет все объекты коллекции col из текущей коллекции. Если текущая коллекция изменилась, возвращает true, иначе возвращается false. Если параметр Collection содержит какие-либо элементы, не найденные в целевой коллекции, они просто игнорируются. Вот пример удаления коллекции элементов из коллекции Java:
+```java
+Collection objects = //... get a collection of objects from somewhere.
+collection.removeAll(objects);
+```
+- **`boolean retainAll (Collection<?> col)`**: удаляет все объекты из текущей коллекции, кроме тех, которые содержатся в коллекции col. Если текущая коллекция после удаления изменилась, возвращает true, иначе возвращается false.
+```java
+Collection colA = new ArrayList();
+Collection colB = new ArrayList();
+
+colA.add("A");
+colA.add("B");
+colA.add("C");
+
+colB.add("1");
+colB.add("2");
+colB.add("3");
+
+Collection target = new HashSet();
+
+target.addAll(colA);     //target now contains [A,B,C]
+target.addAll(colB);     //target now contains [A,B,C,1,2,3]
+
+target.retainAll(colB);  //target now contains [1,2,3]
+```
+- **`int size ()`**: возвращает число элементов в коллекции:
+```java
+int numberOfElements = collection.size();
+```
 - **`Object[] toArray ()`**: возвращает массив, содержащий все элементы коллекции
 
 Коллекции в свою очередь делится на другие большие подгруппы.

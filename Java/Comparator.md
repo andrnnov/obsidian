@@ -57,7 +57,7 @@ public class Spaceship implements Comparable<Spaceship> {
     }
 }
 ```
-Обратите внимание, что класс Spaceship уже реализует сопоставимый интерфейс, который сначала сравнивает объекты Spaceship в spaceshipClass, а затем registrationNo. Кстати, в этом нет необходимости, если вы хотите сравнить объекты с помощью компаратора. Реализует ли objects сопоставимый интерфейс или нет, не имеет значения при сравнении объектов с помощью компаратора.
+Обратите внимание, что класс Spaceship уже реализует интерфейс Comparable, который сначала сравнивает объекты Spaceship в spaceshipClass, а затем registrationNo. Кстати, в этом нет необходимости, если вы хотите сравнить объекты с помощью компаратора. Реализует ли objects интерфейс Comparable или нет, не имеет значения при сравнении объектов с помощью компаратора.
 
 Теперь представьте, что вы хотите отсортировать объекты космического корабля только по их регистрационному номеру и игнорировать класс spaceshipClass. Вот реализация Java Comparator, которая сделает это:
 ```java
@@ -94,4 +94,112 @@ public class SpaceshipComparator implements Comparator<Spaceship> {
     }
 }
 ```
+#### Пример использования интерфейса Comparator ####
 
+Итак, нестандартная сортировка. Допустим, мы все согласны что логичнее всего сравнивать дома по площади. Ну а если их нужно отсортировать, например, по цене?
+
+Для этой цели мы можем создать отдельный класс, который реализует интерфейс Comparator.
+
+Например, у нас уже есть класс **House**:
+```java
+public class House {
+    int area;
+    int price;
+    String city;
+    boolean hasFurniture;
+    public House(int area, int price, String city, boolean hasFurniture) {
+        this.area = area;
+        this.price = price;
+        this.city = city;
+        this.hasFurniture = hasFurniture;
+    }
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("House{");
+            sb.append("area=").append(area);
+            sb.append(", price=").append(price);
+            sb.append(", city='").append(city).append('\'');
+            sb.append(", hasFurniture=").append(hasFurniture);
+            sb.append('}');
+        return sb.toString();
+    }
+}
+```
+Давайте создадим отдельный класс, которые будут выполнять функцию сравнения - **PriceComparator**:
+```java
+public class PriceComparator implements Comparator<House> {
+    public int compare(House h1, House h2) {
+        if (h1.price == h2.price) {
+            return 0;
+        }
+        if (h1.price > h2.price) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
+}
+```
+Обратите внимение: мы указываем тип объектов, которые хотим сравнивать (**House**) в скобках после слова "**Comparator**".
+
+Теперь давайте возьмем **main** и поместим наши объекты в **ArrayList**:
+```java
+public class Test {
+    public static void main(String[] args) {
+       ArrayList<House> myHouseArrayList = new ArrayList<House>();
+
+        House firstHouse = new House(100, 120000, "Tokyo", true);
+        House secondHouse = new House(40, 70000, "Oxford", true);
+        House thirdHouse = new House(70, 180000, "Paris", false);
+
+        myHouseArrayList.add(firstHouse);
+        myHouseArrayList.add(secondHouse);
+        myHouseArrayList.add(thirdHouse);
+
+        for (House h: myHouseArrayList) {
+            System.out.println(h);
+        }
+    }
+}
+```
+Если запустить этот код, то мы увидим, что все наши элементы лежат в порядке добавление - т.е. они не отсортированы.
+
+Теперь давайте создадим объект класса **PriceComparator**, а потом вызовем у нашего ArrayList метод sort(), который принимает на вход как раз объект класса, реализующего интерфейс Comparator, в нашем  **PriceComparator**-а отсортируем наш **ArrayList**:
+```java
+public class Test {
+    public static void main(String[] args) {
+       ArrayList<House> myHouseArrayList = new ArrayList<House>();
+
+        House firstHouse = new House(100, 120000, "Tokyo", true);
+        House secondHouse = new House(40, 70000, "Oxford", true);
+        House thirdHouse = new House(70, 180000, "Paris", false);
+
+        myHouseArrayList.add(firstHouse);
+        myHouseArrayList.add(secondHouse);
+        myHouseArrayList.add(thirdHouse);
+
+        for (House h: myHouseArrayList) {
+            System.out.println(h);
+        }
+
+        PriceComparator myPriceComparator = new PriceComparator();
+        myHouseArrayList.sort(myPriceComparator);
+        System.out.println("Sorted: ");
+        for (House h: myHouseArrayList) {
+            System.out.println(h);
+        }
+    }
+}
+```
+В консоли получим:
+===Area: 100, price: 120000, city: Tokyo, hasFurniture: true
+Area: 40, price: 70000, city: Oxford, hasFurniture: true
+Area: 70, price: 180000, city: Paris, hasFurniture: false
+Sorted:
+Area: 40, price: 70000, city: Oxford, hasFurniture: true
+Area: 100, price: 120000, city: Tokyo, hasFurniture: true
+Area: 70, price: 180000, city: Paris, hasFurniture: false
+Process finished with exit code 0==
+
+Наши дома отсортированы по цене.

@@ -4,13 +4,14 @@
 2023-11-22 11:48
 
 Класс Java File, java.io.Файл в Java IO API предоставляет вам доступ к базовой файловой системе. Используя класс Java File, вы можете: 
-- Проверить, существует ли файл или каталог. 
+- [[File#Метод exists(). Определение наличия файла (каталога)|Метод exists(). Определение наличия файла (каталога)]] 
 - Создать каталог, если он не существует. 
+- [[File#Метод getName(). Получить имя файла или каталога|Метод getName(). Получить имя файла или каталога]]
 - [[File#Метод length(). Определить размер в байтах файла, который связан с файловым объектом|Метод length(). Определить размер в байтах файла, который связан с файловым объектом]]
 - Переименовать или переместить файл. 
-- Удалить файл. 
+- [[File#]]Метод delete(). Удалить файл. 
 - Проверить, является ли путь файлом или каталогом. 
-- [[File#Чтение списка файлов в директории|Прочитайть список файлов в каталоге]].cd
+- [[File#Чтение списка файлов в директории|Методы list() и listFiles(). Прочитайть список файлов в каталоге]].
 
 #### Создание экземпляра класса File. Конструкторы класса ####
 
@@ -46,10 +47,11 @@ public static void main(String[] args) throws IOException
 	}
 ```
 Результат выполнения программы
-==output.txt
-path2 = ``C:\Program Files``
-path3 = ``C:\Programs\Java\Project22``
-path4 = ``C:\Programs\Java\Project22\output.txt``==
+<p style="background-color: navy; color: yellow">
+output.txt<br>
+path2 = C:\Program Files<br>
+path3 = C:\Program Files\Java\Project22<br>
+path4 = C:\Program Files\Java\Project22\output.txt</p>
 #### Метод getName(). Получить имя файла или каталога ####
 
 Метод getName() возвращает имя файла или каталога, с которым связана файловая переменная. Если абсолютный путь к имени файла (каталога) содержит несколько уровней вложения, то возвращается непосредственно имя этого файла (каталога). Общая форма использования метода следующая 
@@ -72,7 +74,7 @@ public static void main(String[] args) throws IOException
 }
 ```
 Результат выполнения программы
-==name = Program Files==
+<p style="background-color: navy; color: yellow">name = Program Files</p>
 #### Метод getPath(). Получить имя файла ####
 
 Метод getPath() возвращает имя файла (каталога), которое было задано в конструкторе при создании файлового объекта типа File. Общая форма использования метода следующая
@@ -146,7 +148,7 @@ public static void main(String[] args) throws IOException
 }
 ```
 Результат выполнения программы
-==``Path = C:\Programs\Java\Project22\output.txt``==
+<p style="background-color: navy; color: yellow">Path = C:\Programs\Java\Project22\output.txt</p>
 
 #### Методы canRead(), canWrite(). Определение того, допускает ли файловый объект чтение и запись ####
 
@@ -170,8 +172,8 @@ public static void main(String[] args) throws IOException
 }
 ```
 Результат работы программы
-==The result of canRead() is true.
-The result of canWrite() is true.==
+<p style="background-color: navy; color: yellow">The result of canRead() is true.<br>
+The result of canWrite() is true.</p>
 #### Метод exists(). Определение наличия файла (каталога) ####
 
 Метод exists() предназначен для определения существования файла, ассоциированного с файловым объектом. Общая форма использования метода следующая
@@ -317,7 +319,7 @@ public static void main(String[] args) throws IOException
 }
 ```
 Результат работы программы
-==len = 12==
+<p style="background-color: navy; color: yellow">len = 12</p>
 #### Метод delete(). Удаление файла ####
 
 Метод delete() используется для удаления файла. Общая форма использования метода
@@ -389,8 +391,8 @@ public static void main(String[] args) throws IOException
 }
 ```
 Результат работы программы
-==The folder is present.
-The folder C:\Programs\345 is created.==
+<p style="background-color: navy; color: yellow">The folder is present.<br>
+The folder C:\Programs\345 is created.</p>
 #### Метод mkdirs(). Создание нескольких вложенных папок ####
 
 Метод mkdirs() позволяет создать несколько уровней вложений папок за один раз. В отличие от метода mkdir(), этот метод создает уровни вложения папок, которые не существуют. В методе mkdir() чтобы создать подпапку нужно, чтобы предварительно обязательно была созданная папка верхнего уровня.
@@ -453,7 +455,6 @@ public static void main(String[] args) throws IOException
 	    System.out.println("The file is not present");
 }
 ```
-
 #### Метод getTotalSpace(). Определение объема диска ####
 
 С помощью метода getTotalSpace() можно определить общий размер носителя (диска) в байтах. Метод возвращает результат типа long. Общая форма использования метода следующая
@@ -484,8 +485,8 @@ public static void main(String[] args) throws IOException
 }
 ```
 Результат выполнения программы
-==Drive E: - Total space = 790486839296
-Drive C: - Total space = 208684355584==
+<p style="background-color: navy; color: yellow">Drive E: - Total space = 790486839296<br>
+Drive C: - Total space = 208684355584</p>
 #### Метод getFreeSpace(). Определить свободное место на диске ####
 
 С помощью метода getFreeSpace() можно определить объем в байтах свободного места на носителе. Общая форма использования метода следующая
@@ -516,8 +517,8 @@ public static void main(String[] args) throws IOException
 }
 ```
 Результат выполнения программы
-==Drive E: - Free space = 197617647616
-Drive C: - Free space = 18358034432==
+<p style="background-color: navy; color: yellow">Drive E: - Free space = 197617647616<br>
+Drive C: - Free space = 18358034432</p>
 #### Метод getUsableSpace(). Определение полезного места на диске ####
 
 С помощью метода getUsableSpace() можно определить полезный размер места на носителе (диске). Во многих случаях значение, которое возвращает данный метод равно значению, которое возвращает метод getFreeSpace(). Общая форма использования метода следующая:
@@ -546,8 +547,8 @@ public static void main(String[] args) throws IOException
 }
 ```
 Результат работы программы
-==Drive E: - Usable space = 197617647616
-Drive C: - Usable space = 18358034432==
+<p style="background-color: navy; color: yellow">Drive E: - Free space = 197617647616<br>
+Drive C: - Free space = 18358034432</p>
 #### Чтение списка файлов в директории ####
 
 Вы можете получить список всех файлов в каталоге, вызвав либо метод Java File list(), либо метод listFiles(). Метод list() возвращает массив строк с именами файлов и/или каталогов каталога, на который указывает объект File. Функция listFiles() возвращает массив файловых объектов, представляющих файлы и/или каталоги в каталоге, на который указывает файл. Вот пример перечисления всех файлов в каталоге с помощью методов Java File list() и listFiles():

@@ -10,9 +10,9 @@
 В данной статье рассматривается вопрос использования потоков для вывода данных в файл. Иерархии выходных **OutputStream** потоков представлена на следующем рисунке.
 ![[OutputStream.png]]
 ```mermaid
-graph TD
+graph LR
 
-OutputStream --> ByteArrayOutputStream 
+OutputStream --> ByteArrayOutputStream
 OutputStream --> FileOutputStream
 OutputStream --> FilterOutputStream
 OutputStream --> ObjectOutputStream
@@ -20,7 +20,7 @@ OutputStream --> PipedOutputStream
 FilterOutputStream --> BufferedOutputStream
 FilterOutputStream --> DataOutputStream
 FilterOutputStream --> PrintStream
-class OutputStream,FileOutputStream internal-link;
+class OutputStream,FileOutputStream,DataOutputStream,DataInputStream,PrintStream internal-link;
 ```
 
 

@@ -5,6 +5,21 @@
 
 Существуют две параллельные иерархии классов ввода : **InputStream** и [Reader](https://java-online.ru/java-reader.xhtml). Класс Reader введен в последних версиях Java. В данной статье рассматривается вопрос использования потока байтового ввода _InputStream_, иерархия которого представлена на следующем рисунке.
 ![[InputStream.png]]
+
+```mermaid
+flowchart LR
+
+InputStream --> ByteArrayInputStream
+InputStream --> FileInputStream
+InputStream --> FilterInputStream
+InputStream --> ObjectInputStream
+InputStream --> PipedInputStream
+FilterInputStream --> BufferedInputStream
+FilterInputStream --> DataInputStream
+
+class InputStream,FileInputStream,DataInputStream internal-link;
+```
+
 Поток **Stream**- это абстрактное понятие источника или приёмника данных, которые способны обрабатывать информацию. Есть два типа потоков: байтовые и символьные. В некоторых ситуациях символьные потоки более эффективны, чем байтовые. Классы, производные от базовых **InputStream** или _Reader_, имеют методы **read()** для чтения отдельных байтов или массива байтов.
 #### Входной поток InputStream ####
 

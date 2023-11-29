@@ -156,6 +156,7 @@ public class Main {
 <p style="background-color: navy; color: yellow">
 Username\Desktop\testFile.txt</p>
 Полный список методов Path довольно велик. Найти их все можено в [документации Oracle](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html).
+
 ### Files ###
 
 Files — это утилитный класс, куда были вынесены статические методы из класса [File](File). Files — это примерно то же, что и `Arrays` или `Collections`, только работает он с файлами, а не с массивами и коллекциями. Он сосредоточен на управлении файлами и директориями. Используя статические методы `Files`, мы можем создавать, удалять и перемещать файлы и директории. Для этих операций используются методы createFile() (для директорий — createDirectory()), move() и delete(). Вот как ими пользоваться:

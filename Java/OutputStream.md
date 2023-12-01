@@ -20,7 +20,7 @@ OutputStream --> PipedOutputStream
 FilterOutputStream --> BufferedOutputStream
 FilterOutputStream --> DataOutputStream
 FilterOutputStream --> PrintStream
-class OutputStream,FileOutputStream,DataOutputStream,DataInputStream,PrintStream internal-link;
+class OutputStream,FileOutputStream,DataOutputStream,BufferedOutputStream,PrintStream internal-link;
 ```
 
 

@@ -17,7 +17,7 @@ InputStream --> PipedInputStream
 FilterInputStream --> BufferedInputStream
 FilterInputStream --> DataInputStream
 
-class InputStream,FileInputStream,DataInputStream internal-link;
+class InputStream,FileInputStream,DataInputStream,BufferedInputStream internal-link;
 ```
 
 Поток **Stream**- это абстрактное понятие источника или приёмника данных, которые способны обрабатывать информацию. Есть два типа потоков: байтовые и символьные. В некоторых ситуациях символьные потоки более эффективны, чем байтовые. Классы, производные от базовых **InputStream** или _Reader_, имеют методы **read()** для чтения отдельных байтов или массива байтов.

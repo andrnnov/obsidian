@@ -20,7 +20,7 @@ OutputStream --> PipedOutputStream
 FilterOutputStream --> BufferedOutputStream
 FilterOutputStream --> DataOutputStream
 FilterOutputStream --> PrintStream
-class OutputStream,FileOutputStream,DataOutputStream,BufferedOutputStream,PrintStream,ObjectOutputStream internal-link;
+class OutputStream,FileOutputStream,DataOutputStream,BufferedOutputStream,PrintStream,ObjectOutputStream,ByteArrayOutputStream internal-link;
 ```
 
 
@@ -38,4 +38,5 @@ class OutputStream,FileOutputStream,DataOutputStream,BufferedOutputStream,PrintS
 |void write(byte b[], int off, int len)| записывает в поток len байтов массива, начиная с элемента `b[off]`.|
 |void flush() |очищает любые выходные буферы, завершая операцию вывода.|
 |void close()| закрывает выходной поток. Последующие попытки записи в этот поток будут возбуждать [IOException](https://java-online.ru/java-interview-03.xhtml).|
+
 

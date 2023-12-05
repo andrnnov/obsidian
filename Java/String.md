@@ -119,10 +119,6 @@ String text = "one two three two one";
 String t = text.replaceAll("two", "five");
 ```
 В этом примере будет возвращена строка: =="one five three five one"==
-
-
-
-
 #### Сравнение строк ####
 
 Для сравнения строк можно воспользоваться методом `equals()`:

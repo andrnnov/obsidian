@@ -26,10 +26,8 @@
 |[skip(long)](https://translated.turbopages.org/proxy_u/en-ru.ru.f627e4fc-64f83b21-4c7afbb3-74722d776562/https/www.geeksforgeeks.org/bufferedreader-skiplong-method-in-java-with-examples/)|Пропускает символы.|
 
 **Реализация:** Содержимое внутри файла выглядит следующим образом:
-
-==This is first line
-this is second line==
-
+<p style="background-color: navy; color: yellow">This is first line<br>
+this is second line</p>
 **Пример**
 
 ```java
@@ -74,8 +72,8 @@ class GFG {
 }
 ```
 **Вывод:**
+<p style="background-color: navy; color: yellow">mark() method is supported<br>
+first line<br>
+this is second line<br>
+This is</p>
 
-==mark() method is supported
-first line
-this is second line
-This is==

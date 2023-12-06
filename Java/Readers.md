@@ -8,11 +8,11 @@
 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 ```
 
-`System.in` — это объект класса `InputStream`. Это входящий поток, и он привязан к системному устройству ввода данных — клавиатуре.
+`System.in` — это объект класса [InputStream](InputStream). Это входящий поток, и он привязан к системному устройству ввода данных — клавиатуре.
 
 `System.out` — поток для отправки данных на консоль, а `System.in` — для получения данных с клавиатуры.
 
-В классе `InputStream` (а `System.in`, напомню, является объектом класса `InputStream`) есть метод `read()`, который позволяет считывать данные. Одна проблема: он считывает байты, а не символы. 
+В классе [InputStream](InputStream) (а `System.in`, напомню, является объектом класса [InputStream](InputStream)) есть метод `read()`, который позволяет считывать данные. Одна проблема: он считывает байты, а не символы. 
 
 ```java
 public class Main {
@@ -27,13 +27,13 @@ public class Main {
 }
 ```
 
-Мы передаем поток `System.in` объекту `InputStreamReader`.
+Мы передаем поток `System.in` объекту [InputStreamReader](InputStreamReader).
 
 ```java
 new InputStreamReader(System.in)
 ```
 
-`InputStreamReader` не только получает данные из потока. Он еще и преобразует байтовые потоки в символьные. Иными словами, тебе уже не нужно самому заботиться о переводе считанных данных с “компьютерного” языка на “человеческий” — `InputStreamReader` сделает все за тебя.
+[InputStreamReader](InputStreamReader) не только получает данные из потока. Он еще и преобразует байтовые потоки в символьные. Иными словами, тебе уже не нужно самому заботиться о переводе считанных данных с “компьютерного” языка на “человеческий” — [InputStreamReader](InputStreamReader) сделает все за тебя.
 
 ```java
 import java.io.FileInputStream;

@@ -33,7 +33,7 @@ flowchart LR
 ```
 Входной поток или устройство чтения связано с источником данных. Выходной поток или устройство записи связано с пунктом назначения данных.
 
-Java IO содержит множество подклассов классов [InputStream](InputStream), [OutputStream](OutputStream), [Reader](Reader) и [Writer](Write). Причина в том, что все эти подклассы предназначены для различных целей. Вот почему существует так много разных классов. Рассмотренные цели кратко изложены ниже:
+Java IO содержит множество подклассов классов [InputStream](InputStream), [OutputStream](OutputStream), [Reader](Reader) и [Writer](Writer). Причина в том, что все эти подклассы предназначены для различных целей. Вот почему существует так много разных классов. Рассмотренные цели кратко изложены ниже:
 - Доступ к файлам 
 - Доступ к сети 
 - Доступ к буферу внутренней памяти 
@@ -52,9 +52,9 @@ Java IO содержит множество подклассов классов 
 |---|---|---|---|---|
 ||Byte Based|   |Character Based|   |
 ||Input|Output|Input|Output|
-|Basic|[InputStream](InputStream)|[OutputStream](OutputStream)|[Reader](Reader)  <br>[InputStreamReader](InputStreamReader)|[Writer](Writer)  <br>[OutputStreamWriter](https://www.jenkov.com/tutorials/java-io/outputstreamwriter.html)|
+|Basic|[InputStream](InputStream)|[OutputStream](OutputStream)|[Reader](Reader)  <br>[InputStreamReader](InputStreamReader)|[Writer](Writer)  <br>[OutputStreamWriter](OutputStreamWriter)|
 |Arrays|[ByteArrayInputStream](ByteArrayInputStream)|[ByteArrayOutputStream](ByteArrayOutputStream)|[CharArrayReader](https://www.jenkov.com/tutorials/java-io/chararrayreader.html)|[CharArrayWriter](https://www.jenkov.com/tutorials/java-io/chararraywriter.html)|
-|Files|[FileInputStream](FileInputStream)  <br>[RandomAccessFile](https://www.jenkov.com/tutorials/java-io/randomaccessfile.html)|[FileOutputStream](FileOutputStream)  <br>[RandomAccessFile](https://www.jenkov.com/tutorials/java-io/randomaccessfile.html)|[FileReader](FileReader)|[FileWriter](https://www.jenkov.com/tutorials/java-io/filewriter.html)|
+|Files|[FileInputStream](FileInputStream)  <br>[RandomAccessFile](https://www.jenkov.com/tutorials/java-io/randomaccessfile.html)|[FileOutputStream](FileOutputStream)  <br>[RandomAccessFile](https://www.jenkov.com/tutorials/java-io/randomaccessfile.html)|[FileReader](FileReader)|[FileWriter](FileWriter)|
 |Pipes|[PipedInputStream](https://www.jenkov.com/tutorials/java-io/pipedinputstream.html)|[PipedOutputStream](https://www.jenkov.com/tutorials/java-io/pipedoutputstream.html)|[PipedReader](https://www.jenkov.com/tutorials/java-io/pipedreader.html)|[PipedWriter](https://www.jenkov.com/tutorials/java-io/pipedwriter.html)|
 |Buffering|[BufferedInputStream](BufferedInputStream)|[BufferedOutputStream](BufferedOutputStream)|[BufferedReader](BufferedReader)|[BufferedWriter](https://www.jenkov.com/tutorials/java-io/bufferedwriter.html)|
 |Filtering|[FilterInputStream](https://www.jenkov.com/tutorials/java-io/filterinputstream.html)|[FilterOutputStream](https://www.jenkov.com/tutorials/java-io/filteroutputstream.html)|[FilterReader](https://www.jenkov.com/tutorials/java-io/filterreader.html)|[FilterWriter](https://www.jenkov.com/tutorials/java-io/filterwriter.html)|

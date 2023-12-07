@@ -7,8 +7,8 @@
 
 Чтобы использовать функциональность Writer, мы можем использовать его подклассы. Некоторые из них: 
 - BufferedWriter
-- OutputStreamWriter 
-- FileWriter
+- [OutputStreamWriter](OutputStreamWriter)
+- [FileWriter](FileWriter)
 - StringWriter
 
 ```mermaid
@@ -22,7 +22,7 @@ flowchart TD
 // Creates a Writer
 Writer output = new FileWriter();
 ```
-Здесь мы создали writer с именем output, используя класс FileWriter. Это потому, что Writer является абстрактным классом. Следовательно, мы не можем создать объект Writer.
+Здесь мы создали writer с именем output, используя класс [FileWriter](FileWriter). Это потому, что Writer является абстрактным классом. Следовательно, мы не можем создать объект Writer.
 #### Методы Writer ####
 
 Класс Writer предоставляет различные методы, которые реализуются его подклассами. Вот некоторые из методов:
@@ -32,7 +32,7 @@ Writer output = new FileWriter();
 - flush() - принудительно записывает все данные, присутствующие в writer в соответствующее место назначения
 - close() - закрывает программу записи
 
-Вот как мы можем реализовать Writer, используя класс FileWriter.
+Вот как мы можем реализовать Writer, используя класс [FileWriter](FileWriter).
 ```java
 import java.io.FileWriter;
 import java.io.Writer;
@@ -54,7 +54,7 @@ public class Main {
     }
 }
 ```
-В приведенном выше примере мы создали writer, используя класс FileWriter. writer связано с файлом output.txt.
+В приведенном выше примере мы создали writer, используя класс [FileWriter](FileWriter). writer связано с файлом output.txt.
 ```java
 Writer output = new FileWriter("output.txt");
 ```

@@ -56,10 +56,10 @@ Java IO содержит множество подклассов классов 
 |Arrays|[ByteArrayInputStream](ByteArrayInputStream)|[ByteArrayOutputStream](ByteArrayOutputStream)|[CharArrayReader](https://www.jenkov.com/tutorials/java-io/chararrayreader.html)|[CharArrayWriter](https://www.jenkov.com/tutorials/java-io/chararraywriter.html)|
 |Files|[FileInputStream](FileInputStream)  <br>[RandomAccessFile](https://www.jenkov.com/tutorials/java-io/randomaccessfile.html)|[FileOutputStream](FileOutputStream)  <br>[RandomAccessFile](https://www.jenkov.com/tutorials/java-io/randomaccessfile.html)|[FileReader](FileReader)|[FileWriter](FileWriter)|
 |Pipes|[PipedInputStream](https://www.jenkov.com/tutorials/java-io/pipedinputstream.html)|[PipedOutputStream](https://www.jenkov.com/tutorials/java-io/pipedoutputstream.html)|[PipedReader](https://www.jenkov.com/tutorials/java-io/pipedreader.html)|[PipedWriter](https://www.jenkov.com/tutorials/java-io/pipedwriter.html)|
-|Buffering|[BufferedInputStream](BufferedInputStream)|[BufferedOutputStream](BufferedOutputStream)|[BufferedReader](BufferedReader)|[BufferedWriter](https://www.jenkov.com/tutorials/java-io/bufferedwriter.html)|
+|Buffering|[BufferedInputStream](BufferedInputStream)|[BufferedOutputStream](BufferedOutputStream)|[BufferedReader](BufferedReader)|[BufferedWriter](BufferedWriter)|
 |Filtering|[FilterInputStream](https://www.jenkov.com/tutorials/java-io/filterinputstream.html)|[FilterOutputStream](https://www.jenkov.com/tutorials/java-io/filteroutputstream.html)|[FilterReader](https://www.jenkov.com/tutorials/java-io/filterreader.html)|[FilterWriter](https://www.jenkov.com/tutorials/java-io/filterwriter.html)|
 |Parsing|[PushbackInputStream](https://www.jenkov.com/tutorials/java-io/pushbackinputstream.html)  <br>[StreamTokenizer](https://www.jenkov.com/tutorials/java-io/streamtokenizer.html)||[PushbackReader](https://www.jenkov.com/tutorials/java-io/pushbackreader.html)  <br>[LineNumberReader](https://www.jenkov.com/tutorials/java-io/linenumberreader.html)||
-|Strings|||[StringReader](https://www.jenkov.com/tutorials/java-io/stringreader.html)|[StringWriter](https://www.jenkov.com/tutorials/java-io/stringwriter.html)|
+|Strings|||[StringReader](StringReader)|[StringWriter](StringWriter)|
 |Data|[DataInputStream](DataInputStream)|[DataOutputStream](DataOutputStream)|||
 |Data - Formatted||[PrintStream](PrintStream)||[PrintWriter](https://www.jenkov.com/tutorials/java-io/printwriter.html)|
 |Objects|[ObjectInputStream](ObjectInputStream)|[ObjectOutputStream](ObjectOutputStream)|||

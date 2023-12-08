@@ -6,7 +6,7 @@
 Класс BufferedOutputStream пакета java.io используется с другими выходными потоками для более эффективной записи данных (в байтах). Он расширяет абстрактный класс [OutputStream](OutputStream).
 ```mermaid
 flowchart BT
-    OutputStream --> |extends|BufferedOutputStream
+    BufferedOutputStream --> |extends|OutputStream
 ```
 #### Работа BufferedOutputStream ####
 

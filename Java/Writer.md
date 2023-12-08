@@ -9,7 +9,7 @@
 - BufferedWriter
 - [OutputStreamWriter](OutputStreamWriter)
 - [FileWriter](FileWriter)
-- StringWriter
+- [StringWriter](StringWriter)
 
 ```mermaid
 flowchart TD

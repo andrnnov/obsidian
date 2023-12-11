@@ -129,14 +129,16 @@ public static void main (String[] args) throws Exception
 	String result = writer.toString();
 	//выводем полученный из Writer’а текст на экран
 	System.out.println("Результат: "+result);
+	
+	writer.close();
+	reader.close();
 }
 
 public static void executor(Reader reader, Writer writer) throws Exception
 {
+	String line;
 	BufferedReader br = new BufferedReader(reader);
-	while (br.ready()) {
-		//читаем строку из Reader’а
-		String line = br.readLine();
+	while ((line = br.readLine()) != null) {
 		//разворачиваем строку задом наперед
 		StringBuilder sb = new StringBuilder(line);
 		String newLine = sb.reverse().toString();
@@ -145,6 +147,8 @@ public static void executor(Reader reader, Writer writer) throws Exception
 	}
 } 
 ```
+Вывод
+<p style="background-color:navy; color: yellow">!iHdrahciR si eman yM rehpargotohp a m'I</p>
 Создание Reader из String
 ```java
 String s = "data";

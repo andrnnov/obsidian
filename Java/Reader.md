@@ -3,7 +3,7 @@
 
 2023-12-06 11:17
 
-Класс Reader из java.io пакета является абстрактным суперклассом, представляющим поток символов. 
+Класс Reader из java.io пакета является абстрактным суперклассом, представляющим поток символов.  Количество
 
 Поскольку Reader является абстрактным классом, сам по себе он бесполезен. Однако его подклассы можно использовать для чтения данных.
 #### Подклассы Reader ####
@@ -12,7 +12,7 @@
 - [BufferedReader](BufferedReader)
 - [InputStreamReader](InputStreamReader)
 - [FileReader](FileReader)
-- StringReader
+- [StringReader](StringReader)
 
 ```mermaid
 flowchart TD

@@ -41,7 +41,7 @@ public class Program {
 }
 ```
 Вывод:
-==abc abc abc abc abc==
+<p style="background-color: navy; color: yellow">abc abc abc abc abc</p>
 ##### Список методов #####
 
 Класс `StringBuilder` имеет два десятка полезных методов, вот самые важные из них:
@@ -62,7 +62,7 @@ public class Program {
 |```int length()```|Возвращает длину строки в символах|
 Часто мы используем StringBuilders в циклах. Здесь у нас часто неизвестное количество итераций. А StringBuilder оптимизирует случаи, когда происходит много вызовов append().
 
-Следовательно использование StringBuilder в цикле может предотвратить возникновение проблемы с производительностью генерации.
+Следовательно, использование StringBuilder в цикле может предотвратить возникновение проблемы с производительностью генерации.
 
 StringBuilder может добавлять данные многих типов. Мы не ограничены строками. С помощью метода append () мы можем добавлять целые числа, двойные числа, символы - любой числовой тип.
 
@@ -89,10 +89,10 @@ public class Program {
 }
 ```
 Вывод:
-==300
-3.14
-5
-A==
+<p style="background: navy; color: yellow">300<br>
+3.14<br>
+5<br>
+A</p>
 StringBuilder имеет изменяемый буфер. Таким образом, мы можем быстро добавлять или вставлять данные. Он получает два аргумента: индекс и значение, которое мы хотим вставить.
 
 Индекс: это первый аргумент. Чтобы вставить после второго символа, используйте значение 2. А для вставки в начале используйте ноль.
@@ -111,7 +111,7 @@ public class Program {
 }
 ```
 Вывод
-==abxyzc==
+<p style="background-color: navy; color: yellow">abxyzc</p>
 
 Мы используем метод indexOf для поиска подстроки в данных. Если подстрока найдена, первый индекс, в котором она встречается, возвращается как int.
 Если подходящая подстрока не найдена, возвращается отрицательное значение. Мы должны часто проверять -1 при использовании indexOf.
@@ -147,7 +147,7 @@ public class Program {
 }
 ```
 Вывод
-==cat==
+<p style="background-color: navy; color: yellow">cat</p>
 
 Замена. Этот метод принимает два индекса и заменяет символы в этом диапазоне указанной строкой. Replace в StringBuilder работает иначе, чем replace() в Strings.
 ```java
@@ -164,7 +164,7 @@ public class Program {
 }
 ```
 Вывод
-==axyzc==
+<p style="background-color: navy; color: yellow">axyzc</p>
 
 Объединение. Мы можем добавить один StringBuilder к другому. Мы просто вызываем append() и передаем второй StringBuilder в качестве аргумента.
 ```java
@@ -179,7 +179,7 @@ public class Program {
 }
 ```
 Вывод
-==catdog==
+<p style="background-color: navy; color: yellow">catdog</p>
 
 Подстрока или [Substring в Java](https://hr-vector.com/java/substring). Этот метод находится в классе AbstractStringBuilder. Он предоставляет полезную возможность извлекать диапазон символов в новую строку.
 Аргументы: первый аргумент - это начальный индекс желаемой подстроки. Второй аргумент - это последний индекс (а не количество символов).
@@ -200,8 +200,8 @@ public class Program {
 }
 ```
 Вывод
-==rest
-Fo==
+<p style="background-color: navy; color: yellow">rest<br>
+Fo</p>
 
 Перебор символов. Цикл for может перебирать символы. Мы обращаемся к методу length(), чтобы получить размер StringBuilder, а затем используем charAt() для доступа к символам.
 ```java
@@ -218,11 +218,11 @@ public class Program {
 }
 ```
 Вывод
-==m
-a
-g
-i
-c==
+<p style="background-color: navy; color: yellow">m<br>
+a<br>
+g<br>
+i<br>
+c</p>
 
 SetLength. Мы можем изменить длину StringBuilder с помощью setLength. Это часто бывает полезно, когда мы хотим сократить или уменьшить количество символов в объекте.
 ```java
@@ -238,7 +238,7 @@ public class Program {
 }
 ```
 Вывод
-==car==
+<p style="background-color: navy; color: yellow">car</p>
 
 Reverse. В этом примере выполняется обратное преобразование. Он вызывает метод reverse(). Обратить строку легко - сначала мы должны поместить ее содержимое в StringBuilder.
 ```java
@@ -255,7 +255,7 @@ public class Program {
 }
 ```
 Вывод
-==cba==
+<p style="background-color: navy; color: yellow">cba</p>
 
 StringBuilder намного быстрее делает добавление, чем String. Для добавления String требуется значительное время(251 мс), а для добавления StringBuilder требуется менее 1 мс.
 ```java
@@ -286,12 +286,12 @@ public class Program {
 }
 ```
 Результат
-==48890
-48890
-251 ms, String + operator (20000 adds)
-0 ms, StringBuilder append (20000 calls)==
+<p style="background-color: navy; color: yellow">48890<br>
+48890<br>
+251 ms, String + operator (20000 adds)<br>
+0 ms, StringBuilder append (20000 calls)</p>
 
-**Класс `StringBuffer`**
+**Класс StringBuffer**
 
 Есть еще один класс — `StringBuffer` — это аналог класса `StringBuilder`, только его методы имеют модификатор `synchronized`. А это значит, что к объекту `StringBuffer` можно одновременно обращаться из нескольких потоков.
 Зато он работает гораздо медленнее, чем `StringBuilder`. 

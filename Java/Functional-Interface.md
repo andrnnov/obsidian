@@ -148,7 +148,9 @@ public static void main(String[] args) {
 Вывод в консоль:
 <p style="background-color: navy; color: yellow">true<br>
 false</p>
+
 #### Consumer ####
+
 
 `Consumer` (с англ. — “потребитель”) — функциональный интерфейс, который принимает в качестве входного аргумента объект типа T, совершает некоторые действия, но при этом ничего не возвращает:
 ```java

@@ -237,7 +237,7 @@ Stream<String> stream = stringList.stream();
 boolean noneMatch = stream.noneMatch((element) -> { return "xyz".equals(element);});
 System.out.println("noneMatch = " + noneMatch);
 ```
-#### collect() ####
+#### [collect()](collect()) ####
 
 Метод collect() является терминальной операцией, которая запускает внутреннюю итерацию элементов и собирает элементы в потоке в коллекции или объекты какого-либо вида.
 ```java
@@ -255,7 +255,7 @@ System.out.println(stringsAsUppercaseList);
 
 К счастью, класс Java java.util.stream.Collectors содержит набор предварительно реализованных действий Collector, которые можно использовать для наиболее распространенных операций.
 
-В приведенном выше примере использовалась реализация Collector, возвращаемая Collectors.toList(). Этот Collector просто собирает все элементы в потоке в стандартный [список Java](https://hr-vector.com/java/spiski-metody-interfejsa-list).
+В приведенном выше примере использовалась реализация Collector, возвращаемая Collectors.toList(). Этот Collector просто собирает все элементы в потоке в стандартный [список Java](List).
 #### count() ####
 
 Метод подсчета является терминальной операцией, которая подсчитывает элементы. Вот пример подсчета:
@@ -287,7 +287,7 @@ Stream<String> stream = stringList.stream();
 Optional<String> anyElement = stream.findAny();
 System.out.println(anyElement.get());
 ```
-Обратим внимание, как метод findAny() возвращает Optional. Поток может быть пустым, поэтому элемент не может быть возвращен. Можно проверить, был ли элемент найден с помощью дополнительного метода isPresent().
+Обратим внимание, как метод findAny() возвращает [Optional](Optional). Поток может быть пустым, поэтому элемент не может быть возвращен. Можно проверить, был ли элемент найден с помощью дополнительного метода isPresent().
 #### FindFirst() ####
 
 findFirst() находит первый элемент в потоке, если в потоке присутствуют какие-либо элементы. Метод findFirst() возвращает необязательный параметр, из которого можно получить элемент, если он есть.
@@ -301,10 +301,10 @@ Stream<String> stream = stringList.stream();
 Optional<String> result = stream.findFirst();
 System.out.println(result.get());
 ```
-Можно проверить, содержит ли возвращаемый Optional элемент через его метод isPresent().
+Можно проверить, содержит ли возвращаемый [Optional](Optional) элемент через его метод isPresent().
 #### forEach() ####
 
-forEach() является терминальной операцией, которая запускает внутреннюю итерацию элементов и применяет Consumer (java.util.function.Consumer) к каждому элементу в стриме.
+forEach() является терминальной операцией, которая запускает внутреннюю итерацию элементов и применяет [[Functional-Interface#Consumer|Consumer]] (java.util.function.Consumer) к каждому элементу в стриме.
 ```java
 List<String> stringList = new ArrayList<String>();
 stringList.add("one");
@@ -316,7 +316,7 @@ stream.forEach( element -> { System.out.println(element); });
 ```
 #### min() ####
 
-min() является терминальной операцией, которая возвращает наименьший элемент в потоке. Наименьший элемент, определяется реализацией Comparator, которую мы передаем методу min().
+min() является терминальной операцией, которая возвращает наименьший элемент в потоке. Наименьший элемент, определяется реализацией [Comparator](Comparator), которую мы передаем методу min().
 ```java
 List<String> stringList = new ArrayList<String>();
 stringList.add("abc");
@@ -329,7 +329,7 @@ System.out.println(minString);
 Обратим внимание, как метод min() возвращает необязательный параметр, который может содержать или не содержать результат. Если поток пустой, дополнительный метод get() генерирует исключение NoSuchElementException.
 #### max() ####
 
-max() возвращает самый большой элемент в потоке. Наибольший элемент определяется реализацией Comparator, которую мы передаем методу max().
+max() возвращает самый большой элемент в потоке. Наибольший элемент определяется реализацией [Comparator](Comparator), которую мы передаем методу max().
 ```java
 List<String> stringList = new ArrayList<String>();
 stringList.add("abc");
@@ -353,7 +353,7 @@ Optional<String> reduced = stream.reduce((value, combinedValue) -> {
 			return combinedValue + " + " + value;});
 			System.out.println(reduced.get());
 ```
-Обратим внимание на необязательный параметр, возвращаемый методом reduce(). Этот необязательный параметр содержит значение (если оно есть), возвращаемое лямбда-выражением, переданным методу reduce(). Мы получаем значение, вызывая метод Optionalget().
+Обратим внимание на необязательный параметр, возвращаемый методом reduce(). Этот необязательный параметр содержит значение (если оно есть), возвращаемое лямбда-выражением, переданным методу reduce(). Мы получаем значение, вызывая метод [OptionalOptional.get()](Optional).
 #### toArray() ####
 
 Метод Java Stream toArray() является терминальной операцией, которая запускает внутреннюю итерацию элементов в потоке и возвращает массив Object, содержащий все элементы.

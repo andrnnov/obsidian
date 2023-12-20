@@ -5,40 +5,41 @@
 
 В классе _Thread_ определены семь перегруженных конструкторов, большое количество методов, предназначенных для работы с потоками, и три константы (приоритеты выполнения потока).
 #### Конструкторы класса Thread ####
-```java
-Thread();
-Thread(Runnable target);
-Thread(Runnable target, String name);
-Thread(String name);
+
+[[Method-Thread#Thread()|Thread()]];
+[[Method-Thread#Thread(Runnable r)|Thread(Runnable target)]];
+[[Method-Thread#Thread(Runnable r, String name)|Thread(Runnable target, String name)]];
+[[Method-Thread#Thread(String name)|Thread(String name)]];
 Thread(ThreadGroup group, Runnable target);
 Thread(ThreadGroup group, Runnable target, String name);
 Thread(ThreadGroup group, String name);
-```
 где :
 - target – экземпляр класса реализующего интерфейс [Runnable](Runnable);
 - name – имя создаваемого потока;
 - group – группа к которой относится поток.
 
-Несмотря на то, что главный поток создаётся автоматически, им можно управлять. Для этого необходимо создать объект класса _Thread_ вызовом метода _currentThread()_.
+Несмотря на то, что главный поток создаётся автоматически, им можно управлять. Для этого необходимо создать объект класса _Thread_ вызовом метода [[Method-Thread#public void Thread.currentThread()|currentThread()]].
 #### Методы класса Thread ####
 
 Наиболее часто используемые методы класса _Thread_ для управления потоками:
 - long getId() - получение идентификатора потока;
-- String getName() - получение имени потока;
-- int getPriority() - получение приоритета потока;
+- [[Method-Thread#public String Thread.getName()|String getName()]] - получение имени потока;
+- [[Method-Thread#public int Thread.currentThread().getPriority()|int getPriority()]] - получение приоритета потока;
 - State getState() - определение состояния потока;
+- [[Method-Thread#public void Thread.currentThread()|static Thread currentThread()]] - возвращает ссылку на объект Thread, в который он был вызван;
 - void interrupt() - прерывание выполнения потока;
 - boolean isAlive() - проверка, выполняется ли поток;
 - boolean isDaemon() - проверка, является ли поток «daemon»;
-- void join() - ожидание завершения потока;
-- void join(millis) - ожидание millis миллисекунд завершения потока;
+- [[Method-Thread#public void Thread.join()|void join()]] - ожидание завершения потока;
+- [[Method-Thread#public void Thread.join(long milliseconds)|void join(millis)]] - ожидание millis миллисекунд завершения потока;
 - void notify() - «пробуждение» отдельного потока, ожидающего «сигнала»;
 - void notifyAll() - «пробуждение» всех потоков, ожидающих «сигнала»;
-- void run() - запуск потока, если поток был создан с использованием интерфейса Runnable;
+- [[Method-Thread#public void run()|void run()]] - запуск потока, если поток был создан с использованием интерфейса Runnable;
+- [[Method-Thread#public String Thread.setName(String name)|setName(String threadName)]] – задает имя потока;
 - void setDaemon(bool) - определение «daemon» потока;
-- void setPriority(int) - определение приоритета потока;
-- void sleep(int) - приостановка потока на заданное время;
-- void start() - запуск потока;
+- [[Method-Thread#public void Thread.currentThread().setPriority(int priority)|void setPriority(int)]] - определение приоритета потока;
+- [[Method-Thread#public void Thread.sleep(long milliseconds)|void sleep(int)]] - приостановка потока на заданное время;
+- [[Method-Thread#public void Thread.start()|void start()]] - запуск потока;
 - void wait() - приостановка потока, пока другой поток не вызовет метод notify();
 - void wait(millis) - приостановка потока на millis миллисекунд или пока другой поток не вызовет метод notify();
 

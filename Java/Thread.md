@@ -30,13 +30,13 @@ Thread(ThreadGroup group, String name);
 - void interrupt() - прерывание выполнения потока;
 - boolean isAlive() - проверка, выполняется ли поток;
 - boolean isDaemon() - проверка, является ли поток «daemon»;
-- [[Method-Thread#public void Thread.join()|void join()]] - ожидание завершения потока;
+- [void join()](Thread.join()) - ожидание завершения потока;
 - [[Method-Thread#public void Thread.join(long milliseconds)|void join(millis)]] - ожидание millis миллисекунд завершения потока;
 - void notify() - «пробуждение» отдельного потока, ожидающего «сигнала»;
 - void notifyAll() - «пробуждение» всех потоков, ожидающих «сигнала»;
 - [[Method-Thread#public void run()|void run()]] - запуск потока, если поток был создан с использованием интерфейса Runnable;
 - [[Method-Thread#public String Thread.setName(String name)|setName(String threadName)]] – задает имя потока;
-- void setDaemon(bool) - определение «daemon» потока;
+- [void setDaemon(bool)](Daemon-Threads) - определение «daemon» потока;
 - [[Method-Thread#public void Thread.currentThread().setPriority(int priority)|void setPriority(int)]] - определение приоритета потока;
 - [[Method-Thread#public void Thread.sleep(long milliseconds)|void sleep(int)]] - приостановка потока на заданное время;
 - [[Method-Thread#public void Thread.start()|void start()]] - запуск потока;
@@ -54,7 +54,7 @@ BLOCKED — поток блокирован;
 WAITING — поток ждет окончания работы другого потока;  
 TIMED_WAITING — поток некоторое время ждет окончания другого потока;  
 TERMINATED — поток завершен.
-#### Пример использования Thread ####
+#### Пример использования [Thread](Thread) ####
 
 В примере ChickenEgg рассматривается параллельная работа двух потоков (главный поток и поток Egg), в которых идет спор, «что было раньше, яйцо или курица?». Каждый поток высказывает свое мнение после небольшой задержки, формируемой методом ChickenEgg.getTimeSleep(). Побеждает тот поток, который последним говорит свое слово.
 ```java

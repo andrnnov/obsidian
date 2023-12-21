@@ -152,59 +152,9 @@ public class ThreadSleepMethod extends Thread {
 4<br>
 4</p>
 
-#### public void Thread.join() ####
-
-Метод join используется для ожидания завершения потока.
-```java
-public class ThreadJoinMethod1 extends Thread {
-
-    public void run() {
-        for (int i = 0; i <= 3; i++) {
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-            System.out.println(i);
-        }
-    }
-
-    public static void main(String args[]) {
-        ThreadJoinMethod1 t1 = new ThreadJoinMethod1();
-        ThreadJoinMethod1 t2 = new ThreadJoinMethod1();
-        ThreadJoinMethod1 t3 = new ThreadJoinMethod1();
-        t1.start();
-        try {
-            t1.join();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-        t2.start();
-        t3.start();
-
-        System.out.println("This is Thread join() method example");
-    }
-}
-```
-Выходные данные следующего кода перечислены ниже.
-<p style="background-color: navy; color: yellow">0<br>
-1<br>
-2<br>
-3<br>
-This is Thread join() method example<br>
-0<br>
-0<br>
-1<br>
-1<br>
-2<br>
-2<br>
-3<br>
-3</p>
-
 #### public void Thread.join(long milliseconds) ####
 
-Этот метод используется для ожидания завершения потока в течение указанной миллисекунды.
+Этот метод используется для ожидания завершения потока в течение указанных миллисекунд.
 ```java
 public class ThreadJoinMethod2 extends Thread {
 

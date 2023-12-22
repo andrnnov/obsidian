@@ -327,3 +327,71 @@ public class ThreadSetPriorityMethiod extends Thread {
 
 При планировании с разделением по времени задача выполняется в течение заранее определенного отрезка времени, а затем повторно входит в пул готовых задач. Затем планировщик потоков решает, какая задача должна выполняться следующей, на основе приоритета и других факторов.
 
+#### Метод Thread.isAlive() ####
+
+Метод _isAlive()_ позволяет выяснить, используется поток или нет. Если поток создан, но не запущен, метод вернет _false_. Как только метод _start()_ вызван для потока, он считается _alive_ и метод _isAlive()_ вернет _true_. Если поток закончил свое выполнение, метод вернет _false_.
+
+**Пример 1. Использование метода _Thread.isAlive()_**
+```java
+class MyRunnable implements Runnable {  
+        public void run() {  
+            System.out.println("Важная работа выполняется.");  
+        }  
+    }  
+  
+public class IsAliveDemo {  
+        public static void main(String[] args) throws InterruptedException {  
+        MyRunnable myRunnable = new MyRunnable();  
+  
+        Thread thread = new Thread(myRunnable);  
+        System.out.println("Before starting: " + thread.isAlive());  
+        thread.start();  
+        System.out.println("After starting: " + thread.isAlive());  
+        thread.join();  
+        System.out.println("After thread completed: " + thread.isAlive());  
+    }  
+}
+```
+Вывод
+<p style="background-color: navy; color: yellow">Before starting: false<br>
+After starting: true<br>
+Важная работа выполняется.<br>
+After thread completed: false</p>
+
+#### Метод Thread.yield() ####
+
+Метод `yield` лишь передаёт некоторую рекомендацию планировщику потоков Java, что данному потоку можно дать меньше времени исполнения. Но что будет на самом деле, услышит ли планировщик рекомендацию и что вообще он будет делать — зависит от реализации JVM и операционной системы. А может и ещё от каких-то других факторов.
+```java
+public class ThreadYield {
+    public static void main(String[] args) {
+        Runnable r = () -> {
+            int counter = 0;
+            while (counter < 2) {
+                System.out.println(Thread.currentThread()
+                    .getName());
+                counter++;
+                Thread.yield();
+            }
+        };
+        new Thread(r).start();
+        new Thread(r).start();
+    }
+}
+```
+Когда мы пытаемся запустить вышеуказанную программу несколько раз, мы получаем разные результаты; некоторые из них упомянуты ниже:
+Выполнение кода 1:
+<p style="background-color: navy; color: yellow">Thread-0<br>
+Thread-1<br>
+Thread-1<br>
+Thread-0</p>
+Выполнение кода 2:
+<p style="background-color: navy; color: yellow">Thread-0<br>
+Thread-0<br>
+Thread-1<br>
+Thread-1</p>
+Итак, как мы можем видеть, поведение yield() также недетерминировано и зависит от платформы.
+
+Как следует из официальной документации, редко возникает необходимость в использовании yield(), и, следовательно, его следует избегать, если не очень ясны цели в свете его поведения. 
+
+Тем не менее, некоторые виды использования yield() включают разработку конструкций управления параллелизмом, повышение быстродействия системы в программе с высокой вычислительной нагрузкой и т.д. Однако эти методы должны сопровождаться подробным профилированием и сравнительным анализом, чтобы обеспечить желаемый результат.
+

@@ -67,3 +67,63 @@ Thread is executing with name: Daemon<br>
 Thread is finishing its execution with name: Worker</p>
 Кроме того, `setDaemon(boolean)` можно вызывать только в том случае, если поток находится в состоянии `New` и пока ещё не запущен, иначе мы получим исключение `IllegalThreadStateException`.
 
+#### Еще один пример программы потока демона ####
+
+Давайте возьмем простой пример программы для демонстрации потока демона.
+**boolean isDaemon()** проверяет, является ли поток «daemon».
+```java
+public class MyDaemon implements Runnable {
+	public void run() {  
+		// Checking whether a thread is Daemon or not
+		if(Thread.currentThread().isDaemon()) { 
+			System.out.println(Thread.currentThread() + " is a daemon thread");  
+		}  
+		else {   
+		    System.out.println(Thread.currentThread() + " is a user (normal) thread");  
+		}
+	}  
+	
+	public static void main(String[] args) {
+		MyDaemon obj = new MyDaemon();
+		Thread t1 = new Thread(obj, "Thread 1");
+	    t1.setDaemon(true); // Set to daemon.
+
+		Thread t2 = new Thread(obj, "Thread 2");
+		t1.start(); // Execution starts.
+		t2.start();
+  
+		System.out.println("Main thread ending"); 
+	}
+}
+```
+Если мы запустим программу, мы получим следующий вывод.
+<p style="background-color: navy; color: yellow">Main thread ending<br>
+Thread[Thread 1,5,main] is a daemon thread<br>
+Thread[Thread 2,5,main] is a user (normal) thread</p>
+Давайте возьмем другой пример программы, в которой мы вызовем метод setDaemon() после запуска потока (т.е. до вызова метода start()), и он выдаст исключение IllegalThreadStateException. Посмотрите на исходный код, чтобы лучше понять.
+
+```java
+public class MyDaemon implements Runnable {
+	public void run() {  
+		System.out.println(Thread.currentThread() + " is a daemon thread");  
+	}  
+	
+	public static void main(String[] args) {
+		MyDaemon obj = new MyDaemon();
+		Thread t1 = new Thread(obj, "Thread 1");
+
+		t1.start(); // Execution starts.
+		t1.setDaemon(true); // It will throw IllegalThreadStateException.
+  
+		System.out.println("Main thread ending"); 
+	}
+}
+```
+
+Вывод:
+<p style="background-color: navy; color: red">Exception in thread "main" Thread[Thread 1,5,main] is a daemon thread
+      java.lang.IllegalThreadStateException<br>
+	at java.lang.Thread.setDaemon(Unknown Source)<br>
+	at thread11.MyDaemon.main(MyDaemon.java:15)</p>
+В этой программе мы вызвали метод setDaemon() после вызова метода start(). Следовательно, он вызвал исключение IllegalThreadStateException.
+

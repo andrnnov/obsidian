@@ -178,7 +178,177 @@ _**Процесс — это исполняемая программа, или, 
 
 При наличии нескольких потоков время обработки одноядерного процессора распределяется между процессами и потоками. Все потоки планируются процессором случайным образом c помощью **_`thread scheduler`_**, и каждый поток получает минимальное количество времени для выполнения. Как только выделенное время истекает, другой поток получает свою часть процессорного времени и начинает свою часть выполнения. Этот процесс выделения процессором времени потокам продолжается до тех пор, пока все потоки не завершат свое выполнение. Это называется алгоритмом квантования времени (time slicing algorithm). Под капотом потоки выполняются последовательно, однако они выполняются настолько быстро, что у нас возникает ощущение параллельного выполнения. Это называется **_`simulated or fake concurrency`_**.
 
+#### Жизненный цикл потока ####
 
+Потоки проходят через различные состояния в течение своего жизненного цикла:
+![[Thread States new.png]]
 
+**NEW** - это состояние, когда поток был создан, но еще не запущен. В этом состоянии поток ожидает своего запуска с помощью метода **start**().  
 
+```java
+Runnable runnable = new NewState();
+Thread t = new Thread(runnable);
+System.out.println(t.getState());
+```
+
+В данном случае метод t.getState() в консоль выведет "**NEW**"
+
+В многопоточной среде планировщик потоков(**_Thread-Scheduler_**) (который является частью JVM) выделяет фиксированное количество времени для каждого потока. Таким образом, он выполняется в течение определенного периода времени, затем передает управление другим выполняемым потокам.
+
+Когда мы создаем новый поток и вызываем для него метод **start**(), он переходит из состояния **NEW** в состояние **RUNNABLE**. Потоки в этом состоянии либо запущены, либо готовы к запуску, но они ожидают выделения ресурсов системой.
+
+Например, давайте добавим метод t.start() в наш предыдущий код и попытаемся получить доступ к его текущему состоянию:
+
+```java
+Runnable runnable = new NewState();
+Thread t = new Thread(runnable);
+t.start();
+System.out.println(t.getState());
+```
+
+Теперь метод t.getState() **вероятнее всего** в консоль выведет "**RUNNABLE**".  
+Почему вероятнее всего? Дело в том, что когда наш элемент управления достигнет t.getState(), мы не всегда можем быть уверены, что он будет находиться в состоянии RUNNABLE. Это связано с тем, что в некоторых случаях элемент может быть немедленно запланирован планировщиком потоков (**_Thread-Scheduler)_** и завершить своё выполнение. Именно в таких ситуациях возможны другие результаты.
+
+Поток переходит в состояние **Blocked**, когда ожидает блокировки монитора(**monitor lock**) и пытается получить доступ к разделу кода, который заблокирован каким-либо другим потоком.
+
+Давайте попробуем воспроизвести это состояние:  
+```java
+public class BlockedState {
+    public static void main(String[] args) throws InterruptedException {
+        Thread t1 = new Thread(new DemoBlockedRunnable());
+        Thread t2 = new Thread(new DemoBlockedRunnable());
+        
+        t1.start();
+        t2.start();
+        
+        Thread.sleep(1000);
+        
+        System.out.println(t2.getState());
+        System.exit(0);
+    }
+}
+
+class DemoBlockedRunnable implements Runnable {
+    @Override
+    public void run() {
+        commonResource();
+    }
+    
+    public static synchronized void commonResource() {
+        while(true) {
+          
+        }
+    }
+}
+```
+Разбор кода:
+1. Мы создали два разных потока – t1 и t2
+2. t1 запускается и вводит синхронизированный метод commonResource(); это означает, что только один поток может получить к нему доступ; все остальные последующие потоки, которые попытаются получить доступ к этому методу, будут заблокированы от дальнейшего выполнения до тех пор, пока текущий не завершит обработку.
+3. Когда t1 входит в этот метод, он сохраняется в бесконечном цикле while; Это сделано для имитации интенсивной обработки, чтобы все остальные потоки не могли войти в этот метод.
+4. Теперь, когда мы запускаем t2, он пытается ввести метод commonResource(), к которому уже обращается t1, таким образом, t2 будет сохранен в состоянии **BLOCKED**.  
+
+Вызовем t2.getState() и получим результат "**BLOCKED**".
+
+Поток находится в состоянии **_WAITING_**, когда он ожидает, пока какой-либо другой поток выполнит определенное действие. Согласно JavaDocs, любой поток может войти в это состояние, вызвав любой из этих трех методов:
+1. object.wait()  
+2. thread.join()  
+3. LockSupport.park()  
+
+Обратите внимание, что в wait() и join() – мы не определяем какой-либо период ожидания, поскольку этот сценарий рассматривается в следующем разделе.
+
+А пока давайте попробуем воспроизвести это состояние:
+```java
+public class WaitingState implements Runnable {
+    public static Thread t1;
+
+    public static void main(String[] args) {
+        t1 = new Thread(new WaitingState());
+        t1.start();
+    }
+
+    public void run() {
+        Thread t2 = new Thread(new DemoWaitingStateRunnable());
+        t2.start();
+
+        try {
+            t2.join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            e.printStackTrace();
+        }
+    }
+}
+
+class DemoWaitingStateRunnable implements Runnable {
+    public void run() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            e.printStackTrace();
+        }
+        
+        System.out.println(WaitingState.t1.getState());
+    }
+}
+```
+Разбор кода:
+1. Мы создали и запустили t1
+2. t1 создает t2 и запускает его
+3. Пока продолжается работа t2, мы вызываем t2.join(), это переводит t1 в состояние ожидания(**_WAITING_**_)_, пока t2 не завершит выполнение.
+4. Поскольку t1 ожидает завершения t2, мы вызываем t1.getState() из t2 и получаем результат "**_WAITING_**"
+
+Поток находится в состоянии **TIMED_WAITING**, когда он ожидает, пока другой поток выполнит определенное действие в течение заданного промежутка времени.
+
+Согласно JavaDocs, существует пять способов перевести поток в состояние **TIMED_WAITING**:
+1. thread.sleep(long millis)
+2. wait(int timeout) or wait(int timeout, int nanos)
+3. thread.join(long millis)
+4. LockSupport.parkNanos
+5. LockSupport.parkUntil
+
+Давайте попробуем воспроизвести это состояние:  
+```java
+public class TimedWaitingState {
+    public static void main(String[] args) throws InterruptedException {
+        DemoTimeWaitingRunnable runnable= new DemoTimeWaitingRunnable();
+        Thread t1 = new Thread(runnable);
+        t1.start();
+        Thread.sleep(1000);
+        System.out.println(t1.getState());
+    }
+}
+
+class DemoTimeWaitingRunnable implements Runnable {
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            e.printStackTrace();
+        }
+    }
+}
+```
+Здесь мы создали и запустили поток t1, который переводится в спящее состояние с периодом ожидания 5 секунд; результатом будет "TIMED_WAITING"
+
+**_TERMINATED -_** это состояние мертвого потока. Поток находится в состоянии **_TERMINATED_**, когда он либо завершил выполнение, либо был как-то прерван.
+
+Попробуем вызвать это состояние:  
+```java
+public class TerminatedState implements Runnable {
+    public static void main(String[] args) throws InterruptedException {
+        Thread t1 = new Thread(new TerminatedState());
+        t1.start();
+        Thread.sleep(1000);
+        System.out.println(t1.getState());
+    }
+    
+    @Override
+    public void run() {
+    }
+}
+```
+Здесь, мы запустили поток t1, но метод Thread.sleep(1000) дает время, для завершения t1, вследствие чего, эта программа выдает нам в результате "**TERMINATED"**.
 

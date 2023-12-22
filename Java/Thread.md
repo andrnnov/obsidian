@@ -25,11 +25,11 @@ Thread(ThreadGroup group, String name);
 - long getId() - получение идентификатора потока;
 - [[Method-Thread#public String Thread.getName()|String getName()]] - получение имени потока;
 - [[Method-Thread#public int Thread.currentThread().getPriority()|int getPriority()]] - получение приоритета потока;
-- State getState() - определение состояния потока;
+- [[Multithreading#Жизненный цикл потока|State getState()]] - определение состояния потока;
 - [[Method-Thread#public void Thread.currentThread()|static Thread currentThread()]] - возвращает ссылку на объект Thread, в который он был вызван;
 - void interrupt() - прерывание выполнения потока;
-- boolean isAlive() - проверка, выполняется ли поток;
-- boolean isDaemon() - проверка, является ли поток «daemon»;
+- [[Method-Thread#Метод Thread.isAlive()|boolean isAlive()]] - проверка, выполняется ли поток;
+- [[Daemon-Threads#Еще один пример программы потока демона|boolean isDaemon()]] - проверка, является ли поток «daemon»;
 - [void join()](Thread.join()) - ожидание завершения потока;
 - [[Method-Thread#public void Thread.join(long milliseconds)|void join(millis)]] - ожидание millis миллисекунд завершения потока;
 - void notify() - «пробуждение» отдельного потока, ожидающего «сигнала»;
@@ -42,10 +42,13 @@ Thread(ThreadGroup group, String name);
 - [[Method-Thread#public void Thread.start()|void start()]] - запуск потока;
 - void wait() - приостановка потока, пока другой поток не вызовет метод notify();
 - void wait(millis) - приостановка потока на millis миллисекунд или пока другой поток не вызовет метод notify();
+- [[Method-Thread#Метод Thread.yield()|yield()]] - позволяет досрочно завершить квант времени текущей нити или, другими словами, переключает процессор на следующую нить.
 
-#### Жизненный цикл потока ####
+#### [[Multithreading#Жизненный цикл потока|Жизненный цикл потока]] ####
 
 При выполнении программы объект Thread может находиться в одном из четырех основных состояний: «новый», «работоспособный», «неработоспособный» и «пассивный». При создании потока он получает состояние «новый» (NEW) и не выполняется. Для перевода потока из состояния «новый» в «работоспособный» (RUNNABLE) следует выполнить метод start(), вызывающий метод run().
+
+![[Thread States new.png]]
 
 Поток может находиться в одном из состояний, соответствующих элементам статически вложенного перечисления Thread.State:
 NEW — поток создан, но еще не запущен;  

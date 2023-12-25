@@ -27,7 +27,7 @@ Thread(ThreadGroup group, String name);
 - [[Method-Thread#public int Thread.currentThread().getPriority()|int getPriority()]] - получение приоритета потока;
 - [[Multithreading#Жизненный цикл потока|State getState()]] - определение состояния потока;
 - [[Method-Thread#public void Thread.currentThread()|static Thread currentThread()]] - возвращает ссылку на объект Thread, в который он был вызван;
-- void interrupt() - прерывание выполнения потока;
+- [[Kill-Thread#Метод interrupt()|void interrupt()]] - прерывание выполнения потока;
 - [[Method-Thread#Метод Thread.isAlive()|boolean isAlive()]] - проверка, выполняется ли поток;
 - [[Daemon-Threads#Еще один пример программы потока демона|boolean isDaemon()]] - проверка, является ли поток «daemon»;
 - [void join()](Thread.join()) - ожидание завершения потока;

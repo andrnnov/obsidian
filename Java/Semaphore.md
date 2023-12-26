@@ -14,7 +14,88 @@ Semaphore(int permits, boolean fair)
 - **`int permits`** — начальное и максимальное значение счетчика. То есть то, сколько потоков одновременно могут иметь доступ к общему ресурсу;  
 - **`boolean fair`** — для установления порядка, в котором потоки будут получать доступ. Если `fair` = _true_, доступ предоставляется ожидающим потокам в том порядке, в котором они его запрашивали. Если же он равен _false_, порядок будет определять планировщик потоков.
 
-Классический пример использования семафоров — [задача об обедающих философах](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BE%D0%B1_%D0%BE%D0%B1%D0%B5%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D1%85_%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B0%D1%85).
+Для получения разрешения у семафора надо вызвать метод acquire(), который имеет две формы:
+```java
+void acquire() throws InterruptedException
+void acquire(int permits) throws InterruptedException
+```
+Для получения одного разрешения применяется первый вариант, а для получения нескольких разрешений - второй вариант.
+
+После вызова этого метода пока поток не получит разрешение, он блокируется.
+
+После окончания работы с ресурсом полученное ранее разрешение надо освободить с помощью метода release():
+```java
+void release()
+void release(int permits)
+```
+Первый вариант метода освобождает одно разрешение, а второй вариант - количество разрешений, указанных в permits.
+
+##### Пример 1. Используем семафор в простом примере: #####
+```java
+import java.util.concurrent.Semaphore;
+ 
+public class Program {
+    public static void main(String[] args) {
+        Semaphore sem = new Semaphore(1); // 1 разрешение
+        CommonResource res = new CommonResource();
+        new Thread(new CountThread(res, sem, "CountThread 1")).start();
+        new Thread(new CountThread(res, sem, "CountThread 2")).start();
+        new Thread(new CountThread(res, sem, "CountThread 3")).start();
+    }
+}
+class CommonResource{
+    int x=0;  
+}
+ 
+class CountThread implements Runnable{
+    CommonResource res;
+    Semaphore sem;
+    String name;
+    CountThread(CommonResource res, Semaphore sem, String name){
+        this.res=res;
+        this.sem=sem;
+        this.name=name;
+    }
+      
+    public void run(){
+        try{
+            System.out.println(name + " ожидает разрешение");
+            sem.acquire();
+            res.x=1;
+            for (int i = 1; i < 5; i++){
+                System.out.println(this.name + ": " + res.x);
+                res.x++;
+                Thread.sleep(100);
+            }
+        }
+        catch(InterruptedException e){System.out.println(e.getMessage());}
+        System.out.println(name + " освобождает разрешение");
+        sem.release();
+    }
+}
+```
+Итак, здесь есть общий ресурс CommonResource с полем x, которое изменяется каждым потоком. Потоки представлены классом CountThread, который получает семафор и выполняет некоторые действия над ресурсом. В основном классе программы эти потоки запускаются. В итоге мы получим следующий вывод:
+<p style="background-color: navy; color: yellow">
+CountThread 1 ожидает разрешение<br>
+CountThread 2 ожидает разрешение<br>
+CountThread 3 ожидает разрешение<br>
+CountThread 1: 1<br>
+CountThread 1: 2<br>
+CountThread 1: 3<br>
+CountThread 1: 4<br>
+CountThread 1 освобождает разрешение<br>
+CountThread 3: 1<br>
+CountThread 3: 2<br>
+CountThread 3: 3<br>
+CountThread 3: 4<br>
+CountThread 3 освобождает разрешение<br>
+CountThread 2: 1<br>
+CountThread 2: 2<br>
+CountThread 2: 3<br>
+CountThread 2: 4<br>
+CountThread 2 освобождает разрешение</p>
+
+##### Пример 2. Классический пример использования семафоров — [задача об обедающих философах](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BE%D0%B1_%D0%BE%D0%B1%D0%B5%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D1%85_%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B0%D1%85) #####
 
 Представь, что у нас есть 5 философов, которым нужно пообедать. При этом у нас есть один стол, и одновременно находиться за ним могут не более двух человек. Наша задача — накормить всех философов. Никто из них не должен остаться голодным, и при этом они не должны «заблокировать» друг друга при попытке сесть за стол (мы должны избежать deadlock). 
 

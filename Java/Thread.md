@@ -32,15 +32,15 @@ Thread(ThreadGroup group, String name);
 - [[Daemon-Threads#Еще один пример программы потока демона|boolean isDaemon()]] - проверка, является ли поток «daemon»;
 - [void join()](Thread.join()) - ожидание завершения потока;
 - [[Method-Thread#public void Thread.join(long milliseconds)|void join(millis)]] - ожидание millis миллисекунд завершения потока;
-- void notify() - «пробуждение» отдельного потока, ожидающего «сигнала»;
-- void notifyAll() - «пробуждение» всех потоков, ожидающих «сигнала»;
+- [void notify()](wait-notify) - «пробуждение» отдельного потока, ожидающего «сигнала»;
+- [void notifyAll()](wait-notify) - «пробуждение» всех потоков, ожидающих «сигнала»;
 - [[Method-Thread#public void run()|void run()]] - запуск потока, если поток был создан с использованием интерфейса Runnable;
 - [[Method-Thread#public String Thread.setName(String name)|setName(String threadName)]] – задает имя потока;
 - [void setDaemon(bool)](Daemon-Threads) - определение «daemon» потока;
 - [[Method-Thread#public void Thread.currentThread().setPriority(int priority)|void setPriority(int)]] - определение приоритета потока;
 - [[Method-Thread#public void Thread.sleep(long milliseconds)|void sleep(int)]] - приостановка потока на заданное время;
 - [[Method-Thread#public void Thread.start()|void start()]] - запуск потока;
-- void wait() - приостановка потока, пока другой поток не вызовет метод notify();
+- [void wait()](wait-notify) - приостановка потока, пока другой поток не вызовет метод notify();
 - void wait(millis) - приостановка потока на millis миллисекунд или пока другой поток не вызовет метод notify();
 - [[Method-Thread#Метод Thread.yield()|yield()]] - позволяет досрочно завершить квант времени текущей нити или, другими словами, переключает процессор на следующую нить.
 

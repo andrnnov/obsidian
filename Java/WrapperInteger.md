@@ -2,7 +2,7 @@
 
 #Java #Wrapper #Integer
 
-Класс [Integer — это класс-обертка](WrapperClasses) примитивного типа int. Внутри данного класса содержится единственное поле типа int. Будучи классом оберткой, Integer предоставляет различные методы для работы с int, а также ряд методов для преобразования int в String и String в int. Ниже мы рассмотрим различные примеры работы с классом. Начнем с создания. Чаще всего используется (да и проще всего использовать) следующий вариант создания:
+Класс [Integer — это класс-обертка](WrapperClasses) примитивного типа int. Внутри данного класса содержится единственное поле типа int. Будучи классом оберткой, Integer предоставляет различные методы для работы с int, а также ряд методов для преобразования int в [String](String) и String в int. Ниже мы рассмотрим различные примеры работы с классом. Начнем с создания. Чаще всего используется (да и проще всего использовать) следующий вариант создания:
 ```java
 Integer a = 3;
 ```
@@ -21,12 +21,12 @@ System.out.println(x);
 
 |   |   |
 |---|---|
-|Складывать|```<br><br>Integer a = 6;<br>Integer b = 2;<br>Integer c = a + b;<br>System.out.println(c); // 8<br>```|
-|Вычитать|```<br><br>Integer a = 6;<br>Integer b = 2;<br>Integer c = a - b;<br>System.out.println(c); // 4<br>```|
-|Умножать|```<br><br>Integer a = 6;<br>Integer b = 2;<br>Integer c = a * b;<br>System.out.println(c); // 12<br>```|
-|Делить|```<br><br>Integer a = 6;<br>Integer b = 2;<br>Integer c = a / b;<br>System.out.println(c); // 3<br>```|
-|Инкрементировать|```<br><br>Integer a = 6;<br>a++;<br>++a;<br>System.out.println(a); // 8<br>```|
-|Декрементировать|```<br><br>Integer a = 6;<br>a--;<br>--a;<br>System.out.println(a); // 4<br>```|
+|Складывать|Integer a = 6;<br>Integer b = 2;<br>Integer c = a + b;<br>System.out.println(c); // 8 |
+|Вычитать|Integer a = 6;<br>Integer b = 2;<br>Integer c = a - b;<br>System.out.println(c); // 4 |
+|Умножать|Integer a = 6;<br>Integer b = 2;<br>Integer c = a * b;<br>System.out.println(c); // 12 |
+|Делить|Integer a = 6;<br>Integer b = 2;<br>Integer c = a / b;<br>System.out.println(c); // 3 |
+|Инкрементировать|Integer a = 6;<br>a++;<br>++a;<br>System.out.println(a); // 8 |
+|Декрементировать|Integer a = 6;<br>a--;<br>--a;<br>System.out.println(a); // 4 |
 
 Однако при всем этом нужно быть осторожным и помнить, что Integer — это ссылочный тип данных, и переменная данного типа может быть null. В таком случае (если переменная равна null) лучше воздержаться от арифметических операций (да и любых других, в которых null ничего хорошего не сулит). Приведем пример:
 ```java
@@ -46,10 +46,11 @@ System.out.println(a < b);
 System.out.println(a <= b);
 ```
 Вывод:
-==false
-false
-true
-true==
+<p style="background-color: navy; color: yellow">
+false<br>
+false<br>
+true<br>
+true</p>
 
 Особняком стоит операция сравнения двух Integer переменных. И дело тут в том, что Integer — это ссылочный тип данных, и его переменные хранят ссылки на значения, а не сами значения (объекты). Проявления этого факта можно наблюдать при выполнении следующего фрагмента кода:
 ```java
@@ -118,11 +119,13 @@ public static void main(String[] args) {
 }
 ```
 В результате получим следующий вывод:
-==32
-4
-2147483647
--2147483648
-int==
+<p style="background-color: navy; color: yellow">
+32<br>
+4<br>
+2147483647<br>
+-2147483648<br>
+int</p>
+
 #### Методы класса Integer ####
 
 А теперь кратко рассмотрим наиболее используемые методы класса Integer. Итак, “топ” возглавляют методы по преобразованию числа из строки, либо преобразованию строки из числа. Начнем с преобразований строки в число. Для этих целей служит метод **parseInt**, сигнатура ниже:

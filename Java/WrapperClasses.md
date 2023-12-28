@@ -5,7 +5,7 @@
 
 Класс-обёртки в Java - это класс, объект которого обертывает или содержит примитивные типы данных. Когда мы создаем объект для класса-обёрток, он содержит поле, и в этом поле мы можем хранить примитивные типы данных. Другими словами, мы можем обернуть примитивное значение в объект класса-обёртку.
 
-**Автоупаковка (autoboxing)** — это автоматическая конвертация из примитивных типов в соответствующий этому типу класс-обёртку, вставляемая компилятором Java, например из float во Float , из int в Integer.
+**Автоупаковка (autoboxing)** — это автоматическая конвертация из примитивных типов в соответствующий этому типу класс-обёртку, вставляемая компилятором Java, например из float во Float, из int в Integer.
 Примера автоупаковки:
 ```java
 Character ch = 'a';
@@ -22,7 +22,7 @@ Boolean b1 = false;
 Компилятор Java автоматически применяет распаковку в следующих случаях:
 - При передаче объекта класса-обёртки в метод, ожидающий соответствующий примитивный тип.
 - При присвоении экземпляра класса-обёртки переменной соответствующего примитивного типа.
-- В выражениях, в которых один или оба аргумента являются экземплярами классов-обёрток (кроме операции == и != ).
+- В выражениях, в которых один или оба аргумента являются экземплярами классов-обёрток (кроме операции == и !=).
 Примеры:
 ```java
 class Main {
@@ -140,18 +140,20 @@ class GFG {
 }
 ```
 **Вывод**
-==Values of Wrapper objects (printing as objects)
-Byte object byteobj: 1
-Integer object intobj: 10
-Float object floatobj: 18.6
-Double object doubleobj: 250.5
-Character object charobj: a
-Unwrapped values (printing as data types)
-byte value, bv: 1
-int value, iv: 10
-float value, fv: 18.6
-double value, dv: 250.5
-char value, cv: a==
+<p style="background-color: navy; color: yellow">
+Values of Wrapper objects (printing as objects)<br>
+Byte object byteobj: 1<br>
+Integer object intobj: 10<br>
+Float object floatobj: 18.6<br>
+Double object doubleobj: 250.5<br>
+Character object charobj: a<br>
+Unwrapped values (printing as data types)<br>
+byte value, bv: 1<br>
+int value, iv: 10<br>
+float value, fv: 18.6<br>
+double value, dv: 250.5<br>
+char value, cv: a</p>
+
 #### Пользовательские классы-оболочки в Java ####
 
 Классы-обертки Java обертывают примитивные типы данных. Мы можем создать класс, который обертывает данные внутри него. Итак, давайте проверим, как создать наш собственный пользовательский класс-оболочку в Java. Это может быть реализовано для создания определенных структур, таких как очереди, стеки и т.д.
@@ -191,6 +193,7 @@ class GFG {
 }
 ```
 **Вывод**:
-==Maximum element: 23
-Number of elements inserted: 3==
+<p style="background-color: navy; color: yellow">
+Maximum element: 23<br>
+Number of elements inserted: 3</p>
 

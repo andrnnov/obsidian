@@ -104,3 +104,39 @@ round x = -12345<br>
 mantissa of x = -1234567890123456789<br>
 mantissa of 0.1 =
 = 1000000000000000055511151231257827021181583404541015625</p>
+
+#### Метод compareTo() ###
+
+Этот метод сравнивает BigDecimal с заданным BigDecimal и возвращает -1, 0 или 1, поскольку этот BigDecimal численно меньше, равен или больше заданного значения. Если значения экземпляров BigDecimal равны, но масштабы различны, они считаются равными для метода compareTo().
+```java
+import java.math.BigDecimal;
+public class CompareToDemo {
+	public static void main(String[] args) {
+		System.out.println(new BigDecimal("300.43").compareTo(new igDecimal("150.12")));
+		System.out.println(new BigDecimal("200.42").compareTo(new igDecimal("350.56")));
+		System.out.println(new BigDecimal("140.56").compareTo(new igDecimal("140.21")));
+	}
+}
+```
+Вывод:
+<p style="background-color: navy; color: yellow">
+1<br>
+-1<br>
+1</p>
+
+#### Метод equals() ####
+
+Этот метод проверяет равенство BigDecimal с заданным BigDecimal. Если значения экземпляров BigDecimal равны, но масштабы различны, они не рассматриваются как равные методом equals().
+```java
+import java.math.BigDecimal;
+public class EqualsDemo {
+	public static void main(String[] args) {
+		System.out.println(new BigDecimal("300.34").equals(new BigDecimal("150.67")));
+		System.out.println(new BigDecimal("140.78").equals(new BigDecimal("140.78")));
+	}
+}
+```
+Вывод:
+<p style="background-color: navy; color: yellow">
+false<br>
+true</p>

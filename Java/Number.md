@@ -3,7 +3,7 @@
 
 2024-01-10 16:26
 
-Класс java.lang.Number является суперклассом классов BigDecimal, BigInteger, Byte, Double, Float, [[WrapperInteger#Класс Integer|Integer]], Long и Short. Подклассы Number должны предоставлять методы для преобразования представленного числового значения в byte, double, float, int, long и short.
+Класс java.lang.Number является суперклассом классов [BigDecimal](BigDecimal), [BigInteger](BigInteger), Byte, Double, Float, [[WrapperInteger#Класс Integer|Integer]], Long и Short. Подклассы Number должны предоставлять методы для преобразования представленного числового значения в byte, double, float, int, long и short.
 
 #### Методы класса Number ####
 

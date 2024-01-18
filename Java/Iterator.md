@@ -130,6 +130,7 @@ iterator.forEachRemaining((element) -> {
     System.out.println(element);
 });
 ```
+
 #### ListIterator ####
 
 Java также содержит интерфейс под названием ListIterator, который расширяет интерфейс Iterator. Интерфейс Java ListIterator, который представляет собой двунаправленный итератор, то есть итератор, в котором вы можете перемещаться по элементам как вперед, так и назад.

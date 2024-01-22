@@ -108,7 +108,7 @@ function.cpp<br>
 
 Имя архива и путь до целевой папки передаются через [аргументы командной строки](args).
 Для того чтобы полностью извлечь файл, нужно скопировать его содержимое из архива в созданный файл в целевой папке. Для этого используют функцию **getInputStream()** у объекта типа **[ZipFile](ZipFile)**.
-cd onedrive```java
+```java
 import java.io.*;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;

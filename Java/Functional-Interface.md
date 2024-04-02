@@ -168,6 +168,7 @@ public static void main(String[] args) {
 ```
 Вывод в консоль:
 <p style="background-color: navy; color: yellow">Hello Elena !!!</p>
+
 #### Supplier ####
 
 `Supplier` (с англ. — поставщик) — функциональный интерфейс, который не принимает никаких аргументов, но возвращает некоторый объект типа T:

@@ -134,6 +134,90 @@ stream.flatMap((value) -> {
 flatMap(), вызываемый в потоке, должен возвращать другой поток, представляющий элементы плоского отображения. В приведенном выше примере каждая исходная строка разбивается на слова, превращается в список, а поток получается и возвращается из этого списка.
 
 Этот пример заканчивается вызовом forEach(). Предназначен только для запуска внутренней итерации и, следовательно, операции flat map. Если в цепочке Stream не было вызвано ни одной операции терминала, ничего бы не произошло. Никакого плоского картирования на самом деле не было бы.
+
+#### [sorted()](sorted())
+
+Класс [Stream](StreamAPI) также включает возможность сортировки. Такую сортировку мы можем задействовать, когда у нас идет набор промежуточных операций с потоком, которые создают новые наборы данных, и нам надо эти наборы отсортировать.
+Для простой сортировки по возрастанию применяется метод sorted()
+
+#### takeWhile()
+
+Метод takeWhile() выбирает из потока элементы, пока они соответствуют условию. Если попадается элемент, который не соответствует условию, то метод завершает свою работу. Выбранные элементы возвращаются в виде потока.
+```java
+import java.util.stream.Stream;
+ 
+public class Program {
+  
+    public static void main(String[] args) {
+          
+        Stream<Integer> numbers = Stream.of(-3, -2, -1, 0, 1, 2, 3, -4, -5);
+        numbers.takeWhile(n -> n < 0)
+            .forEach(n -> System.out.println(n));
+    }
+}
+```
+В данном случае программа выбирает из потока числа, пока они меньше нуля. Консольный вывод программы:
+<p style="background-color: navy; color: yellow">
+-3<br>
+-2<br>
+-1</p>
+При этом несмотря на то, что в потоке больше отрицательных чисел, но метод завершает работу, как только обнаружит первое число, которое не соответствует условию. В этом и состоит отличие, например, от метода `filter()`.
+
+Чтобы в данном случае охватить все элементы, которые меньше нуля, поток следует предварительно отсортировать:
+```java
+Stream<Integer> numbers = Stream.of(-3, -2, -1, 0, 1, 2, 3, -4, -5);
+numbers.sorted().takeWhile(n -> n < 0)
+        .forEach(n -> System.out.println(n));
+```
+Консольный вывод программы:
+<p style="background-color: navy; color: yellow">
+-5<br>
+-4<br>
+-3<br>
+-2<br>
+-1</p>
+
+#### dropWhile()
+
+Метод dropWhile() выполняет обратную задачу - он пропускает элементы потока, которые соответствуют условию до тех пор, пока не встретит элемент, который НЕ соответствует условию:
+```java
+Stream<Integer> numbers = Stream.of(-3, -2, -1, 0, 1, 2, 3, -4, -5);
+numbers.sorted().dropWhile(n -> n < 0)
+    .forEach(n -> System.out.println(n));
+```
+Консольный вывод программы:
+<p style="background-color: navy; color: yellow">
+0<br>
+1<br>
+2<br>
+3</p>
+
+#### concat()
+
+Статический метод concat() объединяет элементы двух потоков, возвращая объединенный поток:
+```java
+import java.util.stream.Stream;
+ 
+public class Program {
+  
+    public static void main(String[] args) {
+          
+        Stream<String> people1 = Stream.of("Tom", "Bob", "Sam");
+        Stream<String> people2 = Stream.of("Alice", "Kate", "Sam");
+         
+        Stream.concat(people1, people2).forEach(n -> System.out.println(n));
+    }
+}
+```
+Консольный вывод:
+<p style="background-color: navy; color: yellow">
+Tom<br>
+Bob<br>
+Sam<br>
+Alice<br>
+Kate<br>
+Sam</p>
+
 #### distinct() ####
 
 Метод distinct() это нетерминальная операция, возвращающая новый поток, который будет содержать только отдельные элементы из исходного потока. Любые дубликаты будут удалены.
@@ -153,6 +237,23 @@ System.out.println(distinctStrings);
 В этом примере элемент 1 появляется 2 раза в исходном потоке. Только первое вхождение этого элемента будет включено в поток, возвращаемый Different(). Таким образом, результирующий список (от вызова collect()) будет содержать только один, два и три. 
 Вывод будет:
 <p style="background-color: navy; color: yellow">one two three</p>
+
+#### skip(long n)
+
+Метод skip(long n) используется для пропуска n элементов. Этот метод возвращает новый поток, в котором пропущены первые n элементов. Зачастую skip b limit используется вместе для создания эффекта постраничной навигации. Рассмотрим, как их применять:
+```java
+Stream<String> phoneStream = Stream.of("iPhone 6 S", "Lumia 950", "Samsung Galaxy S 6", "LG G 4", "Nexus 7");
+         
+phoneStream.skip(1)
+    .limit(2)
+    .forEach(s->System.out.println(s));
+```
+В данном случае метод skip пропускает один первый элемент, а метод limit выбирает два следующих элемента. В итоге мы получим следующий консольный вывод:
+<p style="background-color: navy; color: yellow">
+Lumia 950<br>
+Samsung Galaxy S 6</p>
+Вполне может быть, что метод skip может принимать в качестве параметра число большее, чем количество элементов в потоке. В этом случае будут пропущены все элементы, а в результирующем потоке будет 0 элементов.
+
 #### limit() ####
 
 Метод limit()может ограничивать количество элементов в потоке числом, данным методу limit() в качестве параметра. Метод limit() возвращает новый поток, который будет максимально содержать заданное количество элементов.
@@ -167,6 +268,59 @@ Stream<String> stream = stringList.stream();
 stream.limit(2).forEach( element -> { System.out.println(element); });
 ```
 В этом примере сначала создается Stream, затем вызывается limit(), а затем вызывается forEach() с лямбда-выражением, которое выводит элементы в потоке. Только два первых элемента будут напечатаны из-за вызова limit(2).
+
+И если в метод limit передается число, большее, чем количество элементов, то просто выбираются все элементы потока.
+
+Теперь рассмотрим, как создать постраничную навигацию:
+```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.*;
+import java.util.Scanner;
+ 
+public class Program {
+ 
+    public static void main(String[] args) {
+         
+        List<String> phones = new ArrayList<String>();
+        phones.addAll(Arrays.asList(new String[]
+                {"iPhone 6 S", "Lumia 950", "Huawei Nexus 6P",
+                "Samsung Galaxy S 6", "LG G 4", "Xiaomi MI 5",
+                "ASUS Zenfone 2", "Sony Xperia Z5", "Meizu Pro 5",
+                "Lenovo S 850"}));
+         
+        int pageSize = 3; // количество элементов на страницу
+        Scanner scanner = new Scanner(System.in);
+        while(true){
+            
+            System.out.println("Введите номер страницы: ");
+            int page = scanner.nextInt();
+            
+            if(page<1) break; // если число меньше 1, выходим из цикла
+             
+            phones.stream().skip((page-1) * pageSize)
+                .limit(pageSize)
+                .forEach(s->System.out.println(s));
+       }
+    }
+}
+```
+В данном случае у нас набор из 10 элементов. С помощью переменной pageSize определяем количество элементов на странице - 3. То есть у нас получится 4 страницы (на последней будет только один элемент).
+
+В бесконечном цикле получаем номер страницы и выбираем только те элементы, которые находятся на указанной странице.
+
+Теперь введем какие-нибудь номера страниц, например, 4 и 2:
+<p style="background-color: navy; color: yellow">
+Введите номер страницы: <br>
+4<br>
+Lenovo S 850<br>
+Введите номер страницы: <br>
+2<br>
+Samsung Galaxy S 6<br>
+LG G 4<br>
+Xiaomi MI 5</p>
+
 #### peek() ####
 
 Метод peek() – это нетерминальная операция, которая принимает [[Functional-Interface#Consumer|Consumer(java.mutilfunction.Consumer)]] в качестве параметра. [[Functional-Interface#Consumer|Consumer]] будет вызван для каждого элемента в потоке. Метод peek() возвращает новый поток, который содержит все элементы в исходном потоке.
@@ -288,7 +442,7 @@ Optional<String> anyElement = stream.findAny();
 System.out.println(anyElement.get());
 ```
 Обратим внимание, как метод findAny() возвращает [Optional](Optional). Поток может быть пустым, поэтому элемент не может быть возвращен. Можно проверить, был ли элемент найден с помощью дополнительного метода isPresent().
-#### FindFirst() ####
+#### findFirst() ####
 
 findFirst() находит первый элемент в потоке, если в потоке присутствуют какие-либо элементы. Метод findFirst() возвращает необязательный параметр, из которого можно получить элемент, если он есть.
 ```java
@@ -302,6 +456,7 @@ Optional<String> result = stream.findFirst();
 System.out.println(result.get());
 ```
 Можно проверить, содержит ли возвращаемый [Optional](Optional) элемент через его метод isPresent().
+
 #### forEach() ####
 
 forEach() является терминальной операцией, которая запускает внутреннюю итерацию элементов и применяет [[Functional-Interface#Consumer|Consumer]] (java.util.function.Consumer) к каждому элементу в стриме.
@@ -314,6 +469,7 @@ stringList.add("one");
 Stream<String> stream = stringList.stream();
 stream.forEach( element -> { System.out.println(element); });
 ```
+
 #### min() ####
 
 min() является терминальной операцией, которая возвращает наименьший элемент в потоке. Наименьший элемент, определяется реализацией [Comparator](Comparator), которую мы передаем методу min().
@@ -327,6 +483,7 @@ String minString = min.get();
 System.out.println(minString);
 ```
 Обратим внимание, как метод min() возвращает необязательный параметр, который может содержать или не содержать результат. Если поток пустой, дополнительный метод get() генерирует исключение NoSuchElementException.
+
 #### max() ####
 
 max() возвращает самый большой элемент в потоке. Наибольший элемент определяется реализацией [Comparator](Comparator), которую мы передаем методу max().
@@ -340,6 +497,7 @@ String maxString = max.get();
 System.out.println(maxString);
 ```
 Возвращает необязательный параметр, который может содержать или не содержать результат. Если поток пустой, дополнительный метод get() будет генерировать исключение NoSuchElementException.
+
 #### reduce() ####
 
 reduce() может свести все элементы в потоке к одному элементу. Посмотрите на реализацию:
@@ -354,6 +512,7 @@ Optional<String> reduced = stream.reduce((value, combinedValue) -> {
 			System.out.println(reduced.get());
 ```
 Обратим внимание на необязательный параметр, возвращаемый методом reduce(). Этот необязательный параметр содержит значение (если оно есть), возвращаемое лямбда-выражением, переданным методу reduce(). Мы получаем значение, вызывая метод [OptionalOptional.get()](Optional).
+
 #### toArray() ####
 
 Метод Java Stream toArray() является терминальной операцией, которая запускает внутреннюю итерацию элементов в потоке и возвращает массив Object, содержащий все элементы.

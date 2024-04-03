@@ -54,16 +54,16 @@
 
 Глава. Stream API
 - Введение в [Stream API](StreamAPI)
-- Создание потока данных
+- [Создание потока данных](CreateStream)
 - Фильтрация (Метод [[StreamAPI#filter()|filter]]), перебор элементов (Метод [[StreamAPI#forEach()|forEach]]) и отображение (Методы [[StreamAPI#map()|map]] и [[StreamAPI#flatMap()|flatMap]])
 - Сортировка (Метод [sorted](sorted()))
 - Получение подпотока и объединение потоков (Методы [[StreamAPI#takeWhile()|takeWhile]], [[StreamAPI#dropWhile()|dropWhile]], [[StreamAPI#concat()|concat]] и [[StreamAPI#distinct()|distinct]])
 - Методы [[StreamAPI#skip(long n)|skip]] и [[StreamAPI#limit()|limit]]
-- Операции сведения
+- Операции сведения (Методы [[StreamAPI#count()|count()]], [[StreamAPI#findFirst()|findFirst()]], [[StreamAPI#findAny()|findAny()]], [[StreamAPI#allMatch()|allMatch()]], [[StreamAPI#anyMatch()|anyMatch()]], [[StreamAPI#noneMatch()|noneMatch()]], [[StreamAPI#min()|min()]] и [[StreamAPI#max()|max())]]
 - Метод [[StreamAPI#reduce()|reduce]]
 - Тип [Optional](Optional)
 - Метод [collect](collect())
-- Группировка
+- [Группировка](GroupingStream)
 - Параллельные потоки
 - Параллельные операции над массивами
 

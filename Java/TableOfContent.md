@@ -1,8 +1,34 @@
 #Java 
 ## Оглавление
 
+
+Глава. Классы. Объектно-ориентированное программирование
+- Классы и объекты
+- Пакеты
+- Модификаторы доступа и инкапсуляция
+- Статические члены и модификатор [static](Static)
+- Объекты как параметры методов
+- Внутренние и вложенные классы
+- Наследование
+- [[AbstractInterface#Абстрактные классы|Абстрактные классы]]
+- Иерархия наследования и преобразование типов
+- [Интерфейсы](Interface)
+- Интерфейсы в механизме обратного вызова
+- Перечисления [enum](Enum)
+- Класс [Object](Object) и его методы
+- Обобщения ([Generics](Generics))
+- Ограничения обобщений
+- Наследование и обобщения
+- Ссылочные типы и клонирование объектов
+- Records
+
+Глава. Обработка исключений
+- Оператор throws
+- Классы исключений
+- Создание своих классов исключений
+
 Глава. [Коллекции](Collections)
-- Типы коллекций. Интерфейс Collection
+- [Типы коллекций](Collections). Интерфейс [[Collections#Интерфейс Java Collection|Collection]]
 - Класс [ArrayList](Class-ArrayList) и интерфейс [List](List)
 - Очереди и класс ArrayDeque
 - Класс [LinkedList](Class-LinkedList)
@@ -16,7 +42,7 @@
 Глава. Потоки ввода-вывода. Работа с файлами
 - [Потоки ввода-вывода](JavaIO)
 - Чтение и запись файлов. [FileInputStream](FileInputStream) и [FileOutputStream](FileOutputStream)
-- Закрытие потоков
+- [Закрытие потоков](closeStream)
 - Классы [ByteArrayInputStream](ByteArrayInputStream) и [ByteArrayOutputStream](ByteArrayOutputStream)
 - Буферизованные потоки [BufferedInputStream](BufferedInputStream) и [BufferedOutputStream](BufferedOutputStream)
 - Форматируемый вывод. [PrintStream](PrintStream) и PrintWriter
@@ -49,8 +75,8 @@
 - [Семафоры](Semaphore)
 - Обмен между потоками. Класс [Exchanger](Exchanger)
 - Класс [Phaser](Phaser)
-- Блокировки. ReentrantLock
-- Условия в блокировках
+- [Блокировки.](Locks) [[Locks#Класс ReentrantLock|ReentrantLock]]
+- Условия в блокировках. [[Locks#Интерфейс Condition|Condition]]
 
 Глава. Stream API
 - Введение в [Stream API](StreamAPI)
@@ -64,8 +90,8 @@
 - Тип [Optional](Optional)
 - Метод [collect](collect())
 - [Группировка](GroupingStream)
-- Параллельные потоки
-- Параллельные операции над массивами
+- [Параллельные потоки](parallel())
+- [Параллельные операции над массивами](parallelArray)
 
 
 

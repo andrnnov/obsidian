@@ -73,11 +73,11 @@ public class SpaceshipComparator implements Comparator<Spaceship> {
 ```
 Во-первых, обратите внимание, как класс SpaceshipComparator реализует интерфейс Comparator с типом Spaceship, указанным внутри символов < > ( реализует Comparator`<Spaceship>` ). Это задает тип объектов, которые эта реализация компаратора может сравнивать с объектами космического корабля.
 
-Установка универсального типа реализации Comparator на Spaceship означает, что типам параметров метода compare() может быть присвоено значение Spaceship, а не [Object](Object), как это было бы - если бы не был указан универсальный тип (реализует Comparator ). 
+Установка универсального типа реализации Comparator на Spaceship означает, что типам параметров метода compare() может быть присвоено значение Spaceship, а не [Object](Object), как это было бы - если бы не был указан универсальный тип (реализует Comparator). 
 
 Реализация Java Comparator в значительной степени всегда специализирована для того, чтобы иметь возможность сравнивать объекты определенного типа (класса), поэтому указание универсального типа в вашей реализации Comparator почти всегда имеет смысл. 
 
-Во-вторых, обратите внимание, как метод compare() возвращает значение registrationNo первого параметра Spaceship по сравнению с значением registrationNo второго параметра Spaceship. Это абсолютно правильный способ реализации компаратора.
+Во-вторых, обратите внимание, как метод compare() возвращает значение registrationNo первого параметра Spaceship по сравнению со значением registrationNo второго параметра Spaceship. Это абсолютно правильный способ реализации компаратора.
 ##### Сравнение чисел #####
 
 Если вашей реализации компаратора необходимо сравнить числа из сравниваемых объектов, простой способ - просто вычесть два числа друг из друга и вернуть это значение.
@@ -96,7 +96,7 @@ public class SpaceshipComparator implements Comparator<Spaceship> {
 ```
 #### Пример использования интерфейса Comparator ####
 
-Итак, нестандартная сортировка. Допустим, мы все согласны что логичнее всего сравнивать дома по площади. Ну а если их нужно отсортировать, например, по цене?
+Итак, нестандартная сортировка. Допустим, мы все согласны, что логичнее всего сравнивать дома по площади. Ну а если их нужно отсортировать, например, по цене?
 
 Для этой цели мы можем создать отдельный класс, который реализует интерфейс Comparator.
 
@@ -193,13 +193,14 @@ public class Test {
 }
 ```
 В консоли получим:
-===Area: 100, price: 120000, city: Tokyo, hasFurniture: true
-Area: 40, price: 70000, city: Oxford, hasFurniture: true
-Area: 70, price: 180000, city: Paris, hasFurniture: false
-Sorted:
-Area: 40, price: 70000, city: Oxford, hasFurniture: true
-Area: 100, price: 120000, city: Tokyo, hasFurniture: true
-Area: 70, price: 180000, city: Paris, hasFurniture: false
-Process finished with exit code 0==
+<p style="background-color: navy; color: yellow">
+Area: 100, price: 120000, city: Tokyo, hasFurniture: true<br>
+Area: 40, price: 70000, city: Oxford, hasFurniture: true<br>
+Area: 70, price: 180000, city: Paris, hasFurniture: false<br>
+Sorted:<br>
+Area: 40, price: 70000, city: Oxford, hasFurniture: true<br>
+Area: 100, price: 120000, city: Tokyo, hasFurniture: true<br>
+Area: 70, price: 180000, city: Paris, hasFurniture: false<br>
+Process finished with exit code 0</p>
 
 Наши дома отсортированы по цене.

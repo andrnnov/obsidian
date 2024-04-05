@@ -225,10 +225,11 @@ public class Test {
 }
 ```
 На экране получим:
-==Area: 40, price: 70000, city: Oxford, hasFurniture: true
-Area: 70, price: 180000, city: Paris, hasFurniture: false
-Area: 100, price: 120000, city: Tokyo, hasFurniture: true
-Process finished with exit code 0==
+<p style="background-color: navy; color: yellow">
+Area: 40, price: 70000, city: Oxford, hasFurniture: true<br>
+Area: 70, price: 180000, city: Paris, hasFurniture: false<br>
+Area: 100, price: 120000, city: Tokyo, hasFurniture: true<br>
+Process finished with exit code 0</p>
 
 Как видите, наши дома стоят не в порядке добавления (Токио, Оксфорд, Париж), а отсортированы по площади (Оксфорд, Париж, Токио). Ну, и ошибок, естественно, тоже нет.
 

@@ -30,7 +30,7 @@
 Глава. [Коллекции](Collections)
 - [Типы коллекций](Collections). Интерфейс [[Collections#Интерфейс Java Collection|Collection]]
 - Класс [ArrayList](Class-ArrayList) и интерфейс [List](List)
-- Очереди и класс ArrayDeque
+- Очереди [Queue](Queue), PriorityQueue, [Deque](Deque) и класс ArrayDeque
 - Класс [LinkedList](Class-LinkedList)
 - Интерфейс [Set](Set) и класс HashSet
 - SortedSet, NavigableSet, TreeSet

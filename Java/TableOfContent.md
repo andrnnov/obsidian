@@ -35,8 +35,8 @@
 - Интерфейс [Set](Set) и классы [HashSet](HashSet), [LinkedHashSet](LinkedHashSet)
 - [SortedSet](SortedSet), [NavigableSet](NavigableSet), [TreeSet](TreeSet)
 - Интерфейсы [Comparable](Comparable) и [Comparator](Comparator). Сортировка
-- Интерфейс [Map](Map) и класс HashMap
-- Интерфейсы SortedMap и NavigableMap. Класс TreeMap
+- Интерфейс [Map](Map) и классы [HashMap](HashMap), [LinkedHashMap](LinkedHashMap)
+- Интерфейсы SortedMap и NavigableMap. Класс [TreeMap](TreeMap)
 - Итераторы ([Iterator](Iterator), [[Iterator#ListIterator|ListIterator]])
 
 Глава. Потоки ввода-вывода. Работа с файлами

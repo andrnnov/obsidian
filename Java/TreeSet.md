@@ -8,7 +8,7 @@
 ```mermaid
 flowchart BT
     TreeSet --> |implements|NavigableSet --> |extends|SortedSet --> |extends|Set 
-class SortedSet,Set internal-link;
+class SortedSet,Set,NavigableSet internal-link;
 ```
 
 ### Создание TreeSet
@@ -125,7 +125,7 @@ Are all elements removed? true</p>
 
 #### Методы навигации
 
-Поскольку _TreeSet_ класс реализует _NavigableSet_, он предоставляет различные методы для навигации по элементам набора деревьев.
+Поскольку _TreeSet_ класс реализует [_NavigableSet_](NavigableSet), он предоставляет различные методы для навигации по элементам набора деревьев.
 
 #### 1. Методы first() и last()
 
@@ -475,17 +475,17 @@ Is TreeSet2 subset of TreeSet1? True</p>
 
 #### Другие методы TreeSet
 
-| Метод        | Описание                                                                        |
-| ------------ | ------------------------------------------------------------------------------- |
-| `clone()`    | Создает копию TreeSet                                                           |
-| `contains()` | Выполняет поиск в TreeSet указанного элемента и возвращает логический результат |
-| `isEmpty()`  | Проверяет, является ли `TreeSet` пустым                                         |
-| `size()`     | Возвращает размер `TreeSet`                                                     |
-| `clear()`    | Удаляет все элементы из `TreeSet`                                               |
+| Метод        | Описание                                                                          |
+| ------------ | --------------------------------------------------------------------------------- |
+| `clone()`    | Создает копию _TreeSet_                                                           |
+| `contains()` | Выполняет поиск в _TreeSet_ указанного элемента и возвращает логический результат |
+| `isEmpty()`  | Проверяет, является ли _TreeSet_ пустым                                           |
+| `size()`     | Возвращает размер _TreeSet_                                                       |
+| `clear()`    | Удаляет все элементы из _TreeSet_                                                 |
 
 Чтобы узнать больше, посетите [Java TreeSet (официальная документация Java)](https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html).
 
-### Сравнение TreeSet с HashSet
+### Сравнение TreeSet с [HashSet](HashSet)
 
 Как в _TreeSet_, так и в [_HashSet_](HashSet) реализует [_Set_](Set) интерфейс. Однако между ними существуют некоторые различия.
 - В отличие от [_HashSet_](HashSet), элементы в _TreeSet_ хранятся в определенном порядке. Это потому, что _TreeSet_ также реализует [_SortedSet_](SortedSet) интерфейс.

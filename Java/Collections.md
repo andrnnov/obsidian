@@ -35,8 +35,8 @@
 - [TreeSet](TreeSet): набор отсортированных объектов в виде дерева
 - [LinkedHashSet](LinkedHashSet): связанное хеш-множество
 - [PriorityQueue](PriorityQueue): очередь приоритетов
-- HashMap: структура данных в виде словаря, в котором каждый объект имеет уникальный ключ и некоторое значение
-- TreeMap: структура данных в виде дерева, где каждый элемент имеет уникальный ключ и некоторое значение
+- [HashMap](HashMap): структура данных в виде словаря, в котором каждый объект имеет уникальный ключ и некоторое значение
+- [TreeMap](TreeMap): структура данных в виде дерева, где каждый элемент имеет уникальный ключ и некоторое значение
 
 ### Интерфейс Java Collection 
 
@@ -114,7 +114,7 @@ Collection elements     = new HashSet();
 boolean containsAll     = collection.containsAll(elements);
 ```
 - **`boolean isEmpty ()`**: возвращает true, если коллекция пуста, иначе возвращает false
-- **`Iterator<E> iterator ()`**: возвращает объект [Iterator](Irerator) для обхода элементов коллекции
+- **`Iterator<E> iterator ()`**: возвращает объект [Iterator](Iterator) для обхода элементов коллекции
 - **`boolean remove (Object item)`**. Метод remove() удаляет элемент из коллекции и возвращает значение true, если удаленный элемент присутствовал в коллекции и был удален. Если элемент отсутствовал, метод remove() возвращает значение false. Вот пример удаления элемента из коллекции Java:
 ```java
 boolean wasElementRemoved = collection.remove("an element");

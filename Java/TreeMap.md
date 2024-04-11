@@ -4,11 +4,11 @@
 
 2024-04-10 14:58
 
-Класс _TreeMap_ Java collections framework обеспечивает реализацию древовидной структуры данных. Он реализует интерфейс _NavigableMap_.
+Класс _TreeMap_ Java collections framework обеспечивает реализацию древовидной структуры данных. Он реализует интерфейс [_NavigableMap_](NavigableMap).
 ```mermaid
 flowchart BT
     TreeMap --> |implements|NavigableMap --> |extends|SortedMap --> |extends|Map 
-class Map internal-link;
+class Map,SortedMap,NavigableMap internal-link;
 ```
 
 ### Особенности TreeMap
@@ -16,8 +16,8 @@ class Map internal-link;
 Некоторые важные функции _TreeMap_ заключаются в следующем:
 
 1. Этот класс является членом платформы Java Collections.
-2. Класс реализует интерфейсы [_Map_](Map), включая _NavigableMap_, _SortedMap_ и расширяет класс _AbstractMap_.
-3. _TreeMap_ в Java не допускает нулевых ключей (например, [_Map_]) и, следовательно, возникает [исключение NullPointerException](https://www.geeksforgeeks.org/null-pointer-exception-in-java/). Однако несколько нулевых значений могут быть связаны с разными ключами.
+2. Класс реализует интерфейсы [_Map_](Map), включая [_NavigableMap_](NavigableMap), [_SortedMap_](SortedMap) и расширяет класс _AbstractMap_.
+3. _TreeMap_ в Java не допускает нулевых ключей (например, [_Map_](Map)) и, следовательно, возникает [исключение NullPointerException](https://www.geeksforgeeks.org/null-pointer-exception-in-java/). Однако несколько нулевых значений могут быть связаны с разными ключами.
 4. Пары элементов, возвращаемые методами этого класса и его представлениями, представляют моментальные снимки отображений на момент их создания. Они не поддерживают метод [Entry.setValue](https://www.geeksforgeeks.org/map-entry-interface-java-example/).
 
 Теперь давайте продвинемся вперед и обсудим синхронизированную древовидную карту. Реализация древовидной карты не синхронизирована. Это означает, что если несколько потоков обращаются к набору дерева одновременно, и хотя бы один из потоков изменяет набор, он должен быть синхронизирован извне. Обычно это достигается с помощью [коллекций.Метод synchronizedSortedMap](https://www.geeksforgeeks.org/collections-synchronizedsortedmap-method-in-java-with-examples/). Это лучше всего делать во время создания, чтобы предотвратить случайный несинхронизированный доступ к набору. Это можно сделать следующим образом:
@@ -43,7 +43,7 @@ TreeMap<Key, Value> numbers = new TreeMap<>();
 1. TreeMap()
 2. TreeMap(Comparator comp)
 3. TreeMap(Map M)
-4. TreeMap(SortedMap sm)
+4. TreeMap([SortedMap](SortedMap) sm)
 
 Давайте обсудим их по отдельности наряду с реализацией каждого конструктора следующим образом:
 

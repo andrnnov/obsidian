@@ -10,7 +10,7 @@
 
 Поскольку Map - это интерфейс, вам необходимо создать экземпляр конкретной реализации интерфейса Map, чтобы использовать его. Java [Collections](Collections) API содержит следующие реализации карт:
 - [java.util.HashMap](HashMap)
-- java.util.Hashtable
+- [java.util.Hashtable](Hashtable)
 - java.util.EnumMap
 - java.util.IdentityHashMap
 - [java.util.LinkedHashMap](LinkedHashMap)
@@ -33,7 +33,7 @@ Map mapB = new TreeMap();
 ```
 #### Generic Java Map ####
 
-По умолчанию вы можете поместить любой объект в карту, но начиная с Java 5 Java Generics позволяет ограничить типы объектов, которые вы можете использовать как для ключей, так и для значений на карте. Вот пример:
+По умолчанию вы можете поместить любой объект в карту, но начиная с Java 5 Java [Generics](Generics) позволяет ограничить типы объектов, которые вы можете использовать как для ключей, так и для значений на карте. Вот пример:
 ```java
 Map<String, MyObject> map =  new HashMap<String, MyObject>();
 ```

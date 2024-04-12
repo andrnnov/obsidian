@@ -32,10 +32,10 @@
 - Класс [ArrayList](Class-ArrayList) и интерфейс [List](List)
 - Очереди [Queue](Queue), [PriorityQueue](PriorityQueue), [Deque](Deque) и класс [ArrayDeque](ArrayDeque)
 - Класс [LinkedList](Class-LinkedList)
-- Интерфейс [Set](Set) и классы [HashSet](HashSet), [LinkedHashSet](LinkedHashSet)
+- Интерфейс [Set](Set) и классы [HashSet](HashSet), [LinkedHashSet](LinkedHashSet), [EnumSet](EnumSet)
 - [SortedSet](SortedSet), [NavigableSet](NavigableSet), [TreeSet](TreeSet)
 - Интерфейсы [Comparable](Comparable) и [Comparator](Comparator). Сортировка
-- Интерфейс [Map](Map) и классы [HashMap](HashMap), [LinkedHashMap](LinkedHashMap)
+- Интерфейс [Map](Map) и классы [HashMap](HashMap), [LinkedHashMap](LinkedHashMap), [EnumMap](EnumMap)
 - Интерфейсы [SortedMap](SortedMap) и [NavigableMap](NavigableMap). Класс [TreeMap](TreeMap)
 - Итераторы ([Iterator](Iterator), [[Iterator#ListIterator|ListIterator]])
 

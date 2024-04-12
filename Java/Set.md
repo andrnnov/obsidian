@@ -42,7 +42,7 @@ public class SetExample {
 Будучи подтипом Collection, все методы в интерфейсе [[Collections#Интерфейс Java Collection|Collection]] также доступны в интерфейсе Set.
 
 Поскольку Set - это интерфейс, вам нужно создать экземпляр конкретной реализации интерфейса, чтобы использовать его. Вы можете выбрать одну из следующих реализаций множества в Java Collections API:
-- java.util.EnumSet
+- [java.util.EnumSet](EnumSet)
 - [java.util.HashSet](HashSet)
 - [java.util.LinkedHashSet](LinkedHashSet)
 - [java.util.TreeSet](TreeSet)

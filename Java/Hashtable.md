@@ -22,13 +22,6 @@
 
 ![[HierarchyofHashtable.png]]
 
-### Конструкторы Java для _Hashtable_
-
-- Hashtable(), конструктор по умолчанию. Он создает пустую  _Hashtable_. (Начальная емкость по умолчанию = 11, коэффициент загрузки = 0,75).
-- Hashtable(int size) создает  _Hashtable_ заданного размера.
--  _Hashtable_ (int size, float fillRatio) создает  _Hashtable_ указанного размера и коэффициента заполнения.
--  _Hashtable_ (Map m) создает  _Hashtable_ с теми же отображениями, что и данная карта.
-
 ### Объявление _Hashtable_
 
 Класс Java Hashtable реализует интерфейсы [_Map_](Map), [_Cloneable_](Cloneable) и [_Serializable_](Serializable). Она расширяет класс _Dictionary_.
@@ -39,6 +32,165 @@ K - это тип ключей, поддерживаемых картой. V - �
 ```java
 Hashtable<Student, Integer> myHTable = new Hashtable<>();
 ```
+
+### Конструкторы Java для _Hashtable_
+
+#### 1. Hashtable(), конструктор по умолчанию. Он создает пустую   _Hashtable_. (Начальная емкость по умолчанию = 11, коэффициент загрузки = 0,75).
+
+```java
+/// Java program to demonstrate
+// adding elements to Hashtable
+import java.io.*;
+import java.util.*;
+ 
+class AddElementsToHashtable {
+    public static void main(String args[])
+    {
+        // No need to mention the
+        // Generic type twice
+        Hashtable<Integer, String> ht1 = new Hashtable<>();
+ 
+        // Initialization of a Hashtable
+        // using Generics
+        Hashtable<Integer, String> ht2 = new Hashtable<Integer, String>();
+ 
+        // Inserting the Elements
+        // using put() method
+        ht1.put(1, "one");
+        ht1.put(2, "two");
+        ht1.put(3, "three");
+ 
+        ht2.put(4, "four");
+        ht2.put(5, "five");
+        ht2.put(6, "six");
+ 
+        // Print mappings to the console
+        System.out.println("Mappings of ht1 : " + ht1);
+        System.out.println("Mappings of ht2 : " + ht2);
+    }
+}
+```
+**Вывод**
+<p style="background-color: navy; color: yellow">
+Mappings of ht1 : {3=three, 2=two, 1=one}<br>
+Mappings of ht2 : {6=six, 5=five, 4=four}</p>
+
+#### 2. Hashtable(int size) создает _Hashtable_ заданного размера.
+
+Коэффициент загрузки по умолчанию равен 0,75.
+```java
+// Java program to demonstrate
+// adding elements to Hashtable
+import java.io.*;
+import java.util.*;
+ 
+class AddElementsToHashtable {
+    public static void main(String args[])
+    {
+        // No need to mention the
+        // Generic type twice
+        Hashtable<Integer, String> ht1 = new Hashtable<>(4);
+ 
+        // Initialization of a Hashtable
+        // using Generics
+        Hashtable<Integer, String> ht2 = new Hashtable<Integer, String>(2);
+ 
+        // Inserting the Elements
+        // using put() method
+        ht1.put(1, "one");
+        ht1.put(2, "two");
+        ht1.put(3, "three");
+ 
+        ht2.put(4, "four");
+        ht2.put(5, "five");
+        ht2.put(6, "six");
+ 
+        // Print mappings to the console
+        System.out.println("Mappings of ht1 : " + ht1);
+        System.out.println("Mappings of ht2 : " + ht2);
+    }
+}
+```
+**Вывод**
+<p style="background-color: navy; color: yellow">
+Mappings of ht1 : {3=three, 2=two, 1=one}<br>
+Mappings of ht2 : {4=four, 6=six, 5=five}</p>
+
+#### 3. _Hashtable_ (int size, float fillRatio) создает _Hashtable_ указанного размера и коэффициента заполнения.
+
+Коэффициент заполнения определяет, насколько полной может быть _Hashtable_, прежде чем ее размер будет увеличен, и ее значение находится в диапазоне от 0.0 до 1.0.
+```java
+// Java program to demonstrate
+// adding elements to Hashtable
+import java.io.*;
+import java.util.*;
+ 
+class AddElementsToHashtable {
+    public static void main(String args[])
+    {
+        // No need to mention the
+        // Generic type twice
+        Hashtable<Integer, String> ht1 = new Hashtable<>(4, 0.75f);
+ 
+        // Initialization of a Hashtable
+        // using Generics
+        Hashtable<Integer, String> ht2 = new Hashtable<Integer, String>(3, 0.5f);
+ 
+        // Inserting the Elements
+        // using put() method
+        ht1.put(1, "one");
+        ht1.put(2, "two");
+        ht1.put(3, "three");
+ 
+        ht2.put(4, "four");
+        ht2.put(5, "five");
+        ht2.put(6, "six");
+ 
+        // Print mappings to the console
+        System.out.println("Mappings of ht1 : " + ht1);
+        System.out.println("Mappings of ht2 : " + ht2);
+    }
+}
+```
+**Вывод**
+<p style="background-color: navy; color: yellow">
+Mappings of ht1 : {3=three, 2=two, 1=one}<br>
+Mappings of ht2 : {6=six, 5=five, 4=four}</p>
+
+
+#### 4. _Hashtable_ (Map m) создает _Hashtable_ с теми же отображениями, что и данная карта.
+
+```java
+// Java program to demonstrate
+// adding elements to Hashtable
+import java.io.*;
+import java.util.*;
+ 
+class AddElementsToHashtable {
+    public static void main(String args[])
+    {
+        // No need to mention the
+        // Generic type twice
+        Map<Integer, String> hm = new HashMap<>();
+ 
+        // Inserting the Elements
+        // using put() method
+        hm.put(1, "one");
+        hm.put(2, "two");
+        hm.put(3, "three");
+ 
+        // Initialization of a Hashtable
+        // using Generics
+        Hashtable<Integer, String> ht2 = new Hashtable<Integer, String>(hm);
+ 
+        // Print mappings to the console
+        System.out.println("Mappings of ht2 : " + ht2);
+    }
+}
+```
+**Вывод**
+<p style="background-color: navy; color: yellow">
+Mappings of ht2 : {3=three, 2=two, 1=one}</p>
 
 ### Основные операции с _Hashtable_
 
@@ -56,7 +208,9 @@ Hashtable<Student, Integer> myHTable = new Hashtable<>();
 - boolean isEmpty() возвращает true, если _Hashtable_ пуста, или false, если она содержит хотя бы один ключ.
 - void rehash() увеличивает размер _Hashtable_ и перефразирует все ее ключи.
 
-### Реализация хэш-таблицы, Java-код:
+### Реализация Hashtable, Java-код:
+
+#### Пример 1
 
 Давайте создадим класс Student:
 ```java
@@ -120,6 +274,74 @@ true<br>
 true<br> 
 false<br>
 true</p>
+#### Пример 2.
+
+Чтобы удалить элемент с карты, мы можем использовать метод remove(). Этот метод принимает значение ключа и удаляет сопоставление для ключа из этой карты, если он присутствует на карте.
+```java
+// Java program to demonstrate
+// the removing mappings from Hashtable
+import java.io.*;
+import java.util.*;
+class RemovingMappingsFromHashtable {
+ 
+    public static void main(String args[]) {
+        // Initialization of a Hashtable
+        Map<Integer, String> ht
+            = new Hashtable<Integer, String>();
+ 
+        // Inserting the Elements
+          // using put method
+        ht.put(1, "Geeks");
+        ht.put(2, "For");
+        ht.put(3, "Geeks");
+        ht.put(4, "For");
+ 
+        // Initial HashMap
+        System.out.println("Initial map : " + ht);
+ 
+          // Remove the map entry with key 4
+        ht.remove(4);
+ 
+        // Final Hashtable
+        System.out.println("Updated map : " + ht);
+    }
+}
+```
+**Вывод**
+<p style="background-color: navy; color: yellow">
+Initial map : {4=For, 3=Geeks, 2=For, 1=Geeks}<br>
+Updated map : {3=Geeks, 2=For, 1=Geeks}</p>
+
+#### Пример 3.
+
+Для итерации таблицы мы можем использовать расширенный цикл for. Ниже приведен пример итерации _Hashtable_.
+```java
+// Java program to illustrate
+// traversal of Hashtable
+import java.util.Hashtable;
+import java.util.Map;
+ 
+public class IteratingHashtable {
+    public static void main(String[] args) {
+          // Create an instance of Hashtable
+        Hashtable<String, Integer> ht = new Hashtable<>();
+ 
+          // Adding elements using put method
+        ht.put("one", 10);
+        ht.put("two", 30);
+        ht.put("three", 20);
+     
+          // Iterating using enhanced for loop
+        for (Map.Entry<String, Integer> e : ht.entrySet())
+            System.out.println(e.getKey() + " " + e.getValue());
+    }
+}
+```
+**Вывод**
+<p style="background-color: navy; color: yellow">
+three 20<br>
+one 10<br>
+two 30</p>
 
 ### [HashMap](HashMap) против Hashtable
 

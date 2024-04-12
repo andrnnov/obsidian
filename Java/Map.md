@@ -11,7 +11,7 @@
 Поскольку Map - это интерфейс, вам необходимо создать экземпляр конкретной реализации интерфейса Map, чтобы использовать его. Java [Collections](Collections) API содержит следующие реализации карт:
 - [java.util.HashMap](HashMap)
 - [java.util.Hashtable](Hashtable)
-- java.util.EnumMap
+- [java.util.EnumMap](EnumMap)
 - java.util.IdentityHashMap
 - [java.util.LinkedHashMap](LinkedHashMap)
 - java.util.Properties

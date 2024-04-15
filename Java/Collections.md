@@ -1,6 +1,6 @@
 ### Типы коллекций. Интерфейс Collection ###
 
-#Java #ArrayList #LinkedList
+#Java #ArrayList #LinkedList #Collection
 
 Создано: 2023-09-11 17:27
 

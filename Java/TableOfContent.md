@@ -35,7 +35,7 @@
 - Интерфейс [Set](Set) и классы [HashSet](HashSet), [LinkedHashSet](LinkedHashSet), [EnumSet](EnumSet)
 - [SortedSet](SortedSet), [NavigableSet](NavigableSet), [TreeSet](TreeSet)
 - Интерфейсы [Comparable](Comparable) и [Comparator](Comparator). Сортировка
-- Интерфейс [Map](Map) и классы [HashMap](HashMap), [LinkedHashMap](LinkedHashMap), [EnumMap](EnumMap)
+- Интерфейс [Map](Map) и классы [HashMap](HashMap), [LinkedHashMap](LinkedHashMap), [EnumMap](EnumMap), [_WeakHashMap_](WeakHashMap)
 - Интерфейсы [SortedMap](SortedMap) и [NavigableMap](NavigableMap). Класс [TreeMap](TreeMap)
 - Итераторы ([Iterator](Iterator), [[Iterator#ListIterator|ListIterator]])
 

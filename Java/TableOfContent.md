@@ -29,13 +29,13 @@
 
 Глава. [Коллекции](Collections)
 - [Типы коллекций](Collections). Интерфейс [[Collections#Интерфейс Java Collection|Collection]]
-- Класс [ArrayList](Class-ArrayList) и интерфейс [List](List)
+- Класс [ArrayList](Class-ArrayList), [Vector](Vector) и интерфейс [List](List)
 - Очереди [Queue](Queue), [PriorityQueue](PriorityQueue), [Deque](Deque) и класс [ArrayDeque](ArrayDeque)
 - Класс [LinkedList](Class-LinkedList)
 - Интерфейс [Set](Set) и классы [HashSet](HashSet), [LinkedHashSet](LinkedHashSet), [EnumSet](EnumSet)
 - [SortedSet](SortedSet), [NavigableSet](NavigableSet), [TreeSet](TreeSet)
 - Интерфейсы [Comparable](Comparable) и [Comparator](Comparator). Сортировка
-- Интерфейс [Map](Map) и классы [HashMap](HashMap), [LinkedHashMap](LinkedHashMap), [EnumMap](EnumMap), [_WeakHashMap_](WeakHashMap)
+- Интерфейс [Map](Map) и классы [HashMap](HashMap), [LinkedHashMap](LinkedHashMap), [EnumMap](EnumMap), [_WeakHashMap_](WeakHashMap), [_IdentityHashMap_](IdentityHashMap)
 - Интерфейсы [SortedMap](SortedMap) и [NavigableMap](NavigableMap). Класс [TreeMap](TreeMap)
 - Итераторы ([Iterator](Iterator), [[Iterator#ListIterator|ListIterator]])
 

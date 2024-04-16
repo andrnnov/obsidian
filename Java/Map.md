@@ -12,9 +12,9 @@
 - [java.util.HashMap](HashMap)
 - [java.util.Hashtable](Hashtable)
 - [java.util.EnumMap](EnumMap)
-- java.util.IdentityHashMap
+- [java.util.IdentityHashMap](IdentityHashMap)
 - [java.util.LinkedHashMap](LinkedHashMap)
-- java.util.Properties
+- [java.util.Properties](Properties)
 - [java.util.TreeMap](TreeMap)
 - [java.util.WeakHashMap](WeakHashMap)
 
@@ -23,6 +23,10 @@
 [HashMap](HashMap) отображает ключ и значение. Это не гарантирует какого-либо порядка элементов, хранящихся внутри карты. TreeMap также отображает ключ и значение. Кроме того, это гарантирует порядок, в котором повторяются ключи или значения, то есть порядок сортировки ключей или значений.
 
 Реализация [HashMap](HashMap), как правило, является самой быстрой из двух реализаций Map, поэтому всякий раз, когда вам не нужно сортировать элементы на карте, вы можете просто использовать [HashMap](HashMap). В противном случае используйте [TreeMap](TreeMap).
+
+**Иерархия Map**
+![[maxHierarchyMap.jpg]]
+
 #### Создание Map ####
 
 Чтобы создать Java Map, вы должны создать экземпляр одного из классов, реализующих интерфейс Java Map. Вот несколько примеров того, как создать экземпляр карты:

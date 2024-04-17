@@ -29,7 +29,7 @@
 
 Глава. [Коллекции](Collections)
 - [Типы коллекций](Collections). Интерфейс [[Collections#Интерфейс Java Collection|Collection]]
-- Класс [ArrayList](Class-ArrayList), [Vector](Vector) и интерфейс [List](List)
+- Класс [ArrayList](Class-ArrayList), [Vector](Vector), [Stack](Stack) и интерфейс [List](List)
 - Очереди [Queue](Queue), [PriorityQueue](PriorityQueue), [Deque](Deque) и класс [ArrayDeque](ArrayDeque)
 - Класс [LinkedList](Class-LinkedList)
 - Интерфейс [Set](Set) и классы [HashSet](HashSet), [LinkedHashSet](LinkedHashSet), [EnumSet](EnumSet)

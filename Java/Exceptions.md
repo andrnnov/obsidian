@@ -105,21 +105,21 @@ public class Train04 {
 В функции main() продемонстрировано использование методов класса Throwable. Вводится переменная **x**, которая проверяется на допустимые значения в пределах то 0 до 100. Если значение **x** меньше 0 или больше 100, то генерируется исключение типа MyException.
 
 Результат работы программы
-```
-x = 200
-Return from getLocalizedMessage(): MyException.getLocalizedMessage()
-Return from getMessage(): null
-Method printStackTrace():
-Method toString(): MyException: MyException.getLocalizedMessage()
-------------------------
-Method getStackTrace(). Stack trace:
-Train04.main(Train04.java:36)
--------------------------
-Method fillStackTrace(). Stack trace:
-Train04.main(Train04.java:36)
--------------------------
-MyException: MyException.getLocalizedMessage()
-```
+<p style="background-color: navy; color: yellow">
+x = 200<br>
+Return from getLocalizedMessage(): MyException.getLocalizedMessage()<br>
+Return from getMessage(): null<br>
+Method printStackTrace():<br>
+Method toString(): MyException: MyException.getLocalizedMessage()<br>
+------------------------<br>
+Method getStackTrace(). Stack trace:<br>
+Train04.main(Train04.java:36)<br>
+-------------------------<br>
+Method fillStackTrace(). Stack trace:<br>
+Train04.main(Train04.java:36)<br>
+-------------------------<br>
+MyException: MyException.getLocalizedMessage()</p>
+
 #### Перечень подклассов непроверяемых исключений из пакета java.lang ####
 
 Среди всего разнообразия классов и интерфейсов пакет java.lang содержит мощный арсенал классов для обработки исключений. Эти классы и интерфейсы составляют основу всех программ на Java. Пакет java.lang автоматически импортируется во все программы.
@@ -197,15 +197,15 @@ public class ExceptionHandling {
 }
 ```
 А в консоле эта программа напишет такое:
-```
-java.io.FileNotFoundException: число меньше 0: -5
-    at ExceptionHandling.testException(ExceptionHandling.java:24)
-    at ExceptionHandling.main(ExceptionHandling.java:10)
-Необязательный блок, но раз уже написан, то выполнятся будет не зависимо от того было исключение или нет
-Exception in thread "main" java.io.IOException: Число должно быть в пределах от 0 до 10
-    at ExceptionHandling.testException(ExceptionHandling.java:27)
-    at ExceptionHandling.main(ExceptionHandling.java:19)
-```
+<p style="background-color: navy; color: yellow">
+java.io.FileNotFoundException: число меньше 0: -5<br>
+    at ExceptionHandling.testException(ExceptionHandling.java:24)<br>
+    at ExceptionHandling.main(ExceptionHandling.java:10)<br>
+Необязательный блок, но раз уже написан, то выполнятся будет не зависимо от того было исключение или нет<br>
+Exception in thread "main" java.io.IOException: Число должно быть в пределах от 0 до 10<br>
+    at ExceptionHandling.testException(ExceptionHandling.java:27)<br>
+    at ExceptionHandling.main(ExceptionHandling.java:19)</p>
+
 Обратите внимание, что метод `testException()` бросает исключение, используя ключевое слово `throw`, а в сигнатуре метода используется ключевое слово `throws`, чтобы дать понять вызывающему методу тип исключений, которые может бросить `testException()`.
 
 **Важные моменты в обработке исключений:**

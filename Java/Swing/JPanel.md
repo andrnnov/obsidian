@@ -195,6 +195,6 @@ class solution extends JFrame {
 }
 ```
 Вывод:
-![[Pasted image 20240508123839.png]]
+![[Ex3-JPanel.png]]
 
 

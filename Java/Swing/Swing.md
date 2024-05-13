@@ -52,6 +52,30 @@ Swing является частью **Java Foundation Classes** (JFC). **JFC*
 | - Не поддерживает подключаемый внешний вид и ощущение | - Поддержка подключаемого внешнего вида |
 | - тяжеловесный                                        | - легкий                                |
 
+### Элементы пользовательского интерфейса SWING
+
+Ниже приведен список часто используемых элементов управления при разработке графического интерфейса с использованием SWING.
+
+| S.No. | Класс и описание                                                                                                                                                                                                                 |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | [JLabel](JLabel)<br>Объект JLabel - это компонент для размещения текста в контейнере.                                                                                                                                            |
+| 2     | [JButton](https://www.tutorialspoint.com/swing/swing_jbutton.htm)<br>Этот класс создает кнопку с надписью.                                                                                                                       |
+| 3     | [JColorChooser](https://www.tutorialspoint.com/swing/swing_jcolorchooser.htm)<br>JColorChooser предоставляет панель элементов управления, предназначенную для того, чтобы пользователь мог манипулировать цветом и выбирать его. |
+| 4     | [Флажок JCheck Box](https://www.tutorialspoint.com/swing/swing_jcheckbox.htm)<br>JCheckBox - это графический компонент, который может находиться либо в состоянии **включено** (true), либо в состоянии **выключено** (false).   |
+| 5     | [JRadioButton](https://www.tutorialspoint.com/swing/swing_jradiobutton.htm)<br>The JRadioButton class is a graphical component that can be in either an **on** (true) or **off** (false) state. in a group.                      |
+| 6     | [JList](https://www.tutorialspoint.com/swing/swing_jlist.htm)<br>A JList component presents the user with a scrolling list of text items.                                                                                        |
+| 7     | [JComboBox](https://www.tutorialspoint.com/swing/swing_jcombobox.htm)<br>Компонент JComboBox предоставляет пользователю доступное меню выбора.                                                                                   |
+| 8     | [JTextField](https://www.tutorialspoint.com/swing/swing_jtextfield.htm)<br>Объект JTextField - это текстовый компонент, который позволяет редактировать одну строку текста.                                                      |
+| 9     | [JPasswordField](https://www.tutorialspoint.com/swing/swing_jpasswordfield.htm)<br>Объект JPasswordField - это текстовый компонент, предназначенный для ввода пароля.                                                            |
+| 10    | [JTextArea](https://www.tutorialspoint.com/swing/swing_jtextarea.htm)<br>Объект JTextArea - это текстовый компонент, который позволяет редактировать несколько строк текста.                                                     |
+| 11    | [ImageIcon](https://www.tutorialspoint.com/swing/swing_imageicon.htm)<br>Элемент управления ImageIcon - это реализация интерфейса Icon, который рисует значки из изображений                                                     |
+| 12    | [JScrollBar](https://www.tutorialspoint.com/swing/swing_jscrollbar.htm)<br>Элемент управления полосой прокрутки представляет собой компонент полосы прокрутки, позволяющий пользователю выбирать из диапазона значений.          |
+| 13    | [JOptionPane](https://www.tutorialspoint.com/swing/swing_joptionpane.htm)<br>JOptionPane предоставляет набор стандартных диалоговых окон, которые запрашивают у пользователей значение или информируют их о чем-либо.            |
+| 14    | [JFileChooser](https://www.tutorialspoint.com/swing/swing_jfilechooser.htm)<br>Элемент управления JFileChooser представляет собой диалоговое окно, в котором пользователь может выбрать файл.                                    |
+| 15    | [JProgressBar](https://www.tutorialspoint.com/swing/swing_jprogressbar.htm)<br>По мере продвижения задачи к завершению на индикаторе выполнения отображается процент выполнения задачи.                                          |
+| 16    | [JSlider](https://www.tutorialspoint.com/swing/swing_jslider.htm)<br>JSlider позволяет пользователю графически выбирать значение, перемещая ручку в пределах ограниченного интервала.                                            |
+| 17    | [JSpinner](https://www.tutorialspoint.com/swing/swing_jspinner.htm)<br>JSpinner - это однострочное поле ввода, которое позволяет пользователю выбрать число или значение объекта из упорядоченной последовательности.            |
+
 **Пример 1.** В примере реализуется простейший GUI непосредственно в главном методе _main_():
 ```java
 import javax.swing.*; // подключаем все средства java Swing

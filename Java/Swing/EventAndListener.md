@@ -416,4 +416,82 @@ Button 2, Button 2 was pressed!<br>
 Button 3, Button 3 was pressed!<br>
 Button 2, Button 2 was pressed programmatically!</p>
 
+#### Пример 4. Интерфейс KeyListener и абстрактный класс KeyAdapter
 
+События клавиатуры также можно отслеживать. Для получения такого рода событий используется интерфейс KeyListener. Объекты-слушатели регистрируются для таких компонентов, как окно или панель, при помощи метода addKeyListener компонента.
+
+Класс, заинтересованный в обработке событий клавиатуры, или реализует данный интерфейс вместе со всеми его методами, или же расширяет абстрактный класс KeyAdapter. В последнем случае вы можете переопределить только те методы, которые имеют значение для приложения.
+
+В качестве примера в следующем приложении создается объект, который устанавливает, вводятся ли с клавиатуры какие-либо символы. Введенный текст отображается в метке внизу экрана:
+```java
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class KeyAdapterExample extends JFrame {
+  // Метка, отображающая введенный текст.
+  JLabel label;
+  // Окно, в котором перемещается мышь и вводится текст
+  JPanel p;
+
+  public KeyAdapterExample() {
+    label = new JLabel("You typed: ");
+
+    p = new JPanel();
+    p.setBackground(Color.white);
+    // Зарегистрировать введенный символ
+    p.addKeyListener(new KeyHandler());
+    // Зарегистрировать перемещение мыши в области глухой панели
+    p.addMouseListener(new MyMouseAdapter(p));
+
+    // Получить ContentPane и отформатировать
+    getContentPane().setLayout(new BorderLayout());
+    getContentPane().add(p, BorderLayout.CENTER);
+    getContentPane().add(label, BorderLayout.SOUTH);
+    // зарегистрировать выход из программы
+    addWindowListener(new WinClosing());
+    setBounds(100, 100, 200, 200);
+    setVisible(true);
+  }
+  // закрыть конструктор
+
+  // Класс, обрабатывающий набор символов
+  class KeyHandler extends KeyAdapter {
+    // Метод, извлекающий набранные символы и
+    // устанавливающий их в качестве значений метки
+    public void keyTyped(KeyEvent ke) {
+      label.setText("You typed: " + ke.getKeyChar());
+      label.invalidate();
+      invalidate();
+      validate();
+    }
+  }
+
+  // Класс, обрабатывающий перемещение мыши
+  class MyMouseAdapter extends MouseAdapter {
+    MyMouseAdapter(Component c) {
+      this.c = c;
+    }
+
+    public void mousePressed(MouseEvent e) {
+      c.requestFocus();
+    }
+
+    private Component c;
+  }
+
+  public static void main(String args[]) {
+    KeyAdapterExample kae = new KeyAdapterExample();
+  }
+}
+
+class WinClosing extends WindowAdapter
+
+{
+  public void windowClosing(WindowEvent we) {
+    System.exit(0);
+  }
+}
+```
+**Вывод:**
+![[Ex4-EventAndListener.png]]

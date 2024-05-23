@@ -41,7 +41,7 @@ public class JButton extends AbstractButton implements Accessible
 - **void addItemListener(ItemListener a):** Добавляет объекты, которые прослушивают события элемента, генерируемые кнопкой.
 - **ItemListener removeItemListener():** Удаляет объекты, которые прослушивают события элемента, генерируемые кнопкой.
 - **void setSelected(boolean):** переводит кнопку в режим выбора или нажатия.
-- boolean isSelected():** мы получаем значение кнопки, независимо от того, выбрано оно или нет. AbstractButton предоставляет методы для выравнивания положения значка и текста на кнопке.
+- **boolean isSelected():** мы получаем значение кнопки, независимо от того, выбрано оно или нет. AbstractButton предоставляет методы для выравнивания положения значка и текста на кнопке.
 - **void setHorizontalAlignment(int alignment):** Устанавливает горизонтальное выравнивание значка и текста. AbstractButton по умолчанию использует SwingConstants.CENTER. Некоторые другие настройки, которые могут быть предоставлены: SwingConstants.RIGHT, SwingConstants.LEFT, SwingConstants.LEADING, SwingConstants.TRAILING.
 - **void setVerticalAlignment(int alignment):** - Устанавливает вертикальное выравнивание значков и текста. Некоторые другие настройки, которые могут быть предоставлены: SwingConstants.TOP, SwingConstants.BOTTOM, SwingConstants.CENTER(default).
 - **int getHorizontalAlignment():** возвращает выравнивание значка и текста по горизонтали.

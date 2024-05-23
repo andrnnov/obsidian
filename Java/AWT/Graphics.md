@@ -93,7 +93,7 @@ public class MyFrame extends Frame {
 }
 ```
 **Вывод:**
-![[Pasted image 20240522122507.png]]
+![[Ex2-Graphics.png]]
 Этот код не будет отображать графику, нарисованную с помощью getGraphics(), поскольку paint() вызывается после draw().
 
 #### Пример 3.

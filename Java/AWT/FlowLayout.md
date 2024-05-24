@@ -113,3 +113,40 @@ public class Main {
 ```
 **Вывод:**
 ![[Ex1-FlowLayout.png]]
+
+#### Пример 2.  С использованием [Swing](Swing)
+
+```java
+// Пример последовательного расположения компонентов - FlowLayout
+import java.awt.*;
+import javax.swing.*;
+
+public class FlowLayoutTest extends JFrame {
+
+    public FlowLayoutTest() {
+        super("FlowLayout");
+        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        setSize(700, 120);
+        // Панель содержимого
+        Container container = getContentPane();
+
+        // Определение последовательного расположения
+        // с выравниванием компонентов по центру
+        container.setLayout (new FlowLayout(FlowLayout.CENTER));
+       
+        // добавляем компоненты
+        container.add( new JButton("Школа"   ));
+        container.add( new JButton("Институт"));
+        container.add( new JButton("Аспирантура"));
+        
+        // Открываем окно
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new FlowLayoutTest();
+    }
+}
+```
+**Вывод:**
+![[Ex2-FlowLayout.png]]

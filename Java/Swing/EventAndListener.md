@@ -20,36 +20,36 @@
 
 В таблице приведены определенные в пакете java.awt.event типы событий, соответствующие им слушатели, а также методы, определенные в каждом интерфейсе слушателя.
 
-| Класс события                      | Интерфейс слушателя        | Обработчики события                       |
-| ---------------------------------- | -------------------------- | ----------------------------------------- |
-| ActionEvent                        | ActionListener             | actionPerformed(ActionEvent e)            |
-| AdjustmentEvent                    | AdjustmentListener         | adjustmentValueChanged(AdjustmentEvent e) |
-| ComponentEvent                     | ComponentListener          | componentResized(ComponentEvent e)        |
-| componentMoved(ComponentEvent e)   |                            |                                           |
-| componentShown(ComponentEvent e)   |                            |                                           |
-| componentHidden(ComponentEvent e)  |                            |                                           |
-| ContainerEvent                     | ContainerListener          | componentAdded(ContainerEvent e)          |
-| componentRemoved(ContainerEvent e) |                            |                                           |
-| FocusEvent                         | FocusListener              | focusGained(FocusEvent e)                 |
-| focusLost(FocusEvent e)            |                            |                                           |
-| ItemEvent                          | ItemListener               | itemStateChanged(ItemEvent e)             |
-| KeyEvent                           | KeyListener                | keyPressed(KeyEvent e)                    |
-| keyReleased(KeyEvent e)            |                            |                                           |
-| keyTyped(KeyEvent e)               |                            |                                           |
-| MouseEvent                         | MouseListener              | mouseClicked(MouseEvent e)                |
-| mousePressed(MouseEvent e)         |                            |                                           |
-| mouseReleased(MouseEvent e)        |                            |                                           |
-| mouseEntered(MouseEvent e)         |                            |                                           |
-| mouseExited(MouseEvent e)          |                            |                                           |
-| MouseMotionListener                | mouseDragged(MouseEvent e) |                                           |
-| mouseMoved(MouseEvent e)           |                            |                                           |
-| TextEvent                          | TextListener               | textValueChanged(TextEvent e)             |
-| WindowEvent                        | WindowListener             | windowOpened(WindowEvent e)               |
-| windowClosing(WindowEvent e)       |                            |                                           |
-| windowClosed(WindowEvent e)        |                            |                                           |
-| windowIconified(WindowEvent e)     |                            |                                           |
-| windowDeiconified(WindowEvent e)   |                            |                                           |
-| windowActivated(WindowEvent e)     |                            |                                           |
+| Класс события        | Интерфейс слушателя        | Обработчики события                                                    |
+| -------------------- | -------------------------- | ---------------------------------------------------------------------- |
+| ActionEvent          | ActionListener             | actionPerformed(ActionEvent e)                                         |
+| AdjustmentEvent      | AdjustmentListener         | adjustmentValueChanged(AdjustmentEvent e)                              |
+| ComponentEvent       | ComponentListener          | componentResized(ComponentEvent e)                                     |
+|                      |                            | componentMoved(ComponentEvent e)                                       |
+|                      |                            | componentShown(ComponentEvent e)                                       |
+|                      |                            | componentHidden(ComponentEvent e)                                      |
+| ContainerEvent       | ContainerListener          | componentAdded(ContainerEvent e)                                       |
+|                      |                            | componentRemoved(ContainerEvent e)                                     |
+| FocusEvent           | FocusListener              | focusGained(FocusEvent e)                                              |
+|                      |                            | focusLost(FocusEvent e)                                                |
+| ItemEvent            | ItemListener               | itemStateChanged(ItemEvent e)                                          |
+| [KeyEvent](KeyEvent) | [KeyListener](KeyListener) | [[KeyListener#Длинные одновременные нажатия\|keyPressed(KeyEvent e)]]  |
+|                      |                            | [[KeyListener#Длинные одновременные нажатия\|keyReleased(KeyEvent e)]] |
+|                      |                            | [[KeyListener#Короткие нажатия\|keyTyped(KeyEvent e)]]                 |
+| MouseEvent           | MouseListener              | mouseClicked(MouseEvent e)                                             |
+|                      |                            | mousePressed(MouseEvent e)                                             |
+|                      |                            | mouseReleased(MouseEvent e)                                            |
+|                      |                            | mouseEntered(MouseEvent e)                                             |
+|                      |                            | mouseExited(MouseEvent e)                                              |
+| MouseMotionListener  |                            | mouseDragged(MouseEvent e)                                             |
+|                      |                            | mouseMoved(MouseEvent e)                                               |
+| TextEvent            | TextListener               | textValueChanged(TextEvent e)                                          |
+| WindowEvent          | WindowListener             | windowOpened(WindowEvent e)                                            |
+|                      |                            | windowClosing(WindowEvent e)                                           |
+|                      |                            | windowClosed(WindowEvent e)                                            |
+|                      |                            | windowIconified(WindowEvent e)                                         |
+|                      |                            | windowDeiconified(WindowEvent e)                                       |
+|                      |                            | windowActivated(WindowEvent e)                                         |
 Корнем иерархии классов событий является суперкласс **_EventObject_** из пакета _java.util_. Данный класс содержит два метода: _getSource()_, возвращающий источник событий, и _toString()_, возвращающий строчный эквивалент события. Чтобы узнать, в каком объекте произошло событие, нужно вызвать метод getSource(), возвращающий значение типа [Object](Object). Следовательно, один и тот же слушатель можно подключить к разным источникам.
 
 Для события ActionEvent регистрация проводится по форме ActionListener. Имена в ней связаны соответствующим образом, а для каждого события формы ABCEvent ассоциированным слушателем является ABCListener, где вместо ABC указывается конкретный тип события.

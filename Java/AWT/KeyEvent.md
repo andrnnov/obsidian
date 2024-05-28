@@ -12,407 +12,207 @@
 
 ### Поле
 
-Ниже приведены поля для java.awt.InputEvent класс -
-
-static char CHAR_UNDEFINED - События KEY_PRESSED и KEY_RELEASED, которые не сопоставляются с допустимым символом Unicode, используют его для значения keyChar.
-
-static int KEY_FIRST - Первое число в диапазоне идентификаторов, используемых для ключевых событий.
-
-static int KEY_LAST - Последнее число в диапазоне идентификаторов, используемых для ключевых событий.
-
-static int KEY_LOCATION_LEFT - Константа, указывающая, что нажатая или отпущенная клавиша находится в левом месте клавиши (для этой клавиши может быть более одного места).
-
-static int KEY_LOCATION_NUMPAD - Константа, указывающая, что ключевое событие возникло на цифровой клавиатуре или с виртуальной клавиши, соответствующей цифровой клавиатуре.
-
-static int KEY_LOCATION_RIGHT - Константа, указывающая, что нажатая или отпущенная клавиша находится в правильном месте клавиши (для этой клавиши может быть несколько возможных мест).
-
-static int KEY_LOCATION_STANDARD - Константа, указывающая, что нажатая или отпущенная клавиша не распознается как левая или правая версия клавиши и не была создана на цифровой клавиатуре (или возникла не с виртуальной клавиши, соответствующей цифровой клавиатуре).
-
-static int KEY_LOCATION_UNKNOWN - Константа, указывающая, что keyLocation не определено или не имеет значения.
-
-static int KEY_PRESSED - Событие «нажата клавиша».
-
-static int KEY_RELEASED - Событие «ключ отпущен».
-
-static int KEY_TYPED - Событие "нажата клавиша".
-
-static int VK_0 - VK_0 - VK_9 такие же, как ASCII от '0' до '9' (0 × 30 - 0 × 39)
-
-static int VK_1
-
-static int VK_2
-
-static int VK_3
-
-static int VK_4
-
-static int VK_5
-
-static int VK_6
-
-static int VK_7
-
-static int VK_8
-
-static int VK_9
-
-static int VK_A - VK_A - VK_Z такие же, как ASCII от 'A' до 'Z' (0 × 41 - 0 × 5A)
-
-static int VK_ACCEPT - Константа для функциональной клавиши Accept или Commit.
-
-static int VK_ADD
-
-static int VK_AGAIN
-
-static int VK_ALL_CANDIDATES - Константа для функциональной клавиши «Все кандидаты».
-
-static int VK_ALPHANUMERIC - Константа для буквенно-цифровой функциональной клавиши.
-
-static int VK_ALT
-
-static int VK_ALT_GRAPH - Константа для функциональной клавиши AltGraph.
-
-static int VK_AMPERSAND
-
-static int VK_ASTERISK
-
-static int VK_AT - Константа для клавиши "@".
-
-static int VK_B
-
-static int VK_BACK_QUOTE
-
-static int VK_BACK_SLASH - Константа для обратной косой черты "\"
-
-static int VK_BACK_SPACE
-
-static int VK_BEGIN - Константа для ключа Begin.
-
-static int VK_BRACELEFT
-
-static int VK_BRACERIGHT
-
-static int VK_C
-
-static int VK_CANCEL
-
-static int VK_CAPS_LOCK
-
-static int VK_CIRCUMFLEX - Константа для клавиши «^».
-
-static int VK_CLEAR
-
-static int VK_CLOSE_BRACKET - Константа для клавиши закрывающей скобки "]"
-
-static int VK_CODE_INPUT - Константа для функциональной клавиши ввода кода.
-
-static int VK_COLON - Константа для клавиши ":".
-
-static int VK_COMMA - Константа для клавиши запятой, ","
-
-static int VK_COMPOSE - Константа для функциональной клавиши Compose.
-
-static int VK_CONTEXT_MENU - Константа для клавиши контекстного меню Microsoft Windows.
-
-static int VK_CONTROL
-
-static int VK_CONVERT - Константа для функциональной клавиши Convert.
-
-static int VK_COPY
-
-static int VK_CUT
-
-static int VK_D
-
-static int VK_DEAD_ABOVEDOT
-
-static int VK_DEAD_ABOVERING
-
-static int VK_DEAD_ACUTE
-
-static int VK_DEAD_BREVE
-
-static int VK_DEAD_CARON
-
-static int VK_DEAD_CEDILLA
-
-static int VK_DEAD_CIRCUMFLEX
-
-static int VK_DEAD_DIAERESIS
-
-static int VK_DEAD_DOUBLEACUTE
-
-static int VK_DEAD_GRAVE
-
-static int VK_DEAD_IOTA
-
-static int VK_DEAD_MACRON
-
-static int VK_DEAD_OGONEK
-
-static int VK_DEAD_SEMIVOICED_SOUND
-
-static int VK_DEAD_TILDE
-
-static int VK_DEAD_VOICED_SOUND
-
-static int VK_DECIMAL
-
-static int VK_DELETE
-
-static int VK_DIVIDE
-
-static int VK_DOLLAR - Константа для клавиши «$».
-
-static int VK_DOWN - Константа для клавиши со стрелкой вниз без цифровой клавиатуры.
-
-static int VK_E
-
-static int VK_END
-
-static int VK_ENTER
-
-static int VK_EQUALS - Константа для ключа равенства, "="
-
-static int VK_ESCAPE
-
-static int VK_EURO_SIGN - Константа для ключа знака валюты евро.
-
-static int VK_EXCLAMATION_MARK- Постоянный знак "!" ключ.
-
-static int VK_F
-
-static int VK_F1 - Константа для функциональной клавиши F1.
-
-static int VK_F10 - Константа для функциональной клавиши F10.
-
-static int VK_F11 - Константа для функциональной клавиши F11.
-
-static int VK_F12 - Константа для функциональной клавиши F12.
-
-static int VK_F13 - Константа для функциональной клавиши F13.
-
-static int VK_F14 - Константа для функциональной клавиши F14.
-
-static int VK_F15 - Константа для функциональной клавиши F15.
-
-static int VK_F16 - Константа для функциональной клавиши F16.
-
-static int VK_F17 - Константа для функциональной клавиши F17.
-
-static int VK_F18 - Константа для функциональной клавиши F18.
-
-static int VK_F19 - Константа для функциональной клавиши F19.
-
-static int VK_F2 - Константа для функциональной клавиши F2.
-
-static int VK_F20 - Константа для функциональной клавиши F20.
-
-static int VK_F21 - Константа для функциональной клавиши F21.
-
-static int VK_F22 - Константа для функциональной клавиши F22.
-
-static int VK_F23 - Константа для функциональной клавиши F23.
-
-static int VK_F24 - Константа для функциональной клавиши F24.
-
-static int VK_F3 - Константа для функциональной клавиши F3.
-
-static int VK_F4 - Константа для функциональной клавиши F4.
-
-static int VK_F5 - Константа для функциональной клавиши F5.
-
-static int VK_F6 - Константа для функциональной клавиши F6.
-
-static int VK_F7 - Константа для функциональной клавиши F7.
-
-static int VK_F8 - Константа для функциональной клавиши F8.
-
-static int VK_F9 - Константа для функциональной клавиши F9.
-
-static int VK_FINAL
-
-static int VK_FIND
-
-static int VK_FULL_WIDTH - Константа для функциональной клавиши полноширинных символов.
-
-static int VK_G
-
-static int VK_GREATER
-
-static int VK_H
-
-static int VK_HALF_WIDTH - Константа для функциональной клавиши символов половинной ширины.
-
-static int VK_HELP
-
-static int VK_HIRAGANA - Константа для функциональной клавиши хирагана.
-
-static int VK_HOME
-
-static int VK_I
-
-static int VK_INPUT_METHOD_ON_OFF - Константа для кнопки включения / выключения метода ввода.
-
-static int VK_INSERT
-
-static int VK_INVERTED_EXCLAMATION_MARK - Константа для клавиши с перевернутым восклицательным знаком.
-
-static int VK_J
-
-static int VK_JAPANESE_HIRAGANA - Константа для функциональной клавиши японского языка хирагана.
-
-static int VK_JAPANESE_KATAKANA - Константа для функциональной клавиши японско-катакана.
-
-static int VK_JAPANESE_ROMAN - Константа для функциональной клавиши японско-римского алфавита.
-
-static int VK_K
-
-static int VK_KANA
-
-static int VK_KANA_LOCK - Константа для блокировки функциональной клавиши Кана.
-
-static int VK_KANJI
-
-static int VK_KATAKANA - Константа для функциональной клавиши Катакана.
-
-static int VK_KP_DOWN - Константа для клавиши со стрелкой вниз на цифровой клавиатуре.
-
-static int VK_KP_LEFT - Константа для клавиши со стрелкой влево на цифровой клавиатуре.
-
-static int VK_KP_RIGHT - Константа для клавиши со стрелкой вправо цифровой клавиатуры.
-
-static int VK_KP_UP - Константа для клавиши со стрелкой вверх на цифровой клавиатуре.
-
-static int VK_L
-
-static int VK_LEFT - Константа для клавиши со стрелкой влево без цифровой клавиатуры.
-
-static int VK_LEFT_PARENTHESIS - Константа для клавиши "(".
-
-static int VK_LESS
-
-static int VK_M
-
-static int VK_META
-
-static int VK_MINUS - Константа для клавиши «минус», «-»
-
-static int VK_MODECHANGE
-
-static int VK_MULTIPLY
-
-static int VK_N
-
-static int VK_NONCONVERT - Константа для функциональной клавиши "Не преобразовывать".
-
-static int VK_NUM_LOCK
-
-static int VK_NUMBER_SIGN - Константа для клавиши "#".
-
-static int VK_NUMPAD0
-
-static int VK_NUMPAD1
-
-static int VK_NUMPAD2
-
-static int VK_NUMPAD3
-
-static int VK_NUMPAD4
-
-static int VK_NUMPAD5
-
-static int VK_NUMPAD6
-
-static int VK_NUMPAD7
-
-static int VK_NUMPAD8
-
-static int VK_NUMPAD9
-
-static int VK_O
-
-static int VK_OPEN_BRACKET - Константа для ключа открытой скобки "["
-
-static int VK_P
-
-static int VK_PAGE_DOWN
-
-static int VK_PAGE_UP
-
-static int VK_PASTE
-
-static int VK_PAUSE
-
-static int VK_PERIOD - Константа для ключа периода "."
-
-static int VK_PLUS - Константа для клавиши «+».
-
-static int VK_PREVIOUS_CANDIDATE - Константа для функциональной клавиши Предыдущий кандидат.
-
-static int VK_PRINTSCREEN
-
-static int VK_PROPS
-
-static int VK_Q
-
-static int VK_QUOTE
-
-static int VK_QUOTEDBL
-
-static int VK_R
-
-static int VK_RIGHT - Константа для клавиши со стрелкой вправо без цифровой клавиатуры.
-
-static int VK_RIGHT_PARENTHESIS - Константа для клавиши ")".
-
-static int VK_ROMAN_CHARACTERS - Константа для функциональной клавиши латинских букв.
-
-static int VK_S
-
-static int VK_SCROLL_LOCK
-
-static int VK_SEMICOLON - Константа для ключа с точкой с запятой ";"
-
-static int VK_SEPARATER - Эта константа устарела и включена только для обратной совместимости.
-
-static int VK_SEPARATOR - Константа для клавиши Numpad Separator.
-
-static int VK_SHIFT
-
-static int VK_SLASH - Константа для клавиши косой черты "/"
-
-static int VK_SPACE
-
-static int VK_STOP
-
-static int VK_SUBTRACT
-
-static int VK_T
-
-static int VK_TAB
-
-static int VK_U
-
-static int VK_UNDEFINED - Это значение используется, чтобы указать, что keyCode неизвестен.
-
-static int VK_UNDERSCORE - Константа для клавиши «_».
-
-static int VK_UNDO
-
-static int VK_UP - Константа для клавиши со стрелкой вверх без цифровой клавиатуры.
-
-static int VK_V
-
-static int VK_W
-
-static int VK_WINDOWS - Константа для клавиши Microsoft Windows "Windows".
-
-static int VK_X
-
-static int VK_Y
-
-static int VK_Z
+Ниже приведены поля для класса java.awt.InputEvent:
+- static char CHAR_UNDEFINED - События KEY_PRESSED и KEY_RELEASED, которые не сопоставляются с допустимым символом Unicode, используют его для значения keyChar.
+- static int KEY_FIRST - Первое число в диапазоне идентификаторов, используемых для ключевых событий.
+- static int KEY_LAST - Последнее число в диапазоне идентификаторов, используемых для ключевых событий.
+- static int KEY_LOCATION_LEFT - Константа, указывающая, что нажатая или отпущенная клавиша находится в левом месте клавиши (для этой клавиши может быть более одного места).
+- static int KEY_LOCATION_NUMPAD - Константа, указывающая, что ключевое событие возникло на цифровой клавиатуре или с виртуальной клавиши, соответствующей цифровой клавиатуре.
+- static int KEY_LOCATION_RIGHT - Константа, указывающая, что нажатая или отпущенная клавиша находится в правильном месте клавиши (для этой клавиши может быть несколько возможных мест).
+- static int KEY_LOCATION_STANDARD - Константа, указывающая, что нажатая или отпущенная клавиша не распознается как левая или правая версия клавиши и не была создана на цифровой клавиатуре (или возникла не с виртуальной клавиши, соответствующей цифровой клавиатуре).
+- static int KEY_LOCATION_UNKNOWN - Константа, указывающая, что keyLocation не определено или не имеет значения.
+- static int KEY_PRESSED - Событие «нажата клавиша».
+- static int KEY_RELEASED - Событие «ключ отпущен».
+- static int KEY_TYPED - Событие "нажата клавиша".
+- static int VK_0 - VK_0 - VK_9 такие же, как ASCII от '0' до '9' (0 × 30 - 0 × 39)
+- static int VK_1
+- static int VK_2
+- static int VK_3
+- static int VK_4
+- static int VK_5
+- static int VK_6
+- static int VK_7
+- static int VK_8
+- static int VK_9
+- static int VK_A - VK_A - VK_Z такие же, как ASCII от 'A' до 'Z' (0 × 41 - 0 × 5A)
+- static int VK_ACCEPT - Константа для функциональной клавиши Accept или Commit.
+- static int VK_ADD
+- static int VK_AGAIN
+- static int VK_ALL_CANDIDATES - Константа для функциональной клавиши «Все кандидаты».
+- static int VK_ALPHANUMERIC - Константа для буквенно-цифровой функциональной клавиши.
+- static int VK_ALT
+- static int VK_ALT_GRAPH - Константа для функциональной клавиши AltGraph.
+- static int VK_AMPERSAND
+- static int VK_ASTERISK
+- static int VK_AT - Константа для клавиши "@".
+- static int VK_B
+- static int VK_BACK_QUOTE
+- static int VK_BACK_SLASH - Константа для обратной косой черты "\"
+- static int VK_BACK_SPACE
+- static int VK_BEGIN - Константа для ключа Begin.
+- static int VK_BRACELEFT
+- static int VK_BRACERIGHT
+- static int VK_C
+- static int VK_CANCEL
+- static int VK_CAPS_LOCK
+- static int VK_CIRCUMFLEX - Константа для клавиши «^».
+- static int VK_CLEAR
+- static int VK_CLOSE_BRACKET - Константа для клавиши закрывающей скобки "]"
+- static int VK_CODE_INPUT - Константа для функциональной клавиши ввода кода.
+- static int VK_COLON - Константа для клавиши ":".
+- static int VK_COMMA - Константа для клавиши запятой, ","
+- static int VK_COMPOSE - Константа для функциональной клавиши Compose.
+- static int VK_CONTEXT_MENU - Константа для клавиши контекстного меню Microsoft Windows.
+- static int VK_CONTROL
+- static int VK_CONVERT - Константа для функциональной клавиши Convert.
+- static int VK_COPY
+- static int VK_CUT
+- static int VK_D
+- static int VK_DEAD_ABOVEDOT
+- static int VK_DEAD_ABOVERING
+- static int VK_DEAD_ACUTE
+- static int VK_DEAD_BREVE
+- static int VK_DEAD_CARON
+- static int VK_DEAD_CEDILLA
+- static int VK_DEAD_CIRCUMFLEX
+- static int VK_DEAD_DIAERESIS
+- static int VK_DEAD_DOUBLEACUTE
+- static int VK_DEAD_GRAVE
+- static int VK_DEAD_IOTA
+- static int VK_DEAD_MACRON
+- static int VK_DEAD_OGONEK
+- static int VK_DEAD_SEMIVOICED_SOUND
+- static int VK_DEAD_TILDE
+- static int VK_DEAD_VOICED_SOUND
+- static int VK_DECIMAL
+- static int VK_DELETE
+- static int VK_DIVIDE
+- static int VK_DOLLAR - Константа для клавиши «$».
+- static int VK_DOWN - Константа для клавиши со стрелкой вниз без цифровой клавиатуры.
+- static int VK_E
+- static int VK_END
+- static int VK_ENTER
+- static int VK_EQUALS - Константа для ключа равенства, "="
+- static int VK_ESCAPE
+- static int VK_EURO_SIGN - Константа для ключа знака валюты евро.
+- static int VK_EXCLAMATION_MARK- Постоянный знак "!" ключ.
+- static int VK_F
+- static int VK_F1 - Константа для функциональной клавиши F1.
+- static int VK_F10 - Константа для функциональной клавиши F10.
+- static int VK_F11 - Константа для функциональной клавиши F11.
+- static int VK_F12 - Константа для функциональной клавиши F12.
+- static int VK_F13 - Константа для функциональной клавиши F13.
+- static int VK_F14 - Константа для функциональной клавиши F14.
+- static int VK_F15 - Константа для функциональной клавиши F15.
+- static int VK_F16 - Константа для функциональной клавиши F16.
+- static int VK_F17 - Константа для функциональной клавиши F17.
+- static int VK_F18 - Константа для функциональной клавиши F18.
+- static int VK_F19 - Константа для функциональной клавиши F19.
+- static int VK_F2 - Константа для функциональной клавиши F2.
+- static int VK_F20 - Константа для функциональной клавиши F20.
+- static int VK_F21 - Константа для функциональной клавиши F21.
+- static int VK_F22 - Константа для функциональной клавиши F22.
+- static int VK_F23 - Константа для функциональной клавиши F23.
+- static int VK_F24 - Константа для функциональной клавиши F24.
+- static int VK_F3 - Константа для функциональной клавиши F3.
+- static int VK_F4 - Константа для функциональной клавиши F4.
+- static int VK_F5 - Константа для функциональной клавиши F5.
+- static int VK_F6 - Константа для функциональной клавиши F6.
+- static int VK_F7 - Константа для функциональной клавиши F7.
+- static int VK_F8 - Константа для функциональной клавиши F8.
+- static int VK_F9 - Константа для функциональной клавиши F9.
+- static int VK_FINAL
+- static int VK_FIND
+- static int VK_FULL_WIDTH - Константа для функциональной клавиши полноширинных символов.
+- static int VK_G
+- static int VK_GREATER
+- static int VK_H
+- static int VK_HALF_WIDTH - Константа для функциональной клавиши символов половинной ширины.
+- static int VK_HELP
+- static int VK_HIRAGANA - Константа для функциональной клавиши хирагана.
+- static int VK_HOME
+- static int VK_I
+- static int VK_INPUT_METHOD_ON_OFF - Константа для кнопки включения / выключения метода ввода.
+- static int VK_INSERT
+- static int VK_INVERTED_EXCLAMATION_MARK - Константа для клавиши с перевернутым восклицательным знаком.
+- static int VK_J
+- static int VK_JAPANESE_HIRAGANA - Константа для функциональной клавиши японского языка хирагана.
+- static int VK_JAPANESE_KATAKANA - Константа для функциональной клавиши японско-катакана.
+- static int VK_JAPANESE_ROMAN - Константа для функциональной клавиши японско-римского алфавита.
+- static int VK_K
+- static int VK_KANA
+- static int VK_KANA_LOCK - Константа для блокировки функциональной клавиши Кана.
+- static int VK_KANJI
+- static int VK_KATAKANA - Константа для функциональной клавиши Катакана.
+- static int VK_KP_DOWN - Константа для клавиши со стрелкой вниз на цифровой клавиатуре.
+- static int VK_KP_LEFT - Константа для клавиши со стрелкой влево на цифровой клавиатуре.
+- static int VK_KP_RIGHT - Константа для клавиши со стрелкой вправо цифровой клавиатуры.
+- static int VK_KP_UP - Константа для клавиши со стрелкой вверх на цифровой клавиатуре.
+- static int VK_L
+- static int VK_LEFT - Константа для клавиши со стрелкой влево без цифровой клавиатуры.
+- static int VK_LEFT_PARENTHESIS - Константа для клавиши "(".
+- static int VK_LESS
+- static int VK_M
+- static int VK_META
+- static int VK_MINUS - Константа для клавиши «минус», «-»
+- static int VK_MODECHANGE
+- static int VK_MULTIPLY
+- static int VK_N
+- static int VK_NONCONVERT - Константа для функциональной клавиши "Не преобразовывать".
+- static int VK_NUM_LOCK
+- static int VK_NUMBER_SIGN - Константа для клавиши "#".
+- static int VK_NUMPAD0
+- static int VK_NUMPAD1
+- static int VK_NUMPAD2
+- static int VK_NUMPAD3
+- static int VK_NUMPAD4
+- static int VK_NUMPAD5
+- static int VK_NUMPAD6
+- static int VK_NUMPAD7
+- static int VK_NUMPAD8
+- static int VK_NUMPAD9
+- static int VK_O
+- static int VK_OPEN_BRACKET - Константа для ключа открытой скобки "["
+- static int VK_P
+- static int VK_PAGE_DOWN
+- static int VK_PAGE_UP
+- static int VK_PASTE
+- static int VK_PAUSE
+- static int VK_PERIOD - Константа для ключа периода "."
+- static int VK_PLUS - Константа для клавиши «+».
+- static int VK_PREVIOUS_CANDIDATE - Константа для функциональной клавиши Предыдущий кандидат.
+- static int VK_PRINTSCREEN
+- static int VK_PROPS
+- static int VK_Q
+- static int VK_QUOTE
+- static int VK_QUOTEDBL
+- static int VK_R
+- static int VK_RIGHT - Константа для клавиши со стрелкой вправо без цифровой клавиатуры.
+- static int VK_RIGHT_PARENTHESIS - Константа для клавиши ")".
+- static int VK_ROMAN_CHARACTERS - Константа для функциональной клавиши латинских букв.
+- static int VK_S
+- static int VK_SCROLL_LOCK
+- static int VK_SEMICOLON - Константа для ключа с точкой с запятой ";"
+- static int VK_SEPARATER - Эта константа устарела и включена только для обратной совместимости.
+- static int VK_SEPARATOR - Константа для клавиши Numpad Separator.
+- static int VK_SHIFT
+- static int VK_SLASH - Константа для клавиши косой черты "/"
+- static int VK_SPACE
+- static int VK_STOP
+- static int VK_SUBTRACT
+- static int VK_T
+- static int VK_TAB
+- static int VK_U
+- static int VK_UNDEFINED - Это значение используется, чтобы указать, что keyCode неизвестен.
+- static int VK_UNDERSCORE - Константа для клавиши «_».
+- static int VK_UNDO
+- static int VK_UP - Константа для клавиши со стрелкой вверх без цифровой клавиатуры.
+- static int VK_V
+- static int VK_W
+- static int VK_WINDOWS - Константа для клавиши Microsoft Windows "Windows".
+- static int VK_X
+- static int VK_Y
+- static int VK_Z
 
 ### Конструкторы классов
 

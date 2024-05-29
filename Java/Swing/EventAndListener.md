@@ -20,36 +20,36 @@
 
 В таблице приведены определенные в пакете java.awt.event типы событий, соответствующие им слушатели, а также методы, определенные в каждом интерфейсе слушателя.
 
-| Класс события            | Интерфейс слушателя                        | Обработчики события                                                    |
-| ------------------------ | ------------------------------------------ | ---------------------------------------------------------------------- |
-| ActionEvent              | ActionListener                             | actionPerformed(ActionEvent e)                                         |
-| AdjustmentEvent          | AdjustmentListener                         | adjustmentValueChanged(AdjustmentEvent e)                              |
-| ComponentEvent           | ComponentListener                          | componentResized(ComponentEvent e)                                     |
-|                          |                                            | componentMoved(ComponentEvent e)                                       |
-|                          |                                            | componentShown(ComponentEvent e)                                       |
-|                          |                                            | componentHidden(ComponentEvent e)                                      |
-| ContainerEvent           | ContainerListener                          | componentAdded(ContainerEvent e)                                       |
-|                          |                                            | componentRemoved(ContainerEvent e)                                     |
-| FocusEvent               | FocusListener                              | focusGained(FocusEvent e)                                              |
-|                          |                                            | focusLost(FocusEvent e)                                                |
-| ItemEvent                | ItemListener                               | itemStateChanged(ItemEvent e)                                          |
-| [KeyEvent](KeyEvent)     | [KeyListener](KeyListener)                 | [[KeyListener#Длинные одновременные нажатия\|keyPressed(KeyEvent e)]]  |
-|                          |                                            | [[KeyListener#Длинные одновременные нажатия\|keyReleased(KeyEvent e)]] |
-|                          |                                            | [[KeyListener#Короткие нажатия\|keyTyped(KeyEvent e)]]                 |
-| [MouseEvent](MouseEvent) | [MouseListener](MouseListener)             | [[MouseListener#Методы интерфейса\|mouseClicked(MouseEvent e)]]        |
-|                          |                                            | [[MouseListener#Методы интерфейса\|mousePressed(MouseEvent e)]]        |
-|                          |                                            | [[MouseListener#Методы интерфейса\|mouseReleased(MouseEvent e)]]       |
-|                          |                                            | [[MouseListener#Методы интерфейса\|mouseEntered(MouseEvent e)]]        |
-|                          |                                            | [[MouseListener#Методы интерфейса\|mouseExited(MouseEvent e)]]         |
-|                          | [MouseMotionListener](MouseMotionListener) | [[MouseMotionListener#Методы интерфейса\|mouseDragged(MouseEvent e)]]  |
-|                          |                                            | [[MouseMotionListener#Методы интерфейса\|mouseMoved(MouseEvent e)]]    |
-| TextEvent                | TextListener                               | textValueChanged(TextEvent e)                                          |
-| WindowEvent              | WindowListener                             | windowOpened(WindowEvent e)                                            |
-|                          |                                            | windowClosing(WindowEvent e)                                           |
-|                          |                                            | windowClosed(WindowEvent e)                                            |
-|                          |                                            | windowIconified(WindowEvent e)                                         |
-|                          |                                            | windowDeiconified(WindowEvent e)                                       |
-|                          |                                            | windowActivated(WindowEvent e)                                         |
+| Класс события              | Интерфейс слушателя                        | Обработчики события                                                                   |
+| -------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------- |
+| ActionEvent                | ActionListener                             | actionPerformed(ActionEvent e)                                                        |
+| AdjustmentEvent            | AdjustmentListener                         | adjustmentValueChanged(AdjustmentEvent e)                                             |
+| ComponentEvent             | ComponentListener                          | componentResized(ComponentEvent e)                                                    |
+|                            |                                            | componentMoved(ComponentEvent e)                                                      |
+|                            |                                            | componentShown(ComponentEvent e)                                                      |
+|                            |                                            | componentHidden(ComponentEvent e)                                                     |
+| ContainerEvent             | ContainerListener                          | componentAdded(ContainerEvent e)                                                      |
+|                            |                                            | componentRemoved(ContainerEvent e)                                                    |
+| FocusEvent                 | FocusListener                              | focusGained(FocusEvent e)                                                             |
+|                            |                                            | focusLost(FocusEvent e)                                                               |
+| ItemEvent                  | ItemListener                               | itemStateChanged(ItemEvent e)                                                         |
+| [KeyEvent](KeyEvent)       | [KeyListener](KeyListener)                 | [[KeyListener#Длинные одновременные нажатия\|keyPressed(KeyEvent e)]]                 |
+|                            |                                            | [[KeyListener#Длинные одновременные нажатия\|keyReleased(KeyEvent e)]]                |
+|                            |                                            | [[KeyListener#Короткие нажатия\|keyTyped(KeyEvent e)]]                                |
+| [MouseEvent](MouseEvent)   | [MouseListener](MouseListener)             | [[MouseListener#Методы интерфейса\|mouseClicked(MouseEvent e)]]                       |
+|                            |                                            | [[MouseListener#Методы интерфейса\|mousePressed(MouseEvent e)]]                       |
+|                            |                                            | [[MouseListener#Методы интерфейса\|mouseReleased(MouseEvent e)]]                      |
+|                            |                                            | [[MouseListener#Методы интерфейса\|mouseEntered(MouseEvent e)]]                       |
+|                            |                                            | [[MouseListener#Методы интерфейса\|mouseExited(MouseEvent e)]]                        |
+|                            | [MouseMotionListener](MouseMotionListener) | [[MouseMotionListener#Методы интерфейса\|mouseDragged(MouseEvent e)]]                 |
+|                            |                                            | [[MouseMotionListener#Методы интерфейса\|mouseMoved(MouseEvent e)]]                   |
+| TextEvent                  | TextListener                               | textValueChanged(TextEvent e)                                                         |
+| [WindowEvent](WindowEvent.md) | [WindowListener](WindowListener)           | [[WindowListener#Методы интерфейса WindowListener\|windowOpened(WindowEvent e)]]      |
+|                            |                                            | [[WindowListener#Методы интерфейса WindowListener\|windowClosing(WindowEvent e)]]     |
+|                            |                                            | [[WindowListener#Методы интерфейса WindowListener\|windowClosed(WindowEvent e)]]      |
+|                            |                                            | [[WindowListener#Методы интерфейса WindowListener\|windowIconified(WindowEvent e)]]   |
+|                            |                                            | [[WindowListener#Методы интерфейса WindowListener\|windowDeiconified(WindowEvent e)]] |
+|                            |                                            | [[WindowListener#Методы интерфейса WindowListener\|windowActivated(WindowEvent e)]]   |
 Корнем иерархии классов событий является суперкласс **_EventObject_** из пакета _java.util_. Данный класс содержит два метода: _getSource()_, возвращающий источник событий, и _toString()_, возвращающий строчный эквивалент события. Чтобы узнать, в каком объекте произошло событие, нужно вызвать метод getSource(), возвращающий значение типа [Object](Object). Следовательно, один и тот же слушатель можно подключить к разным источникам.
 
 Для события ActionEvent регистрация проводится по форме ActionListener. Имена в ней связаны соответствующим образом, а для каждого события формы ABCEvent ассоциированным слушателем является ABCListener, где вместо ABC указывается конкретный тип события.
@@ -213,24 +213,24 @@ class WinClosing extends WindowAdapter {
 
 В следующей таблице приведен список визуальных компонентов пакета [AWT](AWT) и событий, которые они порождают.
 
-| Компонент              | Событие                                                                                                                                                                                             | Описание                                                                                              |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Button                 | ActionEvent                                                                                                                                                                                         | Пользователь нажал кнопку                                                                             |
-| CheckBox               | ItemEvent                                                                                                                                                                                           | Пользователь установил или сбросил флажок                                                             |
-| CheckBoxMenuItem       | ItemEvent                                                                                                                                                                                           | Пользователь установил или сбросил флажок рядом с пунктом меню                                        |
-| Choice                 | ItemEvent                                                                                                                                                                                           | Пользователь выбрал элемент списка или отменил его выбор                                              |
-| [Component](Component) | ComponentEvent                                                                                                                                                                                      | Элемент либо перемещен, либо он стал скрытым, либо видимым                                            |
-| FocusEvent             | Элемент получил или потерял фокус ввода                                                                                                                                                             |                                                                                                       |
-| KeyEvent               | Пользователь нажал или отпустил клавишу                                                                                                                                                             |                                                                                                       |
-| MouseEvent             | Пользователь нажал или отпустил кнопку мыши, либо курсор мыши вошел или покинул область, занимаемую элементом, либо пользователь просто переместил мышь или переместил мышь при нажатой кнопке мыши |                                                                                                       |
-| Container              | ContainerEvent                                                                                                                                                                                      | Элемент добавлен в контейнер или удален из него                                                       |
-| List                   | ActionEvent                                                                                                                                                                                         | Пользователь выполнил двойной щелчок мыши на элементе списка                                          |
-| ItemEvent              | Пользователь выбрал элемент списка или отменил выбор                                                                                                                                                |                                                                                                       |
-| MenuItem               | ActionEvent                                                                                                                                                                                         | Пользователь выбрал пункт меню                                                                        |
-| Scrollbar              | AdjustmentEvent                                                                                                                                                                                     | Пользователь осуществил прокрутку                                                                     |
-| TextComponent          | TextEvent                                                                                                                                                                                           | Пользователь внес изменения в текст элемента                                                          |
-| TextField              | ActionEvent                                                                                                                                                                                         | Пользователь закончил редактирование текста элемента                                                  |
-| Window                 | WindowEvent                                                                                                                                                                                         | Окно было открыто, закрыто, представлено в виде пиктограммы, восстановлено или требует восстановления |
+| Компонент              | Событие                    | Описание                                                                                                                                                                                            |
+| ---------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Button                 | ActionEvent                | Пользователь нажал кнопку                                                                                                                                                                           |
+| CheckBox               | ItemEvent                  | Пользователь установил или сбросил флажок                                                                                                                                                           |
+| CheckBoxMenuItem       | ItemEvent                  | Пользователь установил или сбросил флажок рядом с пунктом меню                                                                                                                                      |
+| Choice                 | ItemEvent                  | Пользователь выбрал элемент списка или отменил его выбор                                                                                                                                            |
+| [Component](Component) | ComponentEvent             | Элемент либо перемещен, либо он стал скрытым, либо видимым                                                                                                                                          |
+|                        | FocusEvent                 | Элемент получил или потерял фокус ввода                                                                                                                                                             |
+|                        | [KeyEvent](KeyEvent)       | Пользователь нажал или отпустил клавишу                                                                                                                                                             |
+|                        | [MouseEvent](MouseEvent)   | Пользователь нажал или отпустил кнопку мыши, либо курсор мыши вошел или покинул область, занимаемую элементом, либо пользователь просто переместил мышь или переместил мышь при нажатой кнопке мыши |
+| Container              | ContainerEvent             | Элемент добавлен в контейнер или удален из него                                                                                                                                                     |
+| List                   | ActionEvent                | Пользователь выполнил двойной щелчок мыши на элементе списка                                                                                                                                        |
+|                        | ItemEvent                  | Пользователь выбрал элемент списка или отменил выбор                                                                                                                                                |
+| MenuItem               | ActionEvent                | Пользователь выбрал пункт меню                                                                                                                                                                      |
+| Scrollbar              | AdjustmentEvent            | Пользователь осуществил прокрутку                                                                                                                                                                   |
+| TextComponent          | TextEvent                  | Пользователь внес изменения в текст элемента                                                                                                                                                        |
+| TextField              | ActionEvent                | Пользователь закончил редактирование текста элемента                                                                                                                                                |
+| Window                 | [WindowEvent](WindowEvent.md) | Окно было открыто, закрыто, представлено в виде пиктограммы, восстановлено или требует восстановления                                                                                               |
 
 ### Регистрация слушателя Listener
 

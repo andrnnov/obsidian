@@ -9,9 +9,9 @@
 ### **Конструкторы JPanel** 
 
 1. **JPanel()**: создает новую панель с потоковым макетом
-2. **JPanel(LayoutManager l)**: создает новую JPanel с указанным LayoutManager
+2. **JPanel(LayoutManager l)**: создает новую JPanel с указанным [LayoutManager](LayoutManager)
 3. **JPanel(boolean isDoubleBuffered)**: создает новую JPanel с указанной стратегией буферизации
-4. **JPanel(LayoutManager l, boolean isDoubleBuffered)**: создает новую JPanel с указанным LayoutManager и указанной стратегией буферизации
+4. **JPanel(LayoutManager l, boolean isDoubleBuffered)**: создает новую JPanel с указанным  [LayoutManager](LayoutManager) и указанной стратегией буферизации
 
 ### **Часто используемые функции JPanel** 
 

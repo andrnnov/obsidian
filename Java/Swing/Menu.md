@@ -1,6 +1,6 @@
 #Java #Swing #Menu
 
-## Меню на java
+## [Меню на java](https://programmingdigest.com/creating-jmenu-in-java-using-netbeans-with-examples/)
 
 **Создание JMenu в java с использованием Netbeans-** приложения редко обходятся без строк меню или контекстных меню (меню, которое открывается правой кнопкой мыши). По мере усложнения программы потребность в меню обычно возрастает. Они, так сказать, являются указателями приложения, которые направляют пользователя по программе. В следующей таблице приведен краткий обзор классов, с которыми мы будем иметь дело в этой статье, и краткое описание соответствующего назначения.
 
@@ -449,91 +449,63 @@ _В дополнение к стандартному конструктору, �
 #### Пример 7
 
 ```java
-import java.awt.Color ;
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JDialog ;
-import javax.swing.JMenuBar ;
-import javax.swing.border.LineBorder ;
-import javax.swing.border.Border ;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JSeparator;
-
-public class Main {
-    public static void main ( String [ ] args ) {
-        // Creation of a new
-        JDialog myJDialog =  new  JDialog ( ) ;
-        myJDialog.setTitle ( "menu creating Example" ) ;
-        myJDialog.setSize ( 300 , 200 ) ;
-        // To illustrate, we'll create a red border
-        Border border=  new  LineBorder ( Color .red) ;
-        // create a menu bar
-        JMenuBar bar =  new JMenuBar ( ) ;
-        // We set the created border for our menu
-        bar. setBorder ( border ) ;
-        JMenu file =  new  JMenu ( "File" ) ;
-        bar. add ( file );
-        JMenu Edit =  new  JMenu ( "Edit" ) ;
-        bar. add ( Edit );
-        JMenu View =  new  JMenu ( "View" ) ;
-        bar. add ( View );
-
-        // Creation of an object of the class JSeparator
-        JSeparator sp=new JSeparator();
-        JSeparator sp2=new JSeparator();
-        JSeparator sp3=new JSeparator();
-
-        JMenuItem NewFile =  new  JMenuItem ( "New File" ) ;
-        JMenuItem Save =  new  JMenuItem ( "Save" ) ;
-        JMenuItem OpenFile =  new  JMenuItem ( "Open File" ) ;
-
-        file.add(NewFile);
-        file.add(sp);
-        file.add(Save);
-        file.add(sp2);
-        file.add(OpenFile);
-
-        JCheckBoxMenuItem checkBoxItem1 =  new  JCheckBoxMenuItem( "checkBoxItem1" ) ;
-        JCheckBoxMenuItem checkBoxItem2 =  new  JCheckBoxMenuItem( "checkBoxItem2" ) ;
-        JCheckBoxMenuItem checkBoxItem3 =  new  JCheckBoxMenuItem( "checkBoxItem3" ) ;
-        JCheckBoxMenuItem checkBoxItem4 =  new  JCheckBoxMenuItem( "checkBoxItem4" ) ;
-
-        Edit.add(checkBoxItem1);
-        Edit.add(checkBoxItem2);
-        Edit.add(checkBoxItem3);
-        Edit.add(checkBoxItem4);
-
-        JRadioButtonMenuItem radioButtonItem1 =  new  JRadioButtonMenuItem ( "JRadionButtonMenuItem1" ) ;
-        JRadioButtonMenuItem radioButtonItem2 =  new  JRadioButtonMenuItem ( "JRadionButtonMenuItem2" ) ;
-        JRadioButtonMenuItem radioButtonItem3 =  new  JRadioButtonMenuItem ( "JRadionButtonMenuItem3" ) ;
-        JRadioButtonMenuItem radioButtonItem4 =  new  JRadioButtonMenuItem ( "JRadionButtonMenuItem4" ) ;
-
-        View.add(radioButtonItem1);
-        View.add(radioButtonItem2);
-        View.add(radioButtonItem3);
-        View.add(radioButtonItem4);
-
-        JMenuItem popItem =  new  JMenuItem ( "Open File");
-        JRadioButtonMenuItem popRadio=  new  JRadioButtonMenuItem ( "popRadio",true ) ;
-        JCheckBoxMenuItem PopcheckBox =  new  JCheckBoxMenuItem( "PopcheckBox",true ) ;
-
-        // Creation of a JPopupMenu object
-        JPopupMenu pop =  new     JPopupMenu();
-
-        pop. setLocation ( 100 , 100 ) ;
-        // We add our menu items to our context menu
-        pop. add(popItem);
-        pop. add(sp3);
-        pop. add(PopcheckBox);
-        pop. add(popRadio);
-        // menu bar is set for the dialog
-        myJDialog. setJMenuBar ( bar ) ;
-        // We display our dialog
-        myJDialog. setVisible ( true ) ;
-        pop. setVisible ( true ) ;
-    }
+import javax.swing.*;  
+import java.awt.event.*;  
+  
+public class Main {  
+    public static void main(String[] args) {  
+        final JFrame frame = new JFrame("Popup Menu Demo");  
+        // build poup menu  
+        final JPopupMenu popup = new JPopupMenu();  
+        // New project menu item  
+        JMenuItem menuItem = new JMenuItem("New Project...",  
+                new ImageIcon("c://book//icons//blank.png"));  
+        menuItem.setMnemonic(KeyEvent.VK_P);  
+        menuItem.getAccessibleContext().setAccessibleDescription(  
+                "New Project");  
+        menuItem.addActionListener(new ActionListener() {  
+            public void actionPerformed(ActionEvent e) {  
+                JOptionPane.showMessageDialog(frame, "New Project clicked!");  
+            }  
+        });  
+        popup.add(menuItem);  
+        // New File menu item  
+        menuItem = new JMenuItem("New File...",  
+                new ImageIcon("c://book//icons//list.png"));  
+        menuItem.setMnemonic(KeyEvent.VK_F);  
+        menuItem.addActionListener(new ActionListener() {  
+            public void actionPerformed(ActionEvent e) {  
+                JOptionPane.showMessageDialog(frame, "New File clicked!");  
+            }  
+        });  
+        popup.add(menuItem);  
+  
+        // add mouse listener  
+        frame.addMouseListener(new MouseAdapter() {  
+  
+            @Override  
+            public void mousePressed(MouseEvent e) {  
+                showPopup(e);  
+            }  
+  
+            @Override  
+            public void mouseReleased(MouseEvent e) {  
+                showPopup(e);  
+            }  
+  
+            private void showPopup(MouseEvent e) {  
+                if (e.isPopupTrigger()) {  
+                    popup.show(e.getComponent(),  
+                            e.getX(), e.getY());  
+                }  
+            }  
+        });  
+  
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        frame.setSize(300, 200);  
+        frame.setVisible(true);  
+  
+    }  
 }
 ```
 **Вывод:**

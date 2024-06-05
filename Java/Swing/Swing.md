@@ -263,16 +263,18 @@ getContentPane().add(newButton);
 | 6     | [JList](https://www.tutorialspoint.com/swing/swing_jlist.htm)<br>A JList component presents the user with a scrolling list of text items.                                                                                        |
 | 7     | [JComboBox](https://www.tutorialspoint.com/swing/swing_jcombobox.htm)<br>Компонент JComboBox предоставляет пользователю доступное меню выбора.                                                                                   |
 | 8     | [JTextField](JTextField)<br>Объект JTextField - это текстовый компонент, который позволяет редактировать одну строку текста.                                                                                                     |
-| 9     | [JPasswordField](https://www.tutorialspoint.com/swing/swing_jpasswordfield.htm)<br>Объект JPasswordField - это текстовый компонент, предназначенный для ввода пароля.                                                            |
-| 10    | [JTextArea](https://www.tutorialspoint.com/swing/swing_jtextarea.htm)<br>Объект JTextArea - это текстовый компонент, который позволяет редактировать несколько строк текста.                                                     |
+| 9     | [JPasswordField](JTextField)<br>Объект JPasswordField - это текстовый компонент, предназначенный для ввода пароля.                                                                                                               |
+| 10    | [JTextArea](JTextArea)<br>Объект JTextArea - это текстовый компонент, который позволяет редактировать несколько строк текста.                                                                                                    |
 | 11    | [[Icon#Класс ImageIcon\|ImageIcon]]<br>Элемент управления ImageIcon - это реализация интерфейса Icon, который рисует значки из изображений                                                                                       |
-| 12    | [JScrollBar](https://www.tutorialspoint.com/swing/swing_jscrollbar.htm)<br>Элемент управления полосой прокрутки представляет собой компонент полосы прокрутки, позволяющий пользователю выбирать из диапазона значений.          |
+| 12    | [JScrollBar](JScrollBar)<br>Элемент управления полосой прокрутки представляет собой компонент полосы прокрутки, позволяющий пользователю выбирать из диапазона значений.                                                         |
 | 13    | [JOptionPane](JOptionPane)<br>JOptionPane предоставляет набор стандартных диалоговых окон, которые запрашивают у пользователей значение или информируют их о чем-либо.                                                           |
 | 14    | [JFileChooser](https://www.tutorialspoint.com/swing/swing_jfilechooser.htm)<br>Элемент управления JFileChooser представляет собой диалоговое окно, в котором пользователь может выбрать файл.                                    |
 | 15    | [JProgressBar](https://www.tutorialspoint.com/swing/swing_jprogressbar.htm)<br>По мере продвижения задачи к завершению на индикаторе выполнения отображается процент выполнения задачи.                                          |
 | 16    | [JSlider](https://www.tutorialspoint.com/swing/swing_jslider.htm)<br>JSlider позволяет пользователю графически выбирать значение, перемещая ручку в пределах ограниченного интервала.                                            |
 | 17    | [JSpinner](https://www.tutorialspoint.com/swing/swing_jspinner.htm)<br>JSpinner - это однострочное поле ввода, которое позволяет пользователю выбрать число или значение объекта из упорядоченной последовательности.            |
-| 18    | [JToggleButton](JToggleButton) - реализация кнопки с двумя состояниями.                                                                                                                                                          |
+| 18    | [JToggleButton](JToggleButton)                                                                                                            реализация кнопки с двумя состояниями.                                                 |
+| 19    | [JScrollPane](JScrollPane)                                                                                    предоставляет прокручиваемый вид компонента, где компонентом может быть изображение, таблица, дерево и т.д.        |
+|       |                                                                                                                                                                                                                                  |
 
 
 

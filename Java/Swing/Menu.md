@@ -29,11 +29,6 @@ import javax.swing.JMenuBar ;
 import javax.swing.border.LineBorder ; 
 import javax.swing.border.Border ;
  
- 
-/**
- *
- * @author Fawadkhan
- */
 public class JmenuExamples {
     public static void main ( String [ ] args ) {
         // Creation of a new 
@@ -495,8 +490,7 @@ public class Main {
   
             private void showPopup(MouseEvent e) {  
                 if (e.isPopupTrigger()) {  
-                    popup.show(e.getComponent(),  
-                            e.getX(), e.getY());  
+                    popup.show(e.getComponent(), e.getX(), e.getY());  
                 }  
             }  
         });  

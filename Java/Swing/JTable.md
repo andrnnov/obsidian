@@ -394,7 +394,7 @@ public class Main extends JFrame {
 При перемещении колонки в новую позицию используется метод _moveColumn(int columnIndex, int newIndex)_, в котором в качестве первого параметрам индекс колонки, а вторым параметром указывается ее новое положение.
 
 Скриншот примера использования модели таблицы **TableColumnModel**.
-![[Pasted image 20240610103849.png]]
+![[Ex3-JTable.png]]
 
 ### Свойства модели TableColumnModel
 

@@ -352,7 +352,7 @@ while (scanner.hasNext()) {
 }
 ```
 
-#### Метод findInLine() -**** Searches for the next occurrence of the specified pattern in the current input line.
+#### Метод findInLine() - выполняет поиск следующего вхождения указанного шаблона в текущей строке ввода
 
 ```java
 Scanner scanner = new Scanner("Hello, 123, world!");  
@@ -363,14 +363,14 @@ String result = scanner.findInLine("fox");
 System.out.println(result); // Output: fox
 ```
 
-#### Метод findWithinHorizon(String pattern, int horizon) -**** Searches for the next occurrence of the specified pattern in the input up to the specified horizon.
+#### Метод findWithinHorizon(String pattern, int horizon) - выполняет поиск следующего появления указанного шаблона во входных данных до указанного горизонта
 
 ```java
 Scanner scanner = new Scanner("abc123def456");  
 System.out.println(scanner.findWithinHorizon("\\d+", 3));  
 // Output: null (pattern not found within horizon of 3 characters)
 ```
-#### Метод hasNextByte():**** Returns true if the scanner has another token that is a byte.
+#### Метод hasNextByte() - возвращает true, если у сканера есть другой токен, представляющий собой байт.
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -392,7 +392,7 @@ MatchResult result = scanner.match();
 System.out.println("Last match: " + result.group());
 ```
 
-#### Метод ioException() -**** Returns the IOException last thrown by the scanner's underlying Readable.
+#### Метод ioException() - возвращает исключение IOException, последнее вызванное базовым Readable сканера
 
 ```java
 Scanner scanner = new Scanner(new java.io.FileReader("nonexistent.txt"));  
@@ -409,7 +409,8 @@ try {
 }  
 // Output: Scanner is invalid due to an IOException: null (file not found)
 ```
-#### Метод delimiter() -**** Returns the current delimiter pattern as a string.
+
+#### Метод delimiter() - возвращает шаблон, который в данный момент использует этот сканер для сопоставления разделителей
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -495,7 +496,7 @@ while (scanner.hasNext()) {
 }
 ```
 
-#### Метод hasNextBigDecimal() -**** Returns true if there is another token in the input, and it can be interpreted as a BigDecimal.
+#### Метод hasNextBigDecimal() - возвращает true, если во входных данных присутствует другой токен, и он может быть интерпретирован как BigDecimal
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -504,7 +505,8 @@ if (scanner.hasNextBigDecimal()) {
     System.out.println("Decimal: " + decimal);  
 }
 ```
-#### Метод nextBigDecimal() -**** Returns the next token in the input as a BigDecimal.
+
+#### Метод nextBigDecimal() - возвращает следующий токен во входных данных в виде BigDecimal
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -512,7 +514,8 @@ System.out.print("Enter a BigDecimal value: ");
 BigDecimal input = scanner.nextBigDecimal();  
 System.out.println("Input value: " + input);
 ```
-#### Метод hasNextBigInteger() -**** Returns true if there is another token in the input, and it can be interpreted as a BigInteger.
+
+#### Метод hasNextBigInteger() - возвращает true, если во входных данных присутствует другой токен, и он может быть интерпретирован как [BigInteger](BigInteger)
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -521,6 +524,7 @@ if (scanner.hasNextBigInteger()) {
     System.out.println("Integer: " + integer);  
 }
 ```
+
 #### Метод nextBigInteger() - возвращает следующий токен во входных данных как [BigInteger](BigInteger)
 
 ```java
@@ -529,7 +533,8 @@ System.out.print("Enter a BigInteger value: ");
 BigInteger input = scanner.nextBigInteger();  
 System.out.println("Input value: " + input);
 ```
-#### Метод hasNextBoolean() -**** Returns true if the scanner has another boolean token.
+
+#### Метод hasNextBoolean() - возвращает true, если у сканера есть другой логический токен
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -538,7 +543,8 @@ if (scanner.hasNextBoolean()) {
     System.out.println("Boolean: " + bool);  
 }
 ```
-#### Метод. hasNextPattern() -**** Returns true if the next token in the input matches the specified pattern.
+
+#### Метод hasNextPattern() - возвращает true, если следующий токен во входных данных соответствует указанному шаблону
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -551,7 +557,8 @@ if (scanner.hasNextPattern("\\d+")) {
     System.out.println("The entered string is: " + str);  
 }
 ```
-#### Метод nextInt() in Java-**** Returns the next token in the input as an int.
+
+#### Метод nextInt() in Java- возвращает следующий токен во входных данных как int
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -559,7 +566,8 @@ System.out.println("Enter an integer: ");
 int num = scanner.nextInt();  
 System.out.println("The entered integer is " + num);
 ```
-#### Метод hasNextDouble() -**** Returns true if there is another token in the input, and it can be interpreted as a double.
+
+#### Метод hasNextDouble() - возвращает true, если во входных данных присутствует другой токен, и он может быть интерпретирован как double
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -568,7 +576,8 @@ if (scanner.hasNextDouble()) {
     System.out.println("Double: " + d);  
 }
 ```
-#### Метод hasNextFloat() -**** Returns true if another token is in the input and can be interpreted as a float.
+
+#### Метод hasNextFloat() - возвращает true, если во входных данных присутствует другой токен, который может быть интерпретирован как значение с плавающей точкой
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -577,7 +586,8 @@ if (scanner.hasNextFloat()) {
     System.out.println("Float: " + f);  
 }
 ```
-#### Метод hasNextInt() -**** Returns true if there is another token in the input, and it can be interpreted as an int.
+
+#### Метод hasNextInt() - возвращает true, если во входных данных присутствует другой токен, и он может быть интерпретирован как int
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -586,7 +596,8 @@ if (scanner.hasNextInt()) {
     System.out.println("Int: " + i);  
 }
 ```
-#### Метод. hasNextLong() -**** Returns true if another token is in the input and can be interpreted as a long.
+
+#### Метод hasNextLong() - возвращает true, если во входных данных присутствует другой токен, который может быть интерпретирован как long
 
 ```java
 Scanner scanner = new Scanner(System.in);  
@@ -599,7 +610,15 @@ if (scanner.hasNextLong()) {
 }
 ```
 
+#### Метод hasNextShort - возвращает true, если следующий токен во входных данных этого сканера может быть интерпретирован как короткое значение в базе данных по умолчанию с использованием nextShort() метода.
 
+```java
+Scanner scanner = new Scanner(System.in);  
+if (scanner.hasNextShort()) {  
+ short s = scanner.nextShort();  
+ System.out.println("Short : " + s);  
+}
+```
 
 
 ### Методы

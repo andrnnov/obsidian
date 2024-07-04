@@ -41,6 +41,153 @@ String myString1 = new String("Hello World");
 String myString2 = new String("Hello World");
 ```
 Несмотря на то, что значение (текст) двух созданных строк Java одинаковое, виртуальная машина Java создаст в памяти два разных объекта для их представления.
+
+### Конструкторы
+
+#### 1. String(byte[] byte_arr)
+
+Создайте новую строку путем декодирования __массива байтов__. Для декодирования используется набор символов платформы по умолчанию.
+
+**Пример:**
+```java
+byte[] b_arr = {71, 101, 101, 107, 115};
+String s_byte =new String(b_arr); //Geeks
+```
+
+#### 2. String(byte[] byte_arr, Charset char_set)
+Создайте новую строку путем декодирования массива байтов. Он использует char_set для декодирования.
+
+**Пример:**
+```java
+byte[] b_arr = {71, 101, 101, 107, 115};
+Charset cs = Charset.defaultCharset();
+String s_byte_char = new String(b_arr, cs); //Geeks
+```
+
+#### 3. String(byte[] byte_arr, String char_set_name)
+
+Создайте новую строку путем декодирования массива байтов. Он использует char_set_name для декодирования. Он выглядит аналогично приведенным выше конструкциям, и они появляются перед аналогичными функциями, но он принимает строку (которая содержит char_set_name) в качестве параметра, в то время как приведенный выше конструктор принимает CharSet.
+
+**Пример:**
+```java
+byte[] b_arr = {71, 101, 101, 107, 115};
+String s = new String(b_arr, "US-ASCII"); //Geeks
+```
+
+#### 4. String(byte[] byte_arr, int start_index, int length)
+
+Создайте новую строку из массива bytes в зависимости от start_index(начальной позиции) и длины (количества символов от начальной позиции).
+
+**Пример:**
+```java
+byte[] b_arr = {71, 101, 101, 107, 115};
+String s = new String(b_arr, 1, 3); // eek
+```
+
+#### 5. String(byte[] byte_arr, int start_index, int length, Charset char_set)
+
+Создайте новую строку из массива bytes в зависимости от start_index(начальной позиции) и длины (количества символов от начальной позиции). Использует char_set для декодирования.
+
+**Пример:**
+```java
+byte[] b_arr = {71, 101, 101, 107, 115};
+Charset cs = Charset.defaultCharset();
+String s = new String(b_arr, 1, 3, cs); // eek
+```
+
+#### 6. String(byte[] byte_arr, int start_index, int length, String char_set_name)
+
+Создайте новую строку из массива bytes в зависимости от start_index(начальной позиции) и длины (количества символов от начальной позиции). Использует char_set_name для декодирования.
+
+**Пример:**
+```java
+byte[] b_arr = {71, 101, 101, 107, 115};
+String s = new String(b_arr, 1, 4, "US-ASCII"); // eeks
+```
+
+#### 7. String(char[] char_arr)
+
+Выделяет новую строку из заданного массива символов
+
+**Пример:**
+```java
+char char_arr[] = {'G', 'e', 'e', 'k', 's'};
+String s = new String(char_arr); //Geeks
+```
+
+#### 8. String(char[] char_array, int start_index, int count)
+
+Выделяет строку из заданного массива символов, но выбирает количество символов из start_index.
+
+**Пример:**
+```java
+char char_arr[] = {'G', 'e', 'e', 'k', 's'};
+String s = new String(char_arr , 1, 3); //eek
+```
+
+#### 9. String(int[] uni_code_points, int offset, int count)
+
+Выделяет строку из массива uni_code_array, но выбирает количество символов из start_index.
+
+**Пример:**
+```java
+int[] uni_code = {71, 101, 101, 107, 115};
+String s = new String(uni_code, 1, 3); //eek
+```
+
+#### 10. String(StringBuffer s_buffer)
+
+Выделяет новую строку из строки в s_buffer
+
+**Пример:**
+```java
+StringBuffer s_buffer = new StringBuffer("Geeks");
+String s = new String(s_buffer); //Geeks
+```
+
+#### 11. String(StringBuilder s_builder)
+
+Выделяет новую строку из строки в s_builder
+
+**Пример:**
+```java
+StringBuilder s_builder = new StringBuilder("Geeks");
+String s = new String(s_builder); //Geeks
+```
+
+### Методы String
+
+#### Строковый метод charAt()
+
+Метод String **charAt()** возвращает символ по указанному индексу в строке. Индекс первого символа строки равен 0, второго символа — 1 и т. д. Значение индекса должно находиться в диапазоне от 0 до length() – 1.
+
+Если значение индекса больше или равно длине строки или отрицательному числу, оно возвращает **исключение StringIndexOutOfBoundsException.**
+
+**Пример:**
+```java
+// Java Program to demonstrate use of
+// String charAt() Method
+ 
+class Main {
+    public static void main(String args[]) {
+        // Define a string
+        String s = "Java String charAt() example";
+ 
+        // Retrieve and print the character at index 8
+        char ch = s.charAt(8);
+        System.out.println(ch);
+ 
+        // Retrieve and print the character at index 24
+        ch = s.charAt(24);
+        System.out.println(ch);
+    }
+}
+```
+**Вывод:**
+<p style="background-color: navy; color: yellow">
+i<br>
+m</p>
+
 #### Обрезка строки с помощью trim() ####
 
 Класс Java String содержит метод, называемый trim(), который может обрезать объект string. Под обрезкой подразумевается удаление пробельных символов в начале и конце строки. Символы пробела включают пробел, табуляцию и новые строки. Вот пример Java String trim():

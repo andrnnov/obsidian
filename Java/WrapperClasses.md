@@ -40,16 +40,16 @@ class Main {
 ```
 Соответствие примитивных типов и классов-обёрток
 
-|Примитивный тип|Класс-обёртка|Упаковка|Распаковка|
-|---|---|---|---|
-|boolean|Boolean|Boolean.valueOf(booleanValue)|booleanObject.booleanValue()|
-|byte|Byte|Byte.valueOf(byteValue)|byteObject.byteValue()|
-|char|Character|Character.valueOf(charValue)|characterObject.charValue()|
-|float|Float|Float.valueOf(floatValue)|floatObject.floatValue()|
-|int|Integer|Integer.valueOf(integerValue)|integerObject.integerValue()|
-|long|Long|Long.valueOf(longValue)|longObject.longValue()|
-|short|Short|Short.valueOf(shortValue)|shortObject.shortValue()|
-|double|Double|Double.valueOf(doubleValue)|doubleObject.doubleValue()|
+| Примитивный тип | Класс-обёртка             | Упаковка                      | Распаковка                   |
+| --------------- | ------------------------- | ----------------------------- | ---------------------------- |
+| boolean         | Boolean                   | Boolean.valueOf(booleanValue) | booleanObject.booleanValue() |
+| byte            | Byte                      | Byte.valueOf(byteValue)       | byteObject.byteValue()       |
+| char            | [Character](Character)    | Character.valueOf(charValue)  | characterObject.charValue()  |
+| float           | Float                     | Float.valueOf(floatValue)     | floatObject.floatValue()     |
+| int             | [Integer](WrapperInteger) | Integer.valueOf(integerValue) | integerObject.integerValue() |
+| long            | Long                      | Long.valueOf(longValue)       | longObject.longValue()       |
+| short           | Short                     | Short.valueOf(shortValue)     | shortObject.shortValue()     |
+| double          | Double                    | Double.valueOf(doubleValue)   | doubleObject.doubleValue()   |
 
 #### Когда нужны классы-обертки ####
 

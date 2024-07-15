@@ -93,6 +93,9 @@
 - [Параллельные потоки](parallel())
 - [Параллельные операции над массивами](parallelArray)
 
+ Глава. Java Network
+ - Java [InetAddress](InetAddress)
+
 
 
 

@@ -1,6 +1,6 @@
 #Java #DesignPatterns #Factory
 
-## Паттерн проектирования Factory
+## [Паттерн проектирования Factory](# Паттерн проектирования Factory)
 
 2024-07-17 14:48
 
@@ -182,7 +182,7 @@ You are eating Cherry doughnut!<br>
 You are eating Chocolate doughnut!<br>
 You are eating Almond doughnut!</p>
 
-### Применимость 
+### [Применимость](https://refactoringguru.cn/ru/design-patterns/factory-method)
 
 #### Когда заранее неизвестны типы и зависимости объектов, с которыми должен работать ваш код.
 

@@ -1,6 +1,6 @@
 #Java #Map 
 
-### Методы Map.of() и Map.ofEntries() в Java
+### [Методы Map.of() и Map.ofEntries() в Java](https://www.techiedelight.com/immutable-map-java/)
 
 2024-07-24 12:22
 

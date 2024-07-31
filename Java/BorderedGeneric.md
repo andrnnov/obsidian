@@ -206,3 +206,143 @@ interface Accountable{}
  
 class Transaction<T extends Person & Accountable>{}
 ```
+
+#### Пример. [Методы обобщений и ограничение параметров](https://docs.oracle.com/javase/tutorial/java/generics/boundedTypeParams.html)
+
+Рассмотрим метод, который подсчитывает количество элементов в массиве. 
+```java
+public static <T> int countGreaterThan(T[] anArray, T elem) {
+ int count = 0;
+ for (T e : anArray)
+ if (e > elem) // compiler error
+ ++count;
+ return count;
+}
+```
+Реализация метода проста, но он не компилируется, поскольку оператор  (>) применяется только к примитивным типам, таким как short, int, double, long, float, byte и char. Вы не можете использовать оператор > для сравнения объектов. Чтобы устранить проблему, используйте параметр типа, ограниченный интерфейсом [Comparable](Comparable):
+```java
+public interface Comparable<T> {
+ public int compareTo(T o);
+}
+```
+Результирующий код будет иметь вид:
+```java
+public static <T extends Comparable<T>> int countGreaterThan(T[] anArray, T elem) {
+ int count = 0;
+ for (T e : anArray)
+ if (e.compareTo(elem) > 0)
+ ++count;
+ return count;
+}
+```
+
+#### Пример. [Как реализовать ограниченные типы (расширить суперкласс) с помощью обобщений.]()
+
+Ограничение по верхней границе (которая в приведенном ниже примере c является **A**):
+```java
+// This class only accepts type parameters as any class
+// which extends class A or class A itself.
+// Passing any other type will cause compiler time error
+ 
+class Bound<T extends A> {
+     
+    private T objRef;
+     
+    public Bound(T obj){
+        this.objRef = obj;
+    }
+     
+    public void doRunTest(){
+        this.objRef.displayClass();
+    }
+}
+ 
+class A {
+    public void displayClass()
+    {
+        System.out.println("Inside super class A");
+    }
+}
+ 
+class B extends A {
+    public void displayClass()
+    {
+        System.out.println("Inside sub class B");
+    }
+}
+ 
+class C extends A {
+    public void displayClass()
+    {
+        System.out.println("Inside sub class C");
+    }
+}
+ 
+public class BoundedClass {
+    public static void main(String a[]) {
+         
+        // Creating object of sub class C and
+        // passing it to Bound as a type parameter.
+        Bound<C> bec = new Bound<C>(new C());
+        bec.doRunTest();
+         
+        // Creating object of sub class B and
+        // passing it to Bound as a type parameter.
+        Bound<B> beb = new Bound<B>(new B());
+        beb.doRunTest();
+         
+        // similarly passing super class A
+        Bound<A> bea = new Bound<A>(new A());
+        bea.doRunTest();
+         
+    }
+}
+```
+**Вывод:**
+<p style="background-color: navy; color: yellow">
+Inside sub class C<br>
+Inside sub class B<br>
+Inside super class A</p>
+Теперь мы ограничены только типом A и его подклассами, поэтому он выдаст ошибку для любого другого типа.
+
+#### Пример. Множественные границы
+
+Параметры ограниченного типа могут использоваться как с методами, так и с классами и интерфейсами.
+
+Обобщения Java также поддерживают несколько границ. В этом случае A может быть интерфейсом или классом. Если A - класс, то B и C должны быть интерфейсами. У нас не может быть более одного класса в нескольких границах.
+```java
+class Bound<T extends A & B>{
+     
+    private T objRef;
+     
+    public Bound(T obj) {
+        this.objRef = obj;
+    }
+     
+    public void doRunTest(){
+        this.objRef.displayClass();
+    }
+}
+ 
+interface B {
+    public void displayClass();
+}
+ 
+class A implements B {
+    public void displayClass() {
+        System.out.println("Inside super class A");
+    }
+}
+ 
+public class BoundedClass {
+    public static void main(String a[]) {
+        //Creating object of sub class A and
+        //passing it to Bound as a type parameter.
+        Bound<A> bea = new Bound<A>(new A());
+        bea.doRunTest();
+    }
+}
+```
+**Вывод:**
+<p style="background-color: navy; color: yellow">
+Inside super class A</p>

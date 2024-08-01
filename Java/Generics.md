@@ -59,13 +59,15 @@ public class GenericMethodTest {
 }
 ```
 Получим следующий результат:
-===Массив integerArray содержит:
-1 2 3 4 5 
-Массив doubleArray содержит:
-1.1 2.2 3.3 4.4 
-Массив characterArray содержит:
-П Р И В Е Т===
-### Параметры ограниченного типа
+<p style="background-color: navy; color: yellow">
+Массив integerArray содержит:<br>
+1 2 3 4 5 <br>
+Массив doubleArray содержит:<br>
+1.1 2.2 3.3 4.4 <br>
+Массив characterArray содержит:<br>
+П Р И В Е Т</p>
+
+### [Параметры ограниченного типа](BorderedGeneric)
 
 Могут быть случаи, когда вы захотите ограничить виды типов, которым разрешено быть переданными типу параметра. Например, метод, который работает с числами, может только принимать экземпляры Number или его подклассов. Для этого используются параметры ограниченного типа.
 
@@ -103,15 +105,17 @@ public class MaximumTest {
 }
 ```
 Получим следующий результат:
-===Max of 3, 4 and 5 is 5
-Max of 6.6,8.8 and 7.7 is 8.8
-Max of pear,apple and orange is pear===
+<p style="background-color: navy; color: yellow">
+Max of 3, 4 and 5 is 5<br>
+Max of 6.6,8.8 and 7.7 is 8.8<br>
+Max of pear,apple and orange is pear</p>
+
 ### Общие классы
 
 Объявление общего класса выглядит как объявление не общего класса, за исключением того, что за именем класса следует раздел параметров типа.
 
 Как и в случае с общими методами, раздел параметров типа универсального класса может иметь один или несколько параметров типа, разделенных запятыми. Эти классы известны как параметризованные классы или параметризованные типы, поскольку они принимают один или несколько параметров.
-#### Пример
+#### Пример 1
 
 Следующий пример показывает, как мы можем определить общий класс:
 ```java
@@ -139,5 +143,219 @@ public class Box {
 }
 ```
 Получим следующий результат:
-===Значение Integer :10
-Значение String :Привет Мир===
+<p style="background-color: navy; color: yellow">
+Значение Integer :10<br>
+Значение String :Привет Мир</p>
+
+#### Пример 2
+
+```java
+public class Program{
+      
+    public static void main(String[] args) {
+          
+        Account<String> acc1 = new Account<String>("2345", 5000);
+        String acc1Id = acc1.getId();
+        System.out.println(acc1Id);
+         
+        Account<Integer> acc2 = new Account<Integer>(2345, 5000);
+        Integer acc2Id = acc2.getId();
+        System.out.println(acc2Id);
+    }
+}
+class Account<T>{
+     
+    private T id;
+    private int sum;
+     
+    Account(T id, int sum){
+        this.id = id;
+        this.sum = sum;
+    }
+     
+    public T getId() { return id; }
+    public int getSum() { return sum; }
+    public void setSum(int sum) { this.sum = sum; }
+}
+```
+
+При определении переменной данного класса и создании объекта после имени класса в угловых скобках нужно указать, какой именно тип будет использоваться вместо универсального параметра. При этом надо учитывать, что они работают только с объектами, но не работают с примитивными типами. То есть мы можем написать `Account<Integer>`, но не можем использовать тип int или double, например, `Account<int>`. Вместо примитивных типов надо использовать [классы-обертки](WrapperClasses): [Integer](WrapperInteger) вместо int, Double вместо double и т.д.
+
+Например, первый объект будет использовать тип [String](String), то есть вместо T будет подставляться [String](String):
+```java
+Account<String> acc1 = new Account<String>("2345", 5000);
+```
+В этом случае в качестве первого параметра в конструктор передается строка.
+
+А второй объект использует тип int ([Integer](WrapperInteger)):
+```java
+Account<Integer> acc2 = new Account<Integer>(2345, 5000);
+```
+
+### [Обобщенные интерфейсы](https://metanit.com/java/tutorial/3.11.php)
+
+[Интерфейсы](Interface), как и классы, также могут быть обобщенными. Создадим обобщенный интерфейс Accountable и используем его в программе:
+```java
+public class Program{
+      
+    public static void main(String[] args) {
+          
+        Accountable<String> acc1 = new Account("1235rwr", 5000);
+        Account acc2 = new Account("2373", 4300);
+        System.out.println(acc1.getId());
+        System.out.println(acc2.getId());
+    }
+}
+interface Accountable<T>{
+    T getId();
+    int getSum();
+    void setSum(int sum);
+}
+class Account implements Accountable<String>{
+     
+    private String id;
+    private int sum;
+     
+    Account(String id, int sum){
+        this.id = id;
+        this.sum = sum;
+    }
+     
+    public String getId() { return id; }
+    public int getSum() { return sum; }
+    public void setSum(int sum) { this.sum = sum; }
+}
+```
+При реализации подобного интерфейса есть две стратегии. В данном случае реализована первая стратегия, когда при реализации для универсального параметра интерфейса задается конкретный тип, как например, в данном случае это тип [String](String). Тогда класс, реализующий интерфейс, жестко привязан к этому типу.
+
+Вторая стратегия представляет определение обобщенного класса, который также использует тот же универсальный параметр:
+```java
+public class Program{
+      
+    public static void main(String[] args) {
+          
+        Account<String> acc1 = new Account<String>("1235rwr", 5000);
+        Account<String> acc2 = new Account<String>("2373", 4300);
+        System.out.println(acc1.getId());
+        System.out.println(acc2.getId());
+    }
+}
+interface Accountable<T>{
+    T getId();
+    int getSum();
+    void setSum(int sum);
+}
+class Account<T> implements Accountable<T>{
+     
+    private T id;
+    private int sum;
+     
+    Account(T id, int sum){
+        this.id = id;
+        this.sum = sum;
+    }
+     
+    public T getId() { return id; }
+    public int getSum() { return sum; }
+    public void setSum(int sum) { this.sum = sum; }
+```
+
+### Обобщенные методы
+
+Кроме обобщенных типов можно также создавать обобщенные методы, которые точно также будут использовать универсальные параметры. Например:
+```java
+public class Program{
+      
+    public static void main(String[] args) {
+          
+        Printer printer = new Printer();
+        String[] people = {"Tom", "Alice", "Sam", "Kate", "Bob", "Helen"};
+        Integer[] numbers = {23, 4, 5, 2, 13, 456, 4};
+        printer.<String>print(people);
+        printer.<Integer>print(numbers);
+    }
+}
+ 
+class Printer{
+     
+    public <T> void print(T[] items){
+        for(T item: items){
+            System.out.println(item);
+        }
+    }
+}
+```
+Особенностью обобщенного метода является использование универсального параметра в объявлении метода после всех модификаторов и перед типом возвращаемого значения.
+```java
+public <T> void print(T[] items)
+```
+Затем внутри метода все значения типа T будут представлять данный универсальный параметр.
+
+При вызове подобного метода перед его именем в угловых скобках указывается, какой тип будет передаваться на место универсального параметра:
+```java
+printer.<String>print(people);
+printer.<Integer>print(numbers);
+```
+
+### Использование нескольких универсальных параметров
+
+Мы можем также задать сразу несколько универсальных параметров:
+```java
+public class Program{
+      
+    public static void main(String[] args) {
+          
+        Account<String, Double> acc1 = new Account<String, Double>("354", 5000.87);
+        String id = acc1.getId();
+        Double sum = acc1.getSum();
+        System.out.printf("Id: %s  Sum: %f \n", id, sum);
+    }
+}
+class Account<T, S>{
+     
+    private T id;
+    private S sum;
+     
+    Account(T id, S sum){
+        this.id = id;
+        this.sum = sum;
+    }
+     
+    public T getId() { return id; }
+    public S getSum() { return sum; }
+    public void setSum(S sum) { this.sum = sum; }
+}
+```
+В данном случае тип [String](String) будет передаваться на место параметра T, а тип Double - на место параметра S.
+
+### Обобщенные конструкторы
+
+Конструкторы, как и методы также могут быть обобщенными. В этом случае перед конструктором также указываются в угловых скобках универсальные параметры:
+```java
+public class Program{
+      
+    public static void main(String[] args) {
+          
+        Account acc1 = new Account("cid2373", 5000);
+        Account acc2 = new Account(53757, 4000);
+        System.out.println(acc1.getId());
+        System.out.println(acc2.getId());
+    }
+}
+ 
+class Account{
+     
+    private String id;
+    private int sum;
+     
+    <T>Account(T id, int sum){
+        this.id = id.toString();
+        this.sum = sum;
+    }
+     
+    public String getId() { return id; }
+    public int getSum() { return sum; }
+    public void setSum(int sum) { this.sum = sum; }
+}
+```
+В данном случае конструктор принимает параметр id, который представляет тип T. В конструкторе его значение превращается в строку и сохраняется в локальную переменную.

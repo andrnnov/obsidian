@@ -19,6 +19,7 @@
 - Обобщения ([Generics](Generics))
 - [Стирание типов](TypeErasure)
 - [Ограничения обобщений](BorderedGeneric)
+- Подстановочные знаки ([Wildcards](Wildcards))
 - Наследование и обобщения
 - Ссылочные типы и клонирование объектов
 - [Records](Record)

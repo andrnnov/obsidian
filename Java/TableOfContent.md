@@ -20,7 +20,7 @@
 - [Стирание типов](TypeErasure)
 - [Ограничения обобщений](BorderedGeneric)
 - Подстановочные знаки ([Wildcards](Wildcards))
-- Наследование и обобщения
+- [Наследование и обобщения](GenericsInheritance)
 - Ссылочные типы и клонирование объектов
 - [Records](Record)
 - [Запечатанные (sealed) классы в Java](sealed_non-sealed_permits)

@@ -99,6 +99,9 @@
 
  Глава. [Java Network](Networking)
  - Java [InetAddress](InetAddress)
+ - Класс [URL](URL)
+ - Класс [URLConnection](URLConnection)
+ - Класс [HttpURLConnection](HttpURLConnection)
 
 
 

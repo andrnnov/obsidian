@@ -139,7 +139,7 @@ public class Main {
   . . .
   ```
   
-#### Пример 3. Сравнение работы File и URL
+#### Сравнение работы File и URL
 
 `URL` — это такой аналог [File](File) или [[Files, Path#Path|Path]], только [[Files, Path#Path|Path]] хранит путь к ресурсу в файловой системе, а `URL` — путь к ресурсу в интернете.
 
@@ -169,3 +169,37 @@ String str = new String(buffer);
 System.out.println(str);
 ```
 
+#### Пример 3. [Чтение веб-страницы с помощью Java](https://www.vogella.com/tutorials/JavaNetworking/article.html#javanetwork_example_readpage)
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+public class ReadWebPage {
+  public static void main(String[] args) {
+    String urlText = "https://www.vogella.com/";
+    BufferedReader in = null;
+    try {
+      URL url = new URL(urlText);
+      in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+      String inputLine;
+      while ((inputLine = in.readLine()) != null) {
+        System.out.println(inputLine);
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      if (in != null) {
+        try {
+          in.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+}
+```

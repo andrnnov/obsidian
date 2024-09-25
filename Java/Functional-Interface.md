@@ -197,16 +197,16 @@ public static void main(String[] args) {
 }
 ```
 И если мы это запустим, то увидим в консоли случайные результаты из списка имен.
-#### Function ####
+#### [Function](Function) ####
 
-`Function` — этот функциональный интерфейс принимает аргумент T и приводит его к объекту типа R, который и возвращается как результат:
+[Function](Function) — этот функциональный интерфейс принимает аргумент T и приводит его к объекту типа R, который и возвращается как результат:
 ```java
 @FunctionalInterface
 public interface Function<T, R> {
    R apply(T t);
 }
 ```
-В качестве примера возьмём `Function`, который конвертирует числа из формата строк (`String`) в формат чисел (`Integer`):
+В качестве примера возьмём [Function](Function), который конвертирует числа из формата строк (`String`) в формат чисел (`Integer`):
 ```java
 public static void main(String[] args) {
    Function<String, Integer> valueConverter = x -> Integer.valueOf(x);
@@ -216,6 +216,7 @@ public static void main(String[] args) {
 Запустив, получим вывод в консоль:
 <p style="background-color: navy; color: yellow">678</p>
 P.S.: если в строку мы передадим не только числа, но и другие символы, вылетит [exception](https://javarush.com/quests/lectures/questsyntaxpro.level14.lecture01) — `NumberFormatException`.
+
 #### UnaryOperator ####
 
 `UnaryOperator` — функциональный интерфейс, принимает в качестве параметра объект типа T, выполняет над ним некоторые операции и возвращает результат операций в виде объекта того же типа T:

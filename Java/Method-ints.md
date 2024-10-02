@@ -5,8 +5,10 @@
 
 Метод ints() создает поток случайных чисел типа IntStream. Наиболее распространенные реализации метода выглядят следующим образом
 
+```java
 `IntStream ints();`
-`IntStream ints(**long** streamSize);`
+`IntStream ints(long streamSize);`
+```
 
 здесь
 `streamSize` – количество элементов в потоке данных типа int.

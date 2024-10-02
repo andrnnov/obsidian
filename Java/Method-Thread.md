@@ -249,6 +249,7 @@ public class ThreadGetnameMethod extends Thread {
 Вывод следующего кода генерирует следующий результат.
 <p style="background-color: navy; color: yellow">Name of thread 1:Thread-0<br>
 threads running fast...</p>
+
 #### public String Thread.setName(String name) ####
 
 Этот метод используется для изменения имени потока.

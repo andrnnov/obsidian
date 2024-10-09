@@ -51,8 +51,8 @@ public class TrainCollections {
 }
 ```
 Результат выполнения программы
-
-==[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-[Winter, Spring, Autumn, Summer]
-[Winter, Spring, Autumn, Summer]
-0==
+<p style="background-color: navy; color: yellow">
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]<br>
+[Winter, Spring, Autumn, Summer]<br>
+[Winter, Spring, Autumn, Summer]<br>
+0</p>

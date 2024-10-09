@@ -3,8 +3,8 @@
 
 2024-04-01 15:15
 
- ArrayList – это реализация динамического использования массива в Java. При использовании массива часто приходится задумываться о требуемом размере, а ArrayList является списком, который увеличивается и уменьшается при необходимости. Этот класс является имплементацией интерфейса (interface) List из Collection Framework, который расположен в пакете `java.utils`. В самом классе есть базовые методы добавления и удаления, а также методы, которые возвращают размер списка; очистка по индексу или же по значению и т. д.
-### Создание объекта ###
+ ArrayList – это реализация динамического использования массива в Java. При использовании массива часто приходится задумываться о требуемом размере, а ArrayList является списком, который увеличивается и уменьшается при необходимости. Этот класс является имплементацией интерфейса (interface) [List](List) из Collection Framework, который расположен в пакете `java.utils`. В самом классе есть базовые методы добавления и удаления, а также методы, которые возвращают размер списка; очистка по индексу или же по значению и т. д.
+### Создание объекта
 
 Существуют несколько конструкторов у ArrayList для создания объекта. Каждый из этих видов имеет свои использования и преимущества. Давайте пройдемся по каждому и рассмотрим, где и как используется каждый из данных видов:
 
@@ -21,7 +21,34 @@ ArrayList<String> employee = new ArrayList<>(100);
 ArrayList<String> cars = new ArrayList<>(Arrays.asList("BMW", "AUDI"));
 ```
 ![Пример создания размых видов динамического массива.](Constructor-ArrayList)
-### Добавление элементов ###
+
+## Методы
+
+Помимо методов, унаследованных от родительских классов, ArrayList определяет следующие методы:
+
+|     |                                                                                                                                                                                                                                                                          |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| №   | Метод и описание                                                                                                                                                                                                                                                         |
+| 1   | **void add(int index, Object element)**  <br>Вставляет указанный элемент в указанный индекс позиции в этом списке. Выбрасывает IndexOutOfBoundsException, если указанный индекс выходит за допустимые пределы (index < 0 \| index > size()).                             |
+| 2   | **boolean add(Object o)**  <br>Добавляет указанный элемент в конец этого списка.                                                                                                                                                                                         |
+| 3   | **boolean addAll(Collection c)**  <br>Добавляет все элементы в указанной коллекции в конец этого списка в том порядке, в котором они возвращаются итератором указанной коллекции. Вызывает NullPointerException, если указанная коллекция имеет значение null (нулевая). |
+| 4   | **boolean addAll(int index, Collection c)**  <br>Вставляет все элементы указанной коллекции в этот список, начиная с указанной позиции. Вызывает NullPointerException, если указанная коллекция имеет значение null.                                                     |
+| 5   | **void clear()**  <br>Удаляет все элементы из этого списка.                                                                                                                                                                                                              |
+| 6   | **Object clone()**  <br>Возвращает неглубокую копию этого массива.                                                                                                                                                                                                       |
+| 7   | **boolean contains(Object o)**  <br>Возвращает true, если этот список содержит указанный элемент. Если точнее, то возвращает true тогда и только тогда, когда этот список содержит хотя бы один элемент e такой, что `(o==null ? e==null : o.equals(e))`.                |
+| 8   | **void ensureCapacity(int minCapacity)**  <br>Увеличивает емкость этого экземпляра ArrayList, если это необходимо, чтобы гарантировать, что он может удерживать, по крайней мере, количество элементов, заданных аргументом минимальной емкости.                         |
+| 9   | **Object get(int index)**  <br>Возвращает элемент в указанной позиции в этом списке. Вызывает IndexOutOfBoundsException, если указанный индекс выходит за допустимые пределы (index < 0 \| index >= size()).                                                             |
+| 10  | **int indexOf(Object o)**  <br>Возвращает индекс в этом списке первого упоминания указанного элемента или -1, если List не содержит этот элемент.                                                                                                                        |
+| 11  | **int lastIndexOf(Object o)**  <br>Возвращает индекс в этом списке последнего упоминания указанного элемента или -1, если List не содержит этот элемент.                                                                                                                 |
+| 12  | **Object remove(int index)**  <br>Удаляет элемент в указанной позиции в этом списке. Вызывает IndexOutOfBoundsException, если индекс выходит за допустимые пределы (index < 0 \| index >= size()).                                                                       |
+| 13  | **protected void removeRange(int fromIndex, int toIndex)**  <br>Удаляет из этого списка все элементы, индекс которых находится между fromIndex, включительно, и toIndex, исключительно.                                                                                  |
+| 14  | **Object set(int index, Object element)**  <br>Заменяет элемент в указанной позиции в этом списке указанным элементом. Вызывает IndexOutOfBoundsException, если указанный индекс выходит за допустимые пределы (index < 0 \| index >= size()).                           |
+| 15  | **int size()**  <br>Возвращает количество элементов в этом списке.                                                                                                                                                                                                       |
+| 16  | **Object[] toArray()**  <br>Возвращает массив, содержащий все элементы в этом списке в правильном порядке. Вызывает NullPointerException, если указанный массив равен null (нулевой).                                                                                    |
+| 17  | **Object[] toArray(Object[] a)**  <br>Возвращает массив, содержащий все элементы в этом списке в правильном порядке; тип выполнения возвращаемого массива - тип указанного массива.                                                                                      |
+| 18  | **void trimToSize()**  <br>Обрезает емкость этого экземпляра ArrayList до его текущих размеров.                                                                                                                                                                          |
+
+### Добавление элементов
 
 Для того чтобы добавить элемент в список, используется простая функция `add`. Для этого метода есть разновидности:
 1. **add(E e)** – добавление элемента в конец списка. Это функция является возвращаемой. Если элемент был добавлен в список, то ответ – `true`, иначе – `false`.
@@ -35,10 +62,11 @@ for (var fruit: fruits) {
 }
 ```
 Вывод:
-==banana
-apple==
+<p style="background-color: navy; color: yellow">
+banana<br>
+apple</p>
 
-2. **add(int index, E element)** – в данном методе добавление элемента происходит в определенную позицию (index), а все последующие элементы двигаются слева направо. Метод эффективен для небольших размеров списка (когда размер списка не более ~100 элементов). В ином случае – если в программе происходит много сдвигов, то лучше использовать [LinkedList](https://www.geeksforgeeks.org/data-structures/linked-list/).
+2. **add(int index, E element)** – в данном методе добавление элемента происходит в определенную позицию (index), а все последующие элементы двигаются слева направо. Метод эффективен для небольших размеров списка (когда размер списка не более ~100 элементов). В ином случае – если в программе происходит много сдвигов, то лучше использовать [LinkedList](Class-LinkedList).
 ```java
 ArrayList<String> fruits = new ArrayList<String>();
         fruits.add("apple");
@@ -52,10 +80,12 @@ ArrayList<String> fruits = new ArrayList<String>();
 ```
 
 Вывод:
-==apple
-watermelon
-banana==
-3. **addAll(Collection )** – добавление списка элементов в конец добавляемого списка. То есть, при вызове данного метода в конец списка добавляются все элементы в таком же порядке.
+<p style="background-color: navy; color: yellow">
+apple<br>
+watermelon<br>
+banana</p>
+
+3. **addAll(Collection c)** – добавление списка элементов в конец добавляемого списка. То есть, при вызове данного метода в конец списка добавляются все элементы в таком же порядке.
 ```java
  //список фруктов
         ArrayList<String> fruits = new ArrayList<String>();
@@ -80,12 +110,14 @@ banana==
         }
 ```
 Вывод:
-==cucumber
-carrot
-apple
-watermelon
-banana==
-4. **addAll(int index, Collection )** – это смесь добавления списка и также добавления элемента в определенную позицию. В этом методе в позицию `index` производится добавление всех элементов из списка, а все последующие элементы смещаются направо.
+<p style="background-color: navy; color: yellow">
+cucumber<br>
+carrot<br>
+apple<br>
+watermelon<br>
+banana</p>
+
+4. **addAll(int index, Collection c)** – это смесь добавления списка и также добавления элемента в определенную позицию. В этом методе в позицию `index` производится добавление всех элементов из списка, а все последующие элементы смещаются направо.
 ```java	
         //список фруктов         
         ArrayList<String> fruits = new ArrayList<String>();         
@@ -110,13 +142,14 @@ banana==
 	    }
 ```
 Вывод:
-==cucumber             
-apple             
-watermelon             
-banana             
-carrot==
+<p style="background-color: navy; color: yellow">
+cucumber<br>
+apple<br>
+watermelon<br>
+banana<br>
+carrot</p>
 
-### Удаление элементов ###
+### Удаление элементов
 
 В ArrayList, существуют методы для удаления элементов. Всего существуют 3 метода для удаления элемента:
 1. **remove(int index)** – удаление осуществляется, используя индекс определенного элемента. То есть, передается порядковый номер элемента и этот элемента удаляется из списка. Не забываем, что индекс начинается с 0.
@@ -134,8 +167,9 @@ carrot==
         }
 ```
 Вывод:
-==watermelon
-banana==
+<p style="background-color: navy; color: yellow">
+watermelon<br>
+banana</p>
 
 2. **remove(object o)** – метод удаляет первый встретившийся элемент, который равняется переданному объекту в параметрах. Если проще, то метод проходится по всему списку и ищет элемент, который равняется удаляемому объекту и при нахождении удаляет только первый встретившийся.
 ```java
@@ -152,8 +186,10 @@ banana==
         /* output
 ```
 Вывод:
-==apple
-watermelon==
+<p style="background-color: navy; color: yellow">
+apple<br>
+watermelon</p>
+
 3. **removaAll(Collection c)** – данный метод удаляет все элементы, находящиеся в передаваемом списке.
 ```java
 //список фруктов
@@ -172,9 +208,10 @@ watermelon==
         }
 ```
 Вывод:
-==banana==
+<p style="background-color: navy; color: yellow">
+banana</p>
 
-### Вспомогательные методы ###
+### Вспомогательные методы
 
 В ArrayList встречаются различные методы, которые являются вспомогательными при различных условиях:
 1. **size()** – возвращает размер списка.
@@ -188,7 +225,9 @@ watermelon==
         System.out.println(fruits.size());
 ```
 Вывод:
-==3==
+<p style="background-color: navy; color: yellow">
+3</p>
+
 2. **sort(Comparator c)** – происходит сортировка элементов по заданным параметрам `Comparator`. Есть уже значения по умолчанию у `Comparator`, которыми можно пользоваться, `Comparator.naturalOrder()`, а также `Comparator.reverseOrder()`.
 ```java
 		ArrayList<Integer> numbers = new ArrayList<>();
@@ -211,6 +250,7 @@ watermelon==
             System.out.print(number + " ");
         }
 ```
+
 3. **toArray()** – данный метод превращает список в массив. Он возвращает массив объектов (`Object[]`), но можно вернуть желаемый тип данных и для этого потребуется в метод `toArray(Array a)` передать уже созданный массив.
 ```java
 		ArrayList<Integer> numbers = new ArrayList<>();
@@ -232,8 +272,9 @@ watermelon==
         }
 ```
 Вывод:
-==1 3 -1 5 
-1 3 -1 5==
+<p style="background-color: navy; color: yellow">
+1 3 -1 5 <br>
+1 3 -1 5</p>
 
 4. **isEmpty()** – проверка списка на наличие элементов. Если список пустой, то возвращает `true`, в противном случае – `false`.
 ```java
@@ -248,6 +289,7 @@ watermelon==
         ArrayList<Integer> numbersEmpty = new ArrayList<>();
         System.out.println(numbersEmpty.isEmpty()); //true
 ```
+
 5. **indexOf(Object o)** – метод возвращает позицию передаваемого элемента, и, если элемент не был найден, возвращает -1.
 ```java
 		ArrayList<String> fruits = new ArrayList<>();
@@ -259,6 +301,7 @@ watermelon==
         System.out.println(fruits.indexOf("banana")); // 1
         System.out.println(fruits.indexOf("watermelon")); // 2
 ```
+
 6. **clear()** – удаляет все элементы из списка.
 ```java
 		ArrayList<String> fruits = new ArrayList<>();
@@ -269,6 +312,7 @@ watermelon==
         fruits.clear(); // очищаем список
         System.out.println(fruits.isEmpty()); // true
 ```
+
 7. **clone()** – метод копирует список. После копирования нужно привести к необходимому классу, то есть `type casting`. Когда список клонируется, создается отдельный независимый объект и удаление родительского списка не влияет на элементы нового списка.
 ```java
 ArrayList<String> fruits = new ArrayList<>();
@@ -285,6 +329,53 @@ ArrayList<String> fruits = new ArrayList<>();
         }
 ```
 Вывод:
-==apple
-banana
-watermelon==
+<p style="background-color: navy; color: yellow">
+apple<br>
+banana<br>
+watermelon</p>
+
+8. Метод `set(int index, Object element)` заменяет элемент на указанной позиции в списке. Например, давайте создадим список строк, затем заменим элемент в позиции 1 в этом списке на новую строку с помощью метода `set(int index, Object element)`:
+```java
+import java.util.ArrayList;
+public class ArrayListExample {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        // добавление элементов в список
+        list.add("один");
+        list.add("два");
+        list.add("три");
+        // замена элемента на указанной позиции в списке
+        list.set(1, "новый элемент");
+        System.out.println(list); // [один, новый элемент, три]
+    }
+}
+```
+
+9. Метод `contains(Object o)` возвращает `true`, если список содержит указанный элемент, и `false` в противном случае. Например, давайте создадим список строк, затем проверим, содержится ли строка «два» в этом списке с помощью метода `contains(Object o)`:
+```java
+import java.util.ArrayList;
+public class ArrayListExample {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        // добавление элементов в список
+        list.add("один");
+        list.add("два");
+        list.add("три");
+        // проверка наличия элемента в списке
+        boolean containsTwo = list.contains("два");
+        System.out.println(containsTwo); // true
+    }
+}
+```
+
+10. Метод toArray. Создание массива из элементов ArrayList. Для конвертирования набора элементов в обычный массив необходимо использовать метод **toArray()**.
+```java
+ArrayList<String> myArrayList = new ArrayList<String>();
+myArrayList.add("Россия");
+myArrayList.add("Польша");
+myArrayList.add("Греция");
+myArrayList.add("Чехия");
+
+String[] array = {}; // конвертируем ArrayList в массив
+array = myArrayList.toArray(new String[myArrayList.size()]);
+```

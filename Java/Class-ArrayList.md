@@ -228,7 +228,7 @@ banana</p>
 <p style="background-color: navy; color: yellow">
 3</p>
 
-2. **sort(Comparator c)** – происходит сортировка элементов по заданным параметрам `Comparator`. Есть уже значения по умолчанию у `Comparator`, которыми можно пользоваться, `Comparator.naturalOrder()`, а также `Comparator.reverseOrder()`.
+2. **sort(Comparator c)** – происходит сортировка элементов по заданным параметрам [Comparator](Comparator). Есть уже значения по умолчанию у [Comparator](Comparator), которыми можно пользоваться, `Comparator.naturalOrder()`, а также `Comparator.reverseOrder()`.
 ```java
 		ArrayList<Integer> numbers = new ArrayList<>();
         numbers.add(1);

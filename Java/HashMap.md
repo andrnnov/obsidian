@@ -14,6 +14,7 @@ Java _HashMap_ похожа на [Hashtable](Hashtable), но она неси�
 public class HashMap<K,V> extends AbstractMap<K,V>
                           implements Map<K,V>, Cloneable, Serializable
 ```
+
 **Параметры:**
 - Тип ключей, поддерживаемых этой картой
 - Тип отображаемых значений

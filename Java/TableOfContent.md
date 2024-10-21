@@ -28,7 +28,7 @@
 - [Сокрытие и затенение переменных в Java](shadowing-hiding)
 - [Запечатанные (sealed) классы в Java](sealed_non-sealed_permits)
 - Руководство программиста по [текстовым блокам](TextBlock)
-- [Кортеж](Tuple)
+- [Кортеж](Tuple). [Введение в Java-кортежи](javatuples). [Pair](Pair).
 
 Глава. Обработка исключений
 - Оператор throws

@@ -14,7 +14,7 @@
 - [Интерфейсы](Interface)
 - [Интерфейсы в механизме обратного вызова](CallBack)
 - Перечисления [enum](Enum)
-- Класс [Object](Object) и его методы
+- Класс [Object](Object) и его методы. [Контракты equals и hashCode](equals_hashCode)
 - Обобщения ([Generics](Generics))
 - [Стирание типов](TypeErasure)
 - [Ограничения обобщений](BorderedGeneric)
@@ -107,6 +107,15 @@
  - Класс [URL](URL)
  - Класс [URLConnection](URLConnection)
  - Класс [HttpURLConnection](HttpURLConnection)
+
+Глава. Введение в AWT: работа с окнами, графикой и текстом
+- [Abstract Window Toolkit (AWT)](AWT) исходная платформно-зависимая оконная библиотека графического интерфейса языка Java
+- Класс [Component](Component)
+- Класс Container
+- Работа с окнами Frame
+- Абстрактный класс [Graphics](Graphics)
+- Работа с цветом [Color](Color)
+- Работа со шрифтами [Font](Font)
 
 
 

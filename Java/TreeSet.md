@@ -62,7 +62,7 @@ New TreeSet: [1, 2, 4, 6]</p>
 
 #### Доступ к элементам TreeSet
 
-Для доступа к элементам _TreeSet_ мы можем использовать метод [iterator()](Iterator). Чтобы использовать этот метод, мы должны импортировать `java.util.Iterator` пакет. Например,
+Для доступа к элементам _TreeSet_ мы можем использовать метод iterator(). Чтобы использовать этот метод, мы должны импортировать `java.util.Iterator` пакет. Например,
 ```java
 import java.util.TreeSet;
 import java.util.Iterator;
@@ -198,7 +198,7 @@ Using lower: 2<br>
 Using ceiling: 4<br>
 Using floor: 2</p>
 
-#### 3. Методы pollfirst() и pollLast()
+#### 3. Методы pollFirst() и pollLast()
 
 - `pollFirst()` - возвращает и удаляет первый элемент из набора
 - `pollLast()` - возвращает и удаляет последний элемент из набора

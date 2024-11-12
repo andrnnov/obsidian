@@ -50,8 +50,9 @@ public class ComparableExample {
 }
 ```
 В этом примере будут выведены следующие строки:
-==-1
-1==
+<p style="background-color: navy; color: yellow">
+-1<br>
+1</p>
 
 Поскольку значение 45 меньше 99 - первое сравнение ( valA.compareTo(valB) = 45.compareTo(99)) приводит к возвращению значения -1. 
 Во втором сравнении, когда 99 сравнивается с 45 (valB.compareTo(valA) = 99.compareTo(45)), результат равен 1 - потому что 99 больше, чем 45.

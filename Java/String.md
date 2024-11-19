@@ -196,7 +196,8 @@ String text    = "  And he ran across the field   ";
 String trimmed = text.trim();
 ```
 После выполнения этого кода обрезанная переменная будет указывать на экземпляр строки со значением:
-=="And he ran across the field"==
+<p style="background-color: navy; color: yellow">
+And he ran across the field</p>
 
 Символы пробела в начале и конце объекта String были удалены. Символ пробела внутри строки не был затронут. Под "внутри" подразумевается расстояние между первым и последним символом, не являющимся пробелом. 
 
@@ -246,7 +247,9 @@ String source   = "123abc";
 String replaced = source.replace('a', '@');
 ```
 После выполнения этого кода заменяемая переменная будет указывать на строку с текстом:
-==123@bc==
+<p style="background-color: navy; color: yellow">
+123@bc</p>
+
 Метод replace() заменит все символы, соответствующие символу, переданному в качестве первого параметра методу, на второй символ, переданный в качестве параметра методу replace().
 ##### replaceFirst() #####
 
@@ -256,7 +259,10 @@ String text = "one two three two one";
 
 String s = text.replaceFirst("two", "five");
 cd```
-В этом примере будет возвращена строка: =="one five three two one"==
+В этом примере будет возвращена строка: 
+<p style="background-color: navy; color: yellow">
+one five three two one</p>
+
 ##### replaceAll() #####
 
 Метод Java String replaceAll() возвращает новую строку со всеми совпадениями [регулярного выражения](Regex), переданного в качестве первого параметра, со строковым значением второго параметра. Вот пример replaceAll():
@@ -265,7 +271,10 @@ String text = "one two three two one";
 
 String t = text.replaceAll("two", "five");
 ```
-В этом примере будет возвращена строка: =="one five three five one"==
+В этом примере будет возвращена строка: 
+<p style="background-color: navy; color: yellow">
+one five three five one</p>
+
 #### Сравнение строк ####
 
 Для сравнения строк можно воспользоваться методом `equals()`:
@@ -495,8 +504,10 @@ System.out.println( theString.charAt(0) );
 System.out.println( theString.charAt(3) );
 ```
 Вывод:
-==T
-s==
+<p style="background-color: navy; color: yellow">
+T<br>
+s</p>
+
 поскольку это символы, расположенные в строке с индексами 0 и 3. 
 
 Вы также можете получить байтовое представление метода String, используя метод getBytes(). Вот два примера:
@@ -510,5 +521,6 @@ byte[] bytes2 = theString.getBytes(Charset.forName("UTF-8");
 
 Второй вызов `getBytes()` возвращает представление строки в формате UTF-8 байт.
 
+[Компактные строки в Java 9](CompactString)
 [Методы класса String, появившиеся в Java 11](StringJava11)
 

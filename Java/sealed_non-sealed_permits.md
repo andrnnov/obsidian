@@ -65,7 +65,7 @@ public record Laptop(String brand) implement Device {
 
 ### Поддержка Reflection
 
-Java [Reflection](Reflection) обеспечивает поддержку запечатанных классов. Следующие два метода были добавлены в java.lang.Class:
+Java [Reflection](ReflectionAPI) обеспечивает поддержку запечатанных классов. Следующие два метода были добавлены в java.lang.Class:
 
 #### 1. getPermittedSubclasses()
 

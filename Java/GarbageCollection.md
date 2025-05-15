@@ -446,3 +446,6 @@ java -XX:+UseZGC -Xms4G -Xmx4G -jar my-low-latency-app.jar
 3. [Все типы сборщиков мусора в Java, о которых вы должны знать](https://javarush.com/groups/posts/4075-kofe-breyk-210-vse-tipih-sborjshikov-musora-v-java-o-kotorihkh-vih-dolzhnih-znatjh)
 
 4. [Garbage Collection и JVM](https://habr.com/ru/companies/otus/articles/776342/)
+
+
+

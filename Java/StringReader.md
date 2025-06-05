@@ -1,4 +1,4 @@
-#java #StringReadert 
+#java #StringReader  
 
 ### Класс StringReader ###
 
